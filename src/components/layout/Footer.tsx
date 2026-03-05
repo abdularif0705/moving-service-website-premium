@@ -40,11 +40,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Company</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">About Us</a></li>
-              <li><a href="#process" className="text-white/60 hover:text-white transition-colors text-sm">How It Works</a></li>
-              <li><a href="#testimonials" className="text-white/60 hover:text-white transition-colors text-sm">Reviews</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Careers</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
+              <li><a href="/about" className="text-white/60 hover:text-white transition-colors text-sm">About Us</a></li>
+              <li><a href="/#process" className="text-white/60 hover:text-white transition-colors text-sm">How It Works</a></li>
+              <li><a href="/#testimonials" className="text-white/60 hover:text-white transition-colors text-sm">Reviews</a></li>
+              <li><a href="/careers" className="text-white/60 hover:text-white transition-colors text-sm">Careers</a></li>
+              <li><a href="/privacy" className="text-white/60 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
             </ul>
           </div>
 
@@ -69,8 +69,8 @@ export default function Footer() {
             </p>
           </div>
           <div className="flex gap-6 relative z-20">
-            <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
-            <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
+            <a href="/terms" className="hover:text-white transition-colors">Terms of Service</a>
+            <a href="/privacy" className="hover:text-white transition-colors">Privacy Policy</a>
           </div>
         </div>
       </div>
