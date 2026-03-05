@@ -18,16 +18,15 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 border border-accent/20 text-accent font-medium text-sm mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-foreground font-medium text-sm mb-6">
               <span className="relative flex h-2 w-2">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground/50"></span>
               </span>
               Top-Rated Movers Nationwide
             </div>
             <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-foreground">
               Moving made <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">effortless.</span>
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/50">effortless.</span>
             </h1>
             <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-xl leading-relaxed">
               Experience a seamless, stress-free transition to your new home. 
@@ -37,7 +36,7 @@ export default function Hero() {
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <a
                 href="#quote"
-                className="inline-flex items-center justify-center gap-2 bg-primary hover:bg-primary-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-xl shadow-primary/25 hover:shadow-primary/40 group active:scale-95"
+                className="inline-flex items-center justify-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-full font-bold text-lg transition-all shadow-2xl shadow-foreground/10 hover:shadow-foreground/20 group active:scale-95"
               >
                 Get Your Free Quote
                 <ArrowRight className="group-hover:translate-x-1 transition-transform" />
@@ -53,15 +52,15 @@ export default function Hero() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-8 items-center text-sm font-semibold text-foreground/80">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="text-green-500" size={20} />
+                <ShieldCheck className="text-foreground" size={20} />
                 Fully Insured
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="text-accent" size={20} />
+                <Clock className="text-foreground" size={20} />
                 On-Time Guarantee
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="text-primary" size={20} />
+                <MapPin className="text-foreground" size={20} />
                 Local & Long Distance
               </div>
             </div>
@@ -84,17 +83,17 @@ export default function Hero() {
                  {/* 3D-like Box Illustration via CSS */}
                  <div className="relative w-64 h-64 ease-in-out">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-48 h-48 bg-gradient-to-br from-primary-light to-primary rounded-xl shadow-2xl transform rotate-12 transition-transform hover:rotate-6 flex items-center justify-center border border-white/20">
-                        <Truck size={80} className="text-white drop-shadow-md" />
+                      <div className="w-48 h-48 bg-foreground text-background rounded-3xl shadow-2xl transform rotate-12 transition-transform hover:rotate-6 flex items-center justify-center border border-background/20">
+                        <Truck size={80} className="drop-shadow-md" />
                       </div>
                     </div>
                     {/* Floating elements */}
                     <motion.div 
                       animate={{ y: [0, -15, 0] }} 
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute top-0 right-0 bg-white dark:bg-slate-800 p-4 rounded-xl shadow-xl border border-foreground/5 flex items-center gap-3"
+                      className="absolute top-0 right-0 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-2xl border border-foreground/10 flex items-center gap-3"
                     >
-                      <div className="bg-green-100 text-green-600 p-2 rounded-full"><ShieldCheck size={20}/></div>
+                      <div className="bg-foreground/5 text-foreground p-2 rounded-full"><ShieldCheck size={20}/></div>
                       <div>
                         <p className="text-xs text-foreground/80 font-medium">Status</p>
                         <p className="text-sm font-bold">In Transit</p>

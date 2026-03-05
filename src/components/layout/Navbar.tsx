@@ -26,22 +26,22 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2 cursor-pointer">
-            <div className="bg-primary text-white p-2 rounded-lg">
+          <div className="flex items-center gap-2 cursor-pointer group">
+            <div className="bg-foreground text-background p-2 rounded-xl group-hover:bg-accent transition-colors duration-300">
               <Truck size={24} />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-primary-dark dark:text-white">
-              Swift<span className="text-accent">Move</span>
+            <span className="text-2xl font-bold tracking-tight text-foreground">
+              SwiftMove
             </span>
           </div>
 
           <nav className="hidden md:flex gap-8 items-center">
-            <a href="#services" className="text-sm font-medium hover:text-accent transition-colors">Services</a>
-            <a href="#process" className="text-sm font-medium hover:text-accent transition-colors">Process</a>
-            <a href="#testimonials" className="text-sm font-medium hover:text-accent transition-colors">Reviews</a>
+            <a href="#services" className="text-sm font-medium hover:text-foreground/70 transition-colors">Services</a>
+            <a href="#process" className="text-sm font-medium hover:text-foreground/70 transition-colors">Process</a>
+            <a href="#testimonials" className="text-sm font-medium hover:text-foreground/70 transition-colors">Reviews</a>
             <a
               href="#quote"
-              className="bg-accent hover:bg-accent-dark text-white px-5 py-2.5 rounded-full font-semibold transition-all shadow-lg hover:shadow-accent/50 active:scale-95"
+              className="bg-foreground text-background hover:bg-foreground/90 px-5 py-2.5 rounded-full font-medium transition-all hover:shadow-[0_0_20px_rgba(0,0,0,0.1)] active:scale-95"
             >
               Get a Quote
             </a>
@@ -64,13 +64,13 @@ export default function Navbar() {
             exit={{ opacity: 0, y: -20 }}
             className="absolute top-full left-0 w-full bg-white dark:bg-slate-900 border-b border-foreground/10 shadow-2xl md:hidden flex flex-col items-center py-6 gap-6 z-50 ring-1 ring-foreground/5"
           >
-            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium">Services</a>
-            <a href="#process" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium">Process</a>
-            <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium">Reviews</a>
+            <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground/80 hover:text-foreground">Services</a>
+            <a href="#process" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground/80 hover:text-foreground">Process</a>
+            <a href="#testimonials" onClick={() => setMobileMenuOpen(false)} className="text-lg font-medium text-foreground/80 hover:text-foreground">Reviews</a>
             <a
               href="#quote"
               onClick={() => setMobileMenuOpen(false)}
-              className="bg-accent text-white px-8 py-3 rounded-full font-bold shadow-lg"
+              className="bg-foreground text-background px-8 py-3 rounded-full font-medium"
             >
               Get a Quote
             </a>

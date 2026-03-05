@@ -12,13 +12,13 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#1D4ED8", // premium blue
-          dark: "#1E3A8A",
-          light: "#DBEAFE",
+          DEFAULT: "#000000", // sleek pure black
+          dark: "#171717", // neutral zinc 900
+          light: "#fafafa", // pure off-white
         },
         accent: {
-          DEFAULT: "#F97316", // energetic orange
-          dark: "#C2410C",
+          DEFAULT: "#6366f1", // modern indigo
+          dark: "#4f46e5",
         }
       },
     },

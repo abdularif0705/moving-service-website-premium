@@ -33,7 +33,7 @@ export default function Process() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-foreground/70 font-semibold tracking-wide uppercase text-sm mb-3"
           >
             How It Works
           </motion.h2>
@@ -50,7 +50,7 @@ export default function Process() {
 
         <div className="relative">
           {/* Connector Line */}
-          <div className="hidden md:absolute md:block top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary/10 via-primary/50 to-primary/10 -translate-y-1/2 z-0" />
+          <div className="hidden md:absolute md:block top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-foreground/5 via-foreground/20 to-foreground/5 -translate-y-1/2 z-0" />
 
           <div className="grid md:grid-cols-3 gap-12 relative z-10">
             {steps.map((step, index) => (
@@ -63,8 +63,8 @@ export default function Process() {
                 className="relative flex flex-col items-center text-center group"
               >
                 <div className="bg-background rounded-full p-2 mb-6">
-                  <div className="w-24 h-24 rounded-full bg-gradient-to-br from-primary-light to-primary flex items-center justify-center text-white shadow-xl group-hover:scale-110 transition-transform duration-300">
-                    <step.icon size={40} />
+                  <div className="w-24 h-24 rounded-full bg-white dark:bg-slate-900 border border-foreground/10 flex items-center justify-center text-foreground shadow-sm group-hover:scale-105 group-hover:bg-foreground group-hover:text-background transition-all duration-500">
+                    <step.icon size={40} className="transition-colors duration-500" />
                   </div>
                 </div>
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-9xl font-black text-foreground/5 dark:text-foreground/5 select-none -z-10">

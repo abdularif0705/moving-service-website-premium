@@ -8,11 +8,11 @@ export default function Footer() {
           
           <div className="space-y-6">
             <div className="flex items-center gap-2 text-white">
-              <div className="bg-primary p-2 rounded-lg">
+              <div className="bg-white text-slate-900 p-2 rounded-xl">
                 <Truck size={24} />
               </div>
               <span className="text-2xl font-bold tracking-tight">
-                Swift<span className="text-accent">Move</span>
+                SwiftMove
               </span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
@@ -29,22 +29,22 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Services</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Local Moving</a></li>
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Long Distance Moving</a></li>
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Commercial Relocation</a></li>
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Professional Packing</a></li>
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Storage Solutions</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Local Moving</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Long Distance Moving</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Commercial Relocation</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Professional Packing</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Storage Solutions</a></li>
             </ul>
           </div>
 
           <div>
             <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">About Us</a></li>
-              <li><a href="#process" className="text-white/60 hover:text-accent transition-colors text-sm">How It Works</a></li>
-              <li><a href="#testimonials" className="text-white/60 hover:text-accent transition-colors text-sm">Reviews</a></li>
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Careers</a></li>
-              <li><a href="#" className="text-white/60 hover:text-accent transition-colors text-sm">Privacy Policy</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">About Us</a></li>
+              <li><a href="#process" className="text-white/60 hover:text-white transition-colors text-sm">How It Works</a></li>
+              <li><a href="#testimonials" className="text-white/60 hover:text-white transition-colors text-sm">Reviews</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Careers</a></li>
+              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
             </ul>
           </div>
 

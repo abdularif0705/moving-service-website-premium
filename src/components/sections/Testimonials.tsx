@@ -29,14 +29,14 @@ const reviews = [
 
 export default function Testimonials() {
   return (
-    <section id="testimonials" className="py-24 bg-primary/5 dark:bg-primary/10 relative overflow-hidden">
+    <section id="testimonials" className="py-24 bg-foreground/5 dark:bg-background relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-16">
           <motion.h2
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-primary font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-foreground/70 font-semibold tracking-wide uppercase text-sm mb-3"
           >
             Client Success Stories
           </motion.h2>
@@ -61,7 +61,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-foreground/5 relative"
             >
-              <div className="flex gap-1 text-accent mb-6">
+              <div className="flex gap-1 text-foreground mb-6">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} size={20} fill="currentColor" />
                 ))}
@@ -70,7 +70,7 @@ export default function Testimonials() {
                 "{review.content}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center font-bold text-primary">
+                <div className="w-12 h-12 rounded-full bg-foreground flex items-center justify-center font-bold text-background">
                   {review.author.charAt(0)}
                 </div>
                 <div>

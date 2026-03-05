@@ -7,8 +7,8 @@ export default function Contact() {
   return (
     <section id="quote" className="py-24 bg-foreground dark:bg-slate-900 text-white relative overflow-hidden">
       {/* Abstract Background Design */}
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/20 to-transparent -z-10" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-accent/20 rounded-full blur-[100px] -z-10" />
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-white/10 to-transparent -z-10" />
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full blur-[100px] -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -22,7 +22,7 @@ export default function Contact() {
           >
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
               Ready for a smooth move? <br />
-              <span className="text-accent">Let's get started.</span>
+              <span className="text-white/70">Let's get started.</span>
             </h2>
             <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
               Fill out the form to request your free, no-obligation moving quote. Our team will get back to you within 24 hours.
@@ -30,21 +30,21 @@ export default function Contact() {
 
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4 text-white/90">
-                <div className="bg-white/10 p-3 rounded-full"><Phone className="text-accent" /></div>
+                <div className="bg-white/10 p-3 rounded-full"><Phone className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Call Us 24/7</p>
                   <p className="font-bold text-xl">1-800-555-MOVE</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
-                <div className="bg-white/10 p-3 rounded-full"><Mail className="text-primary-light" /></div>
+                <div className="bg-white/10 p-3 rounded-full"><Mail className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Email Support</p>
                   <p className="font-bold text-lg">quotes@swiftmove.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
-                <div className="bg-white/10 p-3 rounded-full"><MapPin className="text-green-400" /></div>
+                <div className="bg-white/10 p-3 rounded-full"><MapPin className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Headquarters</p>
                   <p className="font-bold text-lg">123 Logistics Way, NY 10001</p>
@@ -61,7 +61,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <div className="absolute -top-4 -right-4 bg-accent text-white px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3">
+            <div className="absolute -top-4 -right-4 bg-white text-slate-900 border border-slate-200 px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3">
               Fast Response!
             </div>
             <h3 className="text-2xl font-bold text-foreground mb-8">Request a Free Quote</h3>
@@ -117,7 +117,7 @@ export default function Contact() {
 
               <button
                 type="button"
-                className="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-primary/40 transition-all flex items-center justify-center gap-2 active:scale-[0.98]"
+                className="w-full bg-foreground hover:bg-foreground/90 text-background font-bold py-4 rounded-xl shadow-lg hover:shadow-foreground/20 transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]"
               >
                 Send Request
                 <Send size={20} />
