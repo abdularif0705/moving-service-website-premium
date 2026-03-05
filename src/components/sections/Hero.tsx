@@ -34,33 +34,33 @@ export default function Hero() {
               Professional packing, safe transport, and absolute peace of mind.
             </p>
             
-            <div className="flex flex-col sm:flex-row gap-4 mb-12">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
               <a
                 href="#quote"
-                className="inline-flex items-center justify-center gap-2 bg-foreground hover:bg-foreground/90 text-background px-8 py-4 rounded-full font-bold text-lg transition-all shadow-2xl shadow-foreground/10 hover:shadow-foreground/20 group active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all active:scale-95"
               >
                 Get Your Free Quote
-                <ArrowRight className="group-hover:translate-x-1 transition-transform" />
+                <ArrowRight size={20} />
               </a>
               <a
                 href="#services"
-                className="inline-flex items-center justify-center gap-2 bg-white dark:bg-white/5 border border-foreground/10 hover:border-foreground/20 dark:hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all active:scale-95"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white dark:bg-white/5 border border-foreground/10 hover:border-foreground/20 dark:hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all active:scale-95"
               >
                 Our Services
               </a>
             </div>
 
             {/* Trust Indicators */}
-            <div className="flex flex-wrap gap-8 items-center text-sm font-semibold text-foreground/80">
-              <div className="flex items-center gap-2">
+            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 items-start sm:items-center text-sm font-semibold text-foreground/80 mt-6 sm:mt-0">
+              <div className="flex items-center gap-3">
                 <ShieldCheck className="text-emerald-500" size={20} />
                 Fully Insured
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <Clock className="text-emerald-500" size={20} />
                 On-Time Guarantee
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-3">
                 <MapPin className="text-emerald-500" size={20} />
                 Local & Long Distance
               </div>

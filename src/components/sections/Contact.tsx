@@ -61,7 +61,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <div className="absolute -top-4 -right-4 bg-emerald-500 text-white border border-emerald-400 px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3">
+            <div className="absolute -top-4 right-4 sm:-right-4 bg-emerald-500 text-white border border-emerald-400 px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3 z-10 hover:rotate-0 transition-transform cursor-default">
               Fast Response!
             </div>
             <h3 className="text-2xl font-bold text-foreground mb-8">Request a Free Quote</h3>

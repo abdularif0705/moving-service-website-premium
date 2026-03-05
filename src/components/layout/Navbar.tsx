@@ -20,7 +20,7 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
         isScrolled || mobileMenuOpen
-          ? "bg-background/95 backdrop-blur-md border-b border-foreground/10 shadow-sm py-4"
+          ? "bg-background border-b border-foreground/10 shadow-sm py-4"
           : "bg-transparent py-6"
       }`}
     >
