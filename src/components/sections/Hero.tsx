@@ -57,11 +57,11 @@ export default function Hero() {
                 Fully Insured
               </div>
               <div className="flex items-center gap-2">
-                <Clock className="text-foreground" size={20} />
+                <Clock className="text-emerald-500" size={20} />
                 On-Time Guarantee
               </div>
               <div className="flex items-center gap-2">
-                <MapPin className="text-foreground" size={20} />
+                <MapPin className="text-emerald-500" size={20} />
                 Local & Long Distance
               </div>
             </div>
