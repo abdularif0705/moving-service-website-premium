@@ -89,7 +89,7 @@ export default function Services() {
               whileHover={{ y: -10 }}
               className="bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm border border-foreground/10 hover:shadow-2xl transition-all duration-500 group"
             >
-              <div className="h-14 w-14 bg-foreground/5 ring-1 ring-foreground/10 rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-accent group-hover:ring-accent transition-all duration-500">
+              <div className="h-14 w-14 bg-foreground/5 border border-foreground rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-accent group-hover:border-accent group-hover:shadow-[0_0_15px_rgba(202,160,82,0.4)] transition-all duration-500">
                 <service.icon className="text-foreground group-hover:text-primary transition-colors duration-500" size={28} />
               </div>
               <h4 className="text-xl font-serif font-medium mb-3 text-foreground">{service.title}</h4>
