@@ -28,7 +28,11 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <Link href="/" className="flex items-center gap-3 cursor-pointer group">
+          <Link 
+            href="/" 
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="flex items-center gap-3 cursor-pointer group"
+          >
             <div className={`p-2 rounded-xl border transition-colors duration-300 ${
               isScrolled 
                 ? 'bg-primary text-accent-light border-accent/20 group-hover:bg-accent group-hover:text-primary' 
