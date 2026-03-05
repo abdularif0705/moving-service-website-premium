@@ -51,19 +51,24 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Coverage Areas</h4>
             <ul className="space-y-3 text-white/60 text-sm">
-              <li>New York City, NY</li>
-              <li>Los Angeles, CA</li>
-              <li>Chicago, IL</li>
-              <li>Miami, FL</li>
-              <li>Austin, TX</li>
+              <li>Windsor, ON</li>
+              <li>Tecumseh, ON</li>
+              <li>LaSalle, ON</li>
+              <li>Amherstburg, ON</li>
+              <li>Lakeshore, ON</li>
             </ul>
           </div>
 
         </div>
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
-          <p>&copy; {new Date().getFullYear()} SwiftMove Relocation LLC. All rights reserved.</p>
-          <div className="flex gap-6">
+          <div className="flex flex-col gap-2 relative z-20 text-center md:text-left">
+            <p>&copy; {new Date().getFullYear()} SwiftMove Relocation. All rights reserved.</p>
+            <p className="text-white/30 text-xs">
+              Designed & Developed by <a href="https://abdularif.me" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors underline underline-offset-2">Abdul Rehman Arif</a>
+            </p>
+          </div>
+          <div className="flex gap-6 relative z-20">
             <a href="#" className="hover:text-white transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-white transition-colors">Privacy Policy</a>
           </div>

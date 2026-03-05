@@ -34,7 +34,7 @@ export default function Hero() {
           </h1>
           
           <p className="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl font-light leading-relaxed">
-            Experience a seamless, stress-free transition. Professional packing, bespoke transport, and absolute peace of mind for your most treasured possessions.
+            Windsor's premier moving service. Experience a seamless, stress-free transition across Ontario and beyond. Professional packing, bespoke transport, and absolute peace of mind.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">

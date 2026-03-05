@@ -47,7 +47,7 @@ export default function Contact() {
                 <div className="bg-white/10 p-3 rounded-full"><MapPin className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Headquarters</p>
-                  <p className="font-bold text-lg">123 Logistics Way, NY 10001</p>
+                  <p className="font-bold text-lg">123 Ouellette Ave, Windsor, ON</p>
                 </div>
               </div>
             </div>
@@ -61,7 +61,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <div className="absolute -top-4 right-4 sm:-right-4 bg-accent text-primary border border-accent-light px-6 py-1 flex p rounded-full font-medium text-[10px] tracking-[0.2em] uppercase shadow-xl transform rotate-3 z-10 hover:rotate-0 transition-transform cursor-default">
+            <div className="absolute -top-5 right-4 sm:-right-6 bg-accent text-primary border border-primary/40 px-6 py-1.5 rounded-full font-bold text-[10px] tracking-[0.25em] uppercase shadow-xl shadow-black/30 transform rotate-3 z-10 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 cursor-default ring-1 ring-white/20 ring-inset">
               Priority Response
             </div>
             <h3 className="text-3xl font-serif text-foreground mb-8 text-center sm:text-left">Request a Consultation</h3>
