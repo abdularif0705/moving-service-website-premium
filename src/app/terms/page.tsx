@@ -11,7 +11,7 @@ export default function TermsPage() {
     <>
       <Navbar transparentTextColor="dark" />
       <main className="pt-32 pb-24 min-h-screen bg-foreground/5 dark:bg-background">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 shadow-xl rounded-3xl p-8 sm:p-12 border border-foreground/10 dark:border-white/5">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 bg-white dark:bg-slate-900 shadow-xl rounded-2xl sm:rounded-3xl p-6 sm:p-12 border border-foreground/10 dark:border-white/5">
           <h1 className="text-4xl font-serif text-foreground mb-8">Terms of Service</h1>
           
           <div className="space-y-8 text-foreground/80 dark:text-stone-300 leading-relaxed">

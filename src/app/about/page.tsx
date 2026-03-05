@@ -1,7 +1,6 @@
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { Copyleft as Box, Truck, ShieldCheck, Users } from "lucide-react";
-import { motion } from "framer-motion";
 
 export const metadata = {
   title: "About Us | SwiftMove",
@@ -59,7 +58,7 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
-              <div className="grid grid-cols-2 gap-6">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {values.map((val, idx) => (
                   <div key={idx} className="bg-white dark:bg-slate-900 p-8 rounded-3xl shadow-sm border border-foreground/5 dark:border-white/5 hover:-translate-y-1 transition-transform">
                     <val.icon className="text-accent mb-4" size={32} />

@@ -36,9 +36,9 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-4xl mx-auto flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-xs tracking-[0.2em] uppercase mb-10 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]"></span>
-            Exclusive White-Glove Service
+          <div className="inline-flex items-center gap-2 sm:gap-3 px-4 sm:px-6 py-1.5 sm:py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-[9px] sm:text-xs tracking-widest sm:tracking-[0.2em] uppercase mb-10 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)] shrink-0"></span>
+            <span className="whitespace-nowrap">Exclusive White-Glove Service</span>
           </div>
           
           <TextReveal 
