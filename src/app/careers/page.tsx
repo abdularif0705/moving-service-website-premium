@@ -32,10 +32,10 @@ export default function CareersPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pt-24 pb-20">
+      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pb-20">
         
         {/* Header */}
-        <div className="bg-primary py-20 text-center relative overflow-hidden">
+        <div className="bg-primary pt-40 pb-20 text-center relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
           <div className="max-w-3xl mx-auto px-4 relative z-10">
              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-accent/40 bg-accent/10 text-accent font-medium text-[10px] tracking-[0.2em] uppercase mb-6 rounded-full">

@@ -19,10 +19,10 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pt-24 pb-20">
+      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pb-20">
         
         {/* Hero Section */}
-        <section className="relative py-24 sm:py-32 overflow-hidden">
+        <section className="relative pt-40 pb-24 sm:pt-48 sm:pb-32 overflow-hidden">
           <div className="absolute inset-0 z-0 bg-primary">
             <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1578505500858-ad232938814b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
             <div className="absolute inset-0 bg-gradient-to-t from-primary to-transparent"></div>
@@ -46,13 +46,16 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">More Than Just a Truck. We are <span className="text-accent italic">Logistics Experts.</span></h2>
+                <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">Built on Integrity. Driven by <span className="text-accent italic">Community.</span></h2>
                 <div className="space-y-6 text-foreground/70 leading-relaxed text-lg">
                   <p>
-                    For years, standard moving companies operated on a model of hidden fees, careless day-laborers, and broken promises. We saw an opportunity to introduce true luxury service to the moving industry.
+                    SwiftMove was founded by Usman Shahzad with a singular vision: to bring honest, reliable, and premium relocation services to the hardworking people of Windsor and Essex County.
                   </p>
                   <p>
-                    Today, SwiftMove manages everything from downtown Windsor high-rise down-sizes to sprawling estate relocations across Ontario. We handle your life's possessions with the reverence and precision they deserve.
+                    As a proud member of the Windsor community, Usman saw firsthand how stressful moving could be—often plagued by hidden fees, careless handling, and poor communication. He set out to change that by building a company rooted in absolute transparency and a genuine desire to help his neighbors transition to their new homes seamlessly. 
+                  </p>
+                  <p>
+                    Today, SwiftMove isn't just about transporting boxes; it's about lifting the burden off families and businesses. Under Usman's leadership, every member of our team treats your cherished possessions—and your peace of mind—as our highest priority.
                   </p>
                 </div>
               </div>

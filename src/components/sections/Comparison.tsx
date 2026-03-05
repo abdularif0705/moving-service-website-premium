@@ -60,7 +60,7 @@ export default function Comparison() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-foreground/5 dark:bg-slate-900 rounded-3xl overflow-hidden ring-1 ring-accent/50 dark:ring-accent/30 shadow-lg shadow-accent/5"
+          className="bg-white dark:bg-slate-900 rounded-3xl overflow-hidden ring-1 ring-black/[0.03] dark:ring-white/10 shadow-[0_20px_50px_-12px_rgba(0,0,0,0.06)] dark:shadow-none"
         >
           <div className="grid grid-cols-12 bg-foreground dark:bg-slate-800 text-white p-6 sm:px-8 border-b border-foreground/10 dark:border-white/10">
             <div className="col-span-12 sm:col-span-4 mb-4 sm:mb-0 hidden sm:block">
