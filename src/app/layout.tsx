@@ -10,6 +10,9 @@ export const metadata: Metadata = {
   description: "Experience a seamless, stress-free move in Windsor, Ontario and surrounding regions. Get a free quote today.",
 };
 
+import ScrollProgress from "@/components/ui/ScrollProgress";
+import FloatingCTA from "@/components/ui/FloatingCTA";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -18,6 +21,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.variable} ${playfair.variable} font-sans antialiased min-h-screen flex flex-col overflow-x-hidden text-primary bg-[#FAFAF9]`}>
+        <ScrollProgress />
+        <FloatingCTA />
         {children}
       </body>
     </html>

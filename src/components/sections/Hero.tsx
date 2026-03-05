@@ -1,16 +1,28 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import { ArrowRight, ShieldCheck, Clock, MapPin } from "lucide-react";
+import { useRef } from "react";
+import TextReveal from "../ui/TextReveal";
 
 export default function Hero() {
+  const ref = useRef(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ["start start", "end start"],
+  });
+  
+  // Parallax translation for the background
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
+
   return (
-    <section className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image */}
-      <div 
-        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+    <section ref={ref} className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image - with Parallax */}
+      <motion.div 
+        className="absolute inset-0 z-0 h-[130%] -top-[15%] bg-cover bg-center bg-no-repeat"
         style={{
           backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80')",
+          y
         }}
       />
       {/* Overlay to ensure text readability */}
@@ -24,14 +36,16 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-4xl mx-auto flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-xs tracking-[0.2em] uppercase mb-10 rounded-full">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+          <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-xs tracking-[0.2em] uppercase mb-10 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)]"></span>
             Exclusive White-Glove Service
           </div>
           
-          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] mb-8 tracking-tight">
-            Moving, elevated to an <span className="text-accent italic">art form.</span>
-          </h1>
+          <TextReveal 
+            text="Moving, elevated to an art form." 
+            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-8"
+            delay={0.1}
+          />
           
           <p className="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl font-light leading-relaxed">
             Windsor's premier moving service. Experience a seamless, stress-free transition across Ontario and beyond. Professional packing, bespoke transport, and absolute peace of mind.
@@ -40,7 +54,7 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">
             <a
               href="#quote"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary px-10 py-4 font-medium tracking-wide transition-colors duration-300 rounded-full"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary px-10 py-4 font-medium tracking-wide transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-accent/20 border border-accent/20 rounded-full"
             >
               Request a Consultation
               <ArrowRight size={18} />
