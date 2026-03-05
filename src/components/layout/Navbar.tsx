@@ -27,7 +27,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-3 cursor-pointer group">
-            <div className={`p-2 rounded-sm border transition-colors duration-300 ${isScrolled ? 'bg-primary text-accent-light border-accent/20 group-hover:bg-accent group-hover:text-primary' : 'bg-white/10 text-accent border-white/20 group-hover:bg-white/20'}`}>
+            <div className={`p-2 rounded-xl border transition-colors duration-300 ${isScrolled ? 'bg-primary text-accent-light border-accent/20 group-hover:bg-accent group-hover:text-primary' : 'bg-white/10 text-accent border-white/20 group-hover:bg-white/20'}`}>
               <Truck size={24} />
             </div>
             <span className="text-2xl font-bold tracking-tight font-serif">
@@ -41,7 +41,7 @@ export default function Navbar() {
             <a href="#testimonials" className="text-sm font-medium hover:opacity-70 transition-opacity">Reviews</a>
             <a
               href="#quote"
-              className="bg-accent text-primary hover:bg-accent-light px-7 py-2.5 font-medium transition-colors duration-300 tracking-wide"
+              className="bg-accent text-primary hover:bg-accent-light px-7 py-2.5 font-medium transition-colors duration-300 tracking-wide rounded-full shadow-md"
             >
               Get a Quote
             </a>
@@ -70,7 +70,7 @@ export default function Navbar() {
             <a
               href="#quote"
               onClick={() => setMobileMenuOpen(false)}
-              className="bg-accent hover:bg-accent-light text-primary px-8 py-3 font-medium tracking-wide w-3/4 text-center transition-colors duration-300"
+              className="bg-accent hover:bg-accent-light text-primary px-8 py-3 font-medium tracking-wide w-3/4 text-center transition-colors duration-300 rounded-full shadow-md"
             >
               Get a Quote
             </a>

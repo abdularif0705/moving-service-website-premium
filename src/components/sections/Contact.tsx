@@ -61,7 +61,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <div className="absolute -top-4 right-4 sm:-right-4 bg-accent text-primary border border-accent-light px-6 py-1 flex p rounded-sm font-medium text-[10px] tracking-[0.2em] uppercase shadow-xl transform rotate-3 z-10 hover:rotate-0 transition-transform cursor-default">
+            <div className="absolute -top-4 right-4 sm:-right-4 bg-accent text-primary border border-accent-light px-6 py-1 flex p rounded-full font-medium text-[10px] tracking-[0.2em] uppercase shadow-xl transform rotate-3 z-10 hover:rotate-0 transition-transform cursor-default">
               Priority Response
             </div>
             <h3 className="text-3xl font-serif text-foreground mb-8 text-center sm:text-left">Request a Consultation</h3>
@@ -72,7 +72,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-foreground/70 mb-2">First Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="John"
                   />
                 </div>
@@ -80,7 +80,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-foreground/70 mb-2">Last Name</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="Doe"
                   />
                 </div>
@@ -91,7 +91,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-foreground/70 mb-2">Moving From (Zip)</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="10001"
                   />
                 </div>
@@ -99,7 +99,7 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-foreground/70 mb-2">Moving To (Zip)</label>
                   <input
                     type="text"
-                    className="w-full px-4 py-3 rounded-xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="90210"
                   />
                 </div>
@@ -107,7 +107,7 @@ export default function Contact() {
 
               <div>
                 <label className="block text-sm font-medium text-foreground/70 mb-2">Move Size</label>
-                <select className="w-full px-4 py-3 rounded-xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
+                <select className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
                   <option>Studio / 1 Bedroom</option>
                   <option>2-3 Bedrooms</option>
                   <option>4+ Bedrooms</option>
@@ -117,7 +117,7 @@ export default function Contact() {
 
               <button
                 type="button"
-                className="w-full bg-accent hover:bg-accent-light text-primary font-medium tracking-wide py-4 rounded-xl shadow-xl hover:shadow-accent/20 transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98]"
+                className="w-full bg-accent hover:bg-accent-light text-primary font-medium tracking-wide py-4 rounded-full shadow-xl hover:shadow-accent/20 transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98]"
               >
                 Send Request
                 <Send size={20} />

@@ -8,7 +8,7 @@ export default function Footer() {
           
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-white">
-              <div className="bg-white/5 text-accent p-2 rounded-sm border border-accent/20">
+              <div className="bg-white/5 text-accent p-2 rounded-xl border border-accent/20">
                 <Truck size={24} />
               </div>
               <span className="text-2xl font-bold tracking-tight font-serif">

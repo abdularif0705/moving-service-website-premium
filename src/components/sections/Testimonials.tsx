@@ -59,7 +59,7 @@ export default function Testimonials() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: index * 0.15 }}
-              className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-foreground/5 relative"
+              className="bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-xl border border-foreground/5 relative"
             >
               <div className="flex gap-1 text-accent mb-6">
                 {[...Array(review.rating)].map((_, i) => (

@@ -24,7 +24,7 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-4xl mx-auto flex flex-col items-center"
         >
-          <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-xs tracking-[0.2em] uppercase mb-10">
+          <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-xs tracking-[0.2em] uppercase mb-10 rounded-full">
             <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
             Exclusive White-Glove Service
           </div>
@@ -40,14 +40,14 @@ export default function Hero() {
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">
             <a
               href="#quote"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary px-10 py-4 font-medium tracking-wide transition-colors duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary px-10 py-4 font-medium tracking-wide transition-colors duration-300 rounded-full"
             >
               Request a Consultation
               <ArrowRight size={18} />
             </a>
             <a
               href="#services"
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-transparent border border-white/30 text-white hover:bg-white/10 px-10 py-4 font-medium tracking-wide transition-colors duration-300"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-transparent border border-white/30 text-white hover:bg-white/10 px-10 py-4 font-medium tracking-wide transition-colors duration-300 rounded-full"
             >
               Explore Services
             </a>
