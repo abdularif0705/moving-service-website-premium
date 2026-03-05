@@ -1,9 +1,40 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin } from "lucide-react";
+import { Send, Phone, Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react";
 
 export default function Contact() {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    fromZip: "",
+    toZip: "",
+    moveSize: "Studio / 1 Bedroom",
+  });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+      
+      if (res.ok) {
+        setIsSuccess(true);
+      }
+    } catch (error) {
+      console.error(error);
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   return (
     <section id="quote" className="py-24 bg-foreground dark:bg-slate-900 text-white relative overflow-hidden">
       {/* Abstract Background Design */}
@@ -66,12 +97,36 @@ export default function Contact() {
             </div>
             <h3 className="text-3xl font-serif text-foreground mb-8 text-center sm:text-left">Request a Consultation</h3>
             
-            <form className="space-y-6">
+            {isSuccess ? (
+              <motion.div 
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                className="flex flex-col items-center justify-center py-12 text-center"
+              >
+                <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-full flex items-center justify-center mb-6">
+                  <CheckCircle2 size={32} />
+                </div>
+                <h4 className="text-2xl font-serif text-foreground mb-3">Request Received</h4>
+                <p className="text-foreground/70 max-w-sm">
+                  Thank you, {formData.firstName}. We've received your details and our premium moving concierge will contact you shortly.
+                </p>
+                <button 
+                  onClick={() => setIsSuccess(false)}
+                  className="mt-8 text-sm font-medium text-accent hover:text-accent-dark transition-colors"
+                >
+                  Submit another request
+                </button>
+              </motion.div>
+            ) : (
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-medium text-foreground/70 mb-2">First Name</label>
                   <input
                     type="text"
+                    required
+                    value={formData.firstName}
+                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="John"
                   />
@@ -80,6 +135,9 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-foreground/70 mb-2">Last Name</label>
                   <input
                     type="text"
+                    required
+                    value={formData.lastName}
+                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="Doe"
                   />
@@ -91,23 +149,33 @@ export default function Contact() {
                   <label className="block text-sm font-medium text-foreground/70 mb-2">Moving From (Zip)</label>
                   <input
                     type="text"
+                    required
+                    value={formData.fromZip}
+                    onChange={(e) => setFormData({ ...formData, fromZip: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="10001"
+                    placeholder="N8X 1A1"
                   />
                 </div>
                 <div>
                   <label className="block text-sm font-medium text-foreground/70 mb-2">Moving To (Zip)</label>
                   <input
                     type="text"
+                    required
+                    value={formData.toZip}
+                    onChange={(e) => setFormData({ ...formData, toZip: e.target.value })}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
-                    placeholder="90210"
+                    placeholder="M5V 2H1"
                   />
                 </div>
               </div>
 
               <div>
                 <label className="block text-sm font-medium text-foreground/70 mb-2">Move Size</label>
-                <select className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer">
+                <select 
+                  value={formData.moveSize}
+                  onChange={(e) => setFormData({ ...formData, moveSize: e.target.value })}
+                  className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer"
+                >
                   <option>Studio / 1 Bedroom</option>
                   <option>2-3 Bedrooms</option>
                   <option>4+ Bedrooms</option>
@@ -116,13 +184,18 @@ export default function Contact() {
               </div>
 
               <button
-                type="button"
-                className="w-full bg-accent hover:bg-accent-light text-primary font-medium tracking-wide py-4 rounded-full shadow-xl hover:shadow-accent/20 transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98]"
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full bg-accent hover:bg-accent-light disabled:bg-accent/70 disabled:cursor-not-allowed text-primary font-medium tracking-wide py-4 rounded-full shadow-xl hover:shadow-accent/20 transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98]"
               >
-                Send Request
-                <Send size={20} />
+                {isSubmitting ? (
+                  <>Processing <Loader2 size={20} className="animate-spin" /></>
+                ) : (
+                  <>Send Request <Send size={20} /></>
+                )}
               </button>
             </form>
+            )}
           </motion.div>
 
         </div>
