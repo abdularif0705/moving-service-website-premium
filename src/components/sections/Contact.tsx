@@ -20,9 +20,9 @@ export default function Contact() {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
               Ready for a smooth move? <br />
-              <span className="text-white/70">Let's get started.</span>
+              <span className="text-accent italic">Let's get started.</span>
             </h2>
             <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
               Fill out the form to request your free, no-obligation moving quote. Our team will get back to you within 24 hours.
@@ -33,7 +33,7 @@ export default function Contact() {
                 <div className="bg-white/10 p-3 rounded-full"><Phone className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Call Us 24/7</p>
-                  <p className="font-bold text-xl">1-800-555-MOVE</p>
+                  <p className="font-serif text-xl tracking-wide text-accent">1-800-555-MOVE</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
@@ -61,10 +61,10 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <div className="absolute -top-4 right-4 sm:-right-4 bg-emerald-500 text-white border border-emerald-400 px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3 z-10 hover:rotate-0 transition-transform cursor-default">
-              Fast Response!
+            <div className="absolute -top-4 right-4 sm:-right-4 bg-accent text-primary border border-accent-light px-6 py-1 flex p rounded-sm font-medium text-[10px] tracking-[0.2em] uppercase shadow-xl transform rotate-3 z-10 hover:rotate-0 transition-transform cursor-default">
+              Priority Response
             </div>
-            <h3 className="text-2xl font-bold text-foreground mb-8">Request a Free Quote</h3>
+            <h3 className="text-3xl font-serif text-foreground mb-8 text-center sm:text-left">Request a Consultation</h3>
             
             <form className="space-y-6">
               <div className="grid sm:grid-cols-2 gap-6">
@@ -117,7 +117,7 @@ export default function Contact() {
 
               <button
                 type="button"
-                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]"
+                className="w-full bg-accent hover:bg-accent-light text-primary font-medium tracking-wide py-4 rounded-xl shadow-xl hover:shadow-accent/20 transition-all duration-300 flex items-center justify-center gap-3 active:scale-[0.98]"
               >
                 Send Request
                 <Send size={20} />

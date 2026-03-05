@@ -1,111 +1,74 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, ShieldCheck, Clock, MapPin, Truck } from "lucide-react";
+import { ArrowRight, ShieldCheck, Clock, MapPin } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative pt-40 pb-20 md:pt-56 md:pb-32 overflow-hidden w-full max-w-[100vw] min-h-[90vh] flex items-center">
-      {/* Background Decor */}
-      <div className="absolute inset-0 bg-primary/5 dark:bg-primary/10 -z-10" />
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-primary/20 blur-[120px] rounded-full -z-10 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 translate-y-1/3 -translate-x-1/3 w-[600px] h-[600px] bg-accent/20 blur-[100px] rounded-full -z-10 pointer-events-none" />
+    <section className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80')",
+        }}
+      />
+      {/* Overlay to ensure text readability */}
+      <div className="absolute inset-0 z-0 bg-primary/70 mix-blend-multiply" />
+      <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/50 via-primary/30 to-background/90" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-          >
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-semibold text-sm mb-8 mt-4 shadow-sm">
-              <span className="relative flex h-2.5 w-2.5">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
-              </span>
-              Top-Rated Movers Nationwide
-            </div>
-            <h1 className="text-5xl lg:text-7xl font-extrabold tracking-tight leading-[1.1] mb-6 text-foreground">
-              Moving made <br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-foreground to-foreground/50">effortless.</span>
-            </h1>
-            <p className="text-lg md:text-xl text-foreground/70 mb-8 max-w-xl leading-relaxed">
-              Experience a seamless, stress-free transition to your new home. 
-              Professional packing, safe transport, and absolute peace of mind.
-            </p>
-            
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-12">
-              <a
-                href="#quote"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white px-8 py-4 rounded-full font-bold text-lg shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all active:scale-95"
-              >
-                Get Your Free Quote
-                <ArrowRight size={20} />
-              </a>
-              <a
-                href="#services"
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-white dark:bg-white/5 border border-foreground/10 hover:border-foreground/20 dark:hover:bg-white/10 px-8 py-4 rounded-full font-bold text-lg transition-all active:scale-95"
-              >
-                Our Services
-              </a>
-            </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full pt-32 pb-20 flex flex-col items-center text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1.2, ease: "easeOut" }}
+          className="max-w-4xl mx-auto flex flex-col items-center"
+        >
+          <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-xs tracking-[0.2em] uppercase mb-10">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+            Exclusive White-Glove Service
+          </div>
+          
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white leading-[1.1] mb-8 tracking-tight">
+            Moving, elevated to an <span className="text-accent italic">art form.</span>
+          </h1>
+          
+          <p className="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl font-light leading-relaxed">
+            Experience a seamless, stress-free transition. Professional packing, bespoke transport, and absolute peace of mind for your most treasured possessions.
+          </p>
+          
+          <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">
+            <a
+              href="#quote"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary px-10 py-4 font-medium tracking-wide transition-colors duration-300"
+            >
+              Request a Consultation
+              <ArrowRight size={18} />
+            </a>
+            <a
+              href="#services"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-transparent border border-white/30 text-white hover:bg-white/10 px-10 py-4 font-medium tracking-wide transition-colors duration-300"
+            >
+              Explore Services
+            </a>
+          </div>
 
-            {/* Trust Indicators */}
-            <div className="flex flex-col sm:flex-row flex-wrap gap-4 sm:gap-8 items-start sm:items-center text-sm font-semibold text-foreground/80 mt-6 sm:mt-0">
-              <div className="flex items-center gap-3">
-                <ShieldCheck className="text-emerald-500" size={20} />
-                Fully Insured
-              </div>
-              <div className="flex items-center gap-3">
-                <Clock className="text-emerald-500" size={20} />
-                On-Time Guarantee
-              </div>
-              <div className="flex items-center gap-3">
-                <MapPin className="text-emerald-500" size={20} />
-                Local & Long Distance
-              </div>
+          {/* Trust Indicators */}
+          <div className="flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-12 items-center justify-center text-xs font-semibold text-stone-300 uppercase tracking-[0.15em]">
+            <div className="flex items-center gap-3">
+              <ShieldCheck className="text-accent" size={18} />
+              Fully Insured
             </div>
-          </motion.div>
-
-          {/* Graphic/Image Area - Placeholder using abstract shapes for ultra-modern look */}
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1, delay: 0.2 }}
-            className="relative hidden lg:block h-[600px] w-full"
-          >
-            <div className="absolute inset-0 glass-panel rounded-3xl overflow-hidden shadow-2xl shadow-primary/10">
-              <div className="absolute inset-x-0 top-0 h-40 bg-gradient-to-b from-primary/10 to-transparent" />
-              {/* Decorative premium elements mapping to 'moving' visually without generic stock photos */}
-              <div className="absolute bottom-10 -left-10 w-48 h-48 bg-accent/20 rounded-full blur-3xl mix-blend-multiply" />
-              <div className="absolute top-20 right-10 w-64 h-64 bg-primary/20 rounded-full blur-3xl mix-blend-multiply" />
-              
-              <div className="flex items-center justify-center h-full relative z-10">
-                 {/* 3D-like Box Illustration via CSS */}
-                 <div className="relative w-64 h-64 ease-in-out">
-                    <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-56 h-56 bg-foreground text-background rounded-[2rem] shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-emerald-500/20 flex items-center justify-center border border-white/10 relative overflow-hidden group">
-                        <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                        <Truck size={84} className="drop-shadow-md z-10" />
-                      </div>
-                    </div>
-                    {/* Floating elements */}
-                    <motion.div 
-                      animate={{ y: [0, -15, 0] }} 
-                      transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                      className="absolute top-0 right-0 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-2xl border border-foreground/10 flex items-center gap-3"
-                    >
-                      <div className="bg-emerald-500/10 text-emerald-500 p-2 rounded-full"><ShieldCheck size={20}/></div>
-                      <div>
-                        <p className="text-xs text-foreground/80 font-medium">Status</p>
-                        <p className="text-sm font-bold">Safely In Transit</p>
-                      </div>
-                    </motion.div>
-                 </div>
-              </div>
+            <div className="flex items-center gap-3">
+              <Clock className="text-accent" size={18} />
+              Guaranteed Precision
             </div>
-          </motion.div>
-        </div>
+            <div className="flex items-center gap-3">
+              <MapPin className="text-accent" size={18} />
+              Global & Local
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

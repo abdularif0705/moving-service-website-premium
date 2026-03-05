@@ -24,8 +24,8 @@ export default function TrustBadges() {
               transition={{ duration: 0.5, delay: index * 0.1 }}
               className="mx-auto flex max-w-xs flex-col gap-y-2"
             >
-              <dt className="text-base leading-7 text-white/80">{stat.name}</dt>
-              <dd className="order-first text-4xl font-extrabold tracking-tight text-white sm:text-5xl">
+              <dt className="text-sm font-medium tracking-wide uppercase text-white/50">{stat.name}</dt>
+              <dd className="order-first text-4xl font-serif text-accent sm:text-5xl mb-2">
                 {stat.value}
               </dd>
             </motion.div>

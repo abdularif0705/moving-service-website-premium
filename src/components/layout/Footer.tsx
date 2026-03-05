@@ -7,11 +7,11 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           <div className="space-y-6">
-            <div className="flex items-center gap-2 text-white">
-              <div className="bg-white text-slate-900 p-2 rounded-xl">
+            <div className="flex items-center gap-3 text-white">
+              <div className="bg-white/5 text-accent p-2 rounded-sm border border-accent/20">
                 <Truck size={24} />
               </div>
-              <span className="text-2xl font-bold tracking-tight">
+              <span className="text-2xl font-bold tracking-tight font-serif">
                 SwiftMove
               </span>
             </div>
@@ -22,12 +22,12 @@ export default function Footer() {
               <a href="#" className="text-white/40 hover:text-white transition-colors"><Facebook size={20} /></a>
               <a href="#" className="text-white/40 hover:text-white transition-colors"><Twitter size={20} /></a>
               <a href="#" className="text-white/40 hover:text-white transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Linkedin size={20} /></a>
+              <a href="#" className="hidden"></a>
             </div>
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Services</h4>
+            <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Services</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Local Moving</a></li>
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Long Distance Moving</a></li>
@@ -38,7 +38,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Company</h4>
+            <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Company</h4>
             <ul className="space-y-3">
               <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">About Us</a></li>
               <li><a href="#process" className="text-white/60 hover:text-white transition-colors text-sm">How It Works</a></li>
@@ -49,7 +49,7 @@ export default function Footer() {
           </div>
 
           <div>
-            <h4 className="text-white font-bold mb-6 text-lg">Coverage Areas</h4>
+            <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Coverage Areas</h4>
             <ul className="space-y-3 text-white/60 text-sm">
               <li>New York City, NY</li>
               <li>Los Angeles, CA</li>

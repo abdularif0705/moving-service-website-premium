@@ -33,7 +33,7 @@ export default function Process() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-accent font-serif tracking-[0.15em] uppercase text-xs font-semibold mb-4"
           >
             How It Works
           </motion.h2>
@@ -42,7 +42,7 @@ export default function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-extrabold text-foreground sm:text-5xl"
+            className="text-4xl font-serif text-foreground sm:text-5xl"
           >
             A Seamless Transition in 3 Steps
           </motion.h3>
@@ -63,14 +63,14 @@ export default function Process() {
                 className="relative flex flex-col items-center text-center group"
               >
                 <div className="bg-background rounded-full p-2 mb-6">
-                  <div className="w-24 h-24 rounded-full bg-white dark:bg-slate-900 border border-foreground/10 flex items-center justify-center text-foreground shadow-sm group-hover:scale-105 group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-white transition-all duration-500">
+                  <div className="w-24 h-24 rounded-full bg-white dark:bg-slate-900 border border-foreground/10 flex items-center justify-center text-foreground shadow-sm group-hover:scale-105 group-hover:bg-accent group-hover:border-accent group-hover:text-primary transition-all duration-500">
                     <step.icon size={40} className="transition-colors duration-500" />
                   </div>
                 </div>
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 text-[8rem] md:text-9xl font-black text-foreground/5 dark:text-foreground/5 select-none -z-10">
                   {step.id}
                 </div>
-                <h4 className="text-2xl font-bold mb-4 text-foreground">{step.title}</h4>
+                <h4 className="text-2xl font-serif font-medium mb-4 text-foreground">{step.title}</h4>
                 <p className="text-foreground/70 leading-relaxed max-w-xs">
                   {step.description}
                 </p>

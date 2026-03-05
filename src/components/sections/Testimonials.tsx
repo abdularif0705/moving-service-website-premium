@@ -36,7 +36,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-accent font-serif tracking-[0.15em] uppercase text-xs font-semibold mb-4"
           >
             Client Success Stories
           </motion.h2>
@@ -45,7 +45,7 @@ export default function Testimonials() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-extrabold text-foreground sm:text-5xl"
+            className="text-4xl font-serif text-foreground sm:text-5xl"
           >
             Don't just take our word for it
           </motion.h3>
@@ -61,7 +61,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-foreground/5 relative"
             >
-              <div className="flex gap-1 text-emerald-500 mb-6">
+              <div className="flex gap-1 text-accent mb-6">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} size={20} fill="currentColor" />
                 ))}
@@ -70,11 +70,11 @@ export default function Testimonials() {
                 "{review.content}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700">
+                <div className="w-12 h-12 rounded-full bg-primary border border-accent/20 flex items-center justify-center font-serif text-lg text-accent">
                   {review.author.charAt(0)}
                 </div>
                 <div>
-                  <h4 className="font-bold text-foreground">{review.author}</h4>
+                  <h4 className="font-serif font-medium text-lg text-foreground">{review.author}</h4>
                   <p className="text-sm text-foreground/60">{review.role}</p>
                 </div>
               </div>

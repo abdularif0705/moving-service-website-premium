@@ -60,7 +60,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-accent font-serif tracking-[0.15em] uppercase text-xs font-semibold mb-4"
           >
             What We Do
           </motion.h2>
@@ -69,7 +69,7 @@ export default function Services() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
-            className="text-4xl font-extrabold text-foreground sm:text-5xl"
+            className="text-4xl font-serif text-foreground sm:text-5xl"
           >
             Comprehensive Moving Services
           </motion.h3>
@@ -89,10 +89,10 @@ export default function Services() {
               whileHover={{ y: -10 }}
               className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-foreground/10 hover:shadow-2xl transition-all duration-500 group"
             >
-              <div className="h-14 w-14 bg-foreground/5 ring-1 ring-foreground/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-emerald-500 group-hover:ring-emerald-500 transition-all duration-500">
-                <service.icon className="text-foreground group-hover:text-white transition-colors duration-500" size={28} />
+              <div className="h-14 w-14 bg-foreground/5 ring-1 ring-foreground/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-accent group-hover:ring-accent transition-all duration-500">
+                <service.icon className="text-foreground group-hover:text-primary transition-colors duration-500" size={28} />
               </div>
-              <h4 className="text-xl font-bold mb-3 text-foreground">{service.title}</h4>
+              <h4 className="text-xl font-serif font-medium mb-3 text-foreground">{service.title}</h4>
               <p className="text-foreground/70 leading-relaxed">
                 {service.description}
               </p>

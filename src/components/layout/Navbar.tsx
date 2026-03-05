@@ -20,35 +20,35 @@ export default function Navbar() {
     <header
       className={`fixed top-0 left-0 right-0 w-full z-50 transition-all duration-300 ${
         isScrolled || mobileMenuOpen
-          ? "bg-background border-b border-foreground/10 shadow-sm py-4"
-          : "bg-transparent py-6"
+          ? "bg-stone-50/95 backdrop-blur-md shadow-sm py-4 text-primary"
+          : "bg-transparent py-6 text-white"
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center">
-          <div className="flex items-center gap-2 cursor-pointer group">
-            <div className="bg-foreground text-background p-2 rounded-xl group-hover:bg-accent transition-colors duration-300">
+          <div className="flex items-center gap-3 cursor-pointer group">
+            <div className={`p-2 rounded-sm border transition-colors duration-300 ${isScrolled ? 'bg-primary text-accent-light border-accent/20 group-hover:bg-accent group-hover:text-primary' : 'bg-white/10 text-accent border-white/20 group-hover:bg-white/20'}`}>
               <Truck size={24} />
             </div>
-            <span className="text-2xl font-bold tracking-tight text-foreground">
+            <span className="text-2xl font-bold tracking-tight font-serif">
               SwiftMove
             </span>
           </div>
 
           <nav className="hidden md:flex gap-8 items-center">
-            <a href="#services" className="text-sm font-medium hover:text-foreground/70 transition-colors">Services</a>
-            <a href="#process" className="text-sm font-medium hover:text-foreground/70 transition-colors">Process</a>
-            <a href="#testimonials" className="text-sm font-medium hover:text-foreground/70 transition-colors">Reviews</a>
+            <a href="#services" className="text-sm font-medium hover:opacity-70 transition-opacity">Services</a>
+            <a href="#process" className="text-sm font-medium hover:opacity-70 transition-opacity">Process</a>
+            <a href="#testimonials" className="text-sm font-medium hover:opacity-70 transition-opacity">Reviews</a>
             <a
               href="#quote"
-              className="bg-emerald-600 text-white hover:bg-emerald-700 px-5 py-2.5 rounded-full font-medium transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)] hover:shadow-[0_0_25px_rgba(16,185,129,0.5)] active:scale-95"
+              className="bg-accent text-primary hover:bg-accent-light px-7 py-2.5 font-medium transition-colors duration-300 tracking-wide"
             >
               Get a Quote
             </a>
           </nav>
 
           <button
-            className="md:hidden p-2 text-foreground"
+            className="md:hidden p-2"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
@@ -70,7 +70,7 @@ export default function Navbar() {
             <a
               href="#quote"
               onClick={() => setMobileMenuOpen(false)}
-              className="bg-emerald-600 hover:bg-emerald-700 text-white shadow-lg px-8 py-3 rounded-full font-medium"
+              className="bg-accent hover:bg-accent-light text-primary px-8 py-3 font-medium tracking-wide w-3/4 text-center transition-colors duration-300"
             >
               Get a Quote
             </a>
