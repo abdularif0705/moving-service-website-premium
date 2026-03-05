@@ -36,7 +36,7 @@ export default function Testimonials() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-foreground/70 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3"
           >
             Client Success Stories
           </motion.h2>
@@ -61,7 +61,7 @@ export default function Testimonials() {
               transition={{ duration: 0.5, delay: index * 0.15 }}
               className="bg-white dark:bg-slate-800 rounded-2xl p-8 shadow-xl border border-foreground/5 relative"
             >
-              <div className="flex gap-1 text-foreground mb-6">
+              <div className="flex gap-1 text-emerald-500 mb-6">
                 {[...Array(review.rating)].map((_, i) => (
                   <Star key={i} size={20} fill="currentColor" />
                 ))}
@@ -70,7 +70,7 @@ export default function Testimonials() {
                 "{review.content}"
               </p>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-foreground flex items-center justify-center font-bold text-background">
+                <div className="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center font-bold text-emerald-700">
                   {review.author.charAt(0)}
                 </div>
                 <div>

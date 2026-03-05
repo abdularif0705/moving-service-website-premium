@@ -17,8 +17,8 @@ const config: Config = {
           light: "#fafafa", // pure off-white
         },
         accent: {
-          DEFAULT: "#6366f1", // modern indigo
-          dark: "#4f46e5",
+          DEFAULT: "#10b981", // modern emerald green
+          dark: "#059669",
         }
       },
     },

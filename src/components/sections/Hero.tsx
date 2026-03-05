@@ -5,7 +5,7 @@ import { ArrowRight, ShieldCheck, Clock, MapPin, Truck } from "lucide-react";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32 overflow-hidden w-full max-w-[100vw] min-h-[90vh] flex items-center">
+    <section className="relative pt-40 pb-20 md:pt-56 md:pb-32 overflow-hidden w-full max-w-[100vw] min-h-[90vh] flex items-center">
       {/* Background Decor */}
       <div className="absolute inset-0 bg-primary/5 dark:bg-primary/10 -z-10" />
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/3 w-[800px] h-[800px] bg-primary/20 blur-[120px] rounded-full -z-10 pointer-events-none" />
@@ -18,9 +18,10 @@ export default function Hero() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, ease: "easeOut" }}
           >
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-foreground/5 border border-foreground/10 text-foreground font-medium text-sm mb-6">
-              <span className="relative flex h-2 w-2">
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-foreground/50"></span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-50 dark:bg-emerald-500/10 border border-emerald-200 dark:border-emerald-500/20 text-emerald-700 dark:text-emerald-400 font-semibold text-sm mb-8 mt-4 shadow-sm">
+              <span className="relative flex h-2.5 w-2.5">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-2.5 w-2.5 bg-emerald-500"></span>
               </span>
               Top-Rated Movers Nationwide
             </div>
@@ -52,7 +53,7 @@ export default function Hero() {
             {/* Trust Indicators */}
             <div className="flex flex-wrap gap-8 items-center text-sm font-semibold text-foreground/80">
               <div className="flex items-center gap-2">
-                <ShieldCheck className="text-foreground" size={20} />
+                <ShieldCheck className="text-emerald-500" size={20} />
                 Fully Insured
               </div>
               <div className="flex items-center gap-2">
@@ -83,8 +84,9 @@ export default function Hero() {
                  {/* 3D-like Box Illustration via CSS */}
                  <div className="relative w-64 h-64 ease-in-out">
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <div className="w-48 h-48 bg-foreground text-background rounded-3xl shadow-2xl transform rotate-12 transition-transform hover:rotate-6 flex items-center justify-center border border-background/20">
-                        <Truck size={80} className="drop-shadow-md" />
+                      <div className="w-56 h-56 bg-foreground text-background rounded-[2rem] shadow-2xl transition-all duration-500 hover:-translate-y-4 hover:shadow-emerald-500/20 flex items-center justify-center border border-white/10 relative overflow-hidden group">
+                        <div className="absolute inset-0 bg-gradient-to-tr from-emerald-500/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                        <Truck size={84} className="drop-shadow-md z-10" />
                       </div>
                     </div>
                     {/* Floating elements */}
@@ -93,10 +95,10 @@ export default function Hero() {
                       transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
                       className="absolute top-0 right-0 bg-white dark:bg-slate-900 p-4 rounded-2xl shadow-2xl border border-foreground/10 flex items-center gap-3"
                     >
-                      <div className="bg-foreground/5 text-foreground p-2 rounded-full"><ShieldCheck size={20}/></div>
+                      <div className="bg-emerald-500/10 text-emerald-500 p-2 rounded-full"><ShieldCheck size={20}/></div>
                       <div>
                         <p className="text-xs text-foreground/80 font-medium">Status</p>
-                        <p className="text-sm font-bold">In Transit</p>
+                        <p className="text-sm font-bold">Safely In Transit</p>
                       </div>
                     </motion.div>
                  </div>

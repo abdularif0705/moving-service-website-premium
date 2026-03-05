@@ -33,7 +33,7 @@ export default function Process() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-foreground/70 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3"
           >
             How It Works
           </motion.h2>
@@ -63,7 +63,7 @@ export default function Process() {
                 className="relative flex flex-col items-center text-center group"
               >
                 <div className="bg-background rounded-full p-2 mb-6">
-                  <div className="w-24 h-24 rounded-full bg-white dark:bg-slate-900 border border-foreground/10 flex items-center justify-center text-foreground shadow-sm group-hover:scale-105 group-hover:bg-foreground group-hover:text-background transition-all duration-500">
+                  <div className="w-24 h-24 rounded-full bg-white dark:bg-slate-900 border border-foreground/10 flex items-center justify-center text-foreground shadow-sm group-hover:scale-105 group-hover:bg-emerald-500 group-hover:border-emerald-500 group-hover:text-white transition-all duration-500">
                     <step.icon size={40} className="transition-colors duration-500" />
                   </div>
                 </div>

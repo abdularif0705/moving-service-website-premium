@@ -60,7 +60,7 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-foreground/70 font-semibold tracking-wide uppercase text-sm mb-3"
+            className="text-emerald-600 font-semibold tracking-wide uppercase text-sm mb-3"
           >
             What We Do
           </motion.h2>
@@ -89,8 +89,8 @@ export default function Services() {
               whileHover={{ y: -10 }}
               className="bg-white dark:bg-slate-900 rounded-2xl p-8 shadow-sm border border-foreground/10 hover:shadow-2xl transition-all duration-500 group"
             >
-              <div className="h-14 w-14 bg-foreground/5 ring-1 ring-foreground/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-foreground group-hover:text-background transition-all duration-500">
-                <service.icon className="text-foreground group-hover:text-background transition-colors duration-500" size={28} />
+              <div className="h-14 w-14 bg-foreground/5 ring-1 ring-foreground/10 rounded-xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-emerald-500 group-hover:ring-emerald-500 transition-all duration-500">
+                <service.icon className="text-foreground group-hover:text-white transition-colors duration-500" size={28} />
               </div>
               <h4 className="text-xl font-bold mb-3 text-foreground">{service.title}</h4>
               <p className="text-foreground/70 leading-relaxed">

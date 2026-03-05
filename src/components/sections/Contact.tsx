@@ -61,7 +61,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <div className="absolute -top-4 -right-4 bg-white text-slate-900 border border-slate-200 px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3">
+            <div className="absolute -top-4 -right-4 bg-emerald-500 text-white border border-emerald-400 px-4 py-1 flex p rounded-full font-bold text-sm shadow-lg transform rotate-3">
               Fast Response!
             </div>
             <h3 className="text-2xl font-bold text-foreground mb-8">Request a Free Quote</h3>
@@ -117,7 +117,7 @@ export default function Contact() {
 
               <button
                 type="button"
-                className="w-full bg-foreground hover:bg-foreground/90 text-background font-bold py-4 rounded-xl shadow-lg hover:shadow-foreground/20 transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]"
+                className="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-4 rounded-xl shadow-lg hover:shadow-emerald-500/30 transition-all duration-300 flex items-center justify-center gap-2 active:scale-[0.98]"
               >
                 Send Request
                 <Send size={20} />
