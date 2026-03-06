@@ -12,34 +12,34 @@ const services = [
     image: "/images/gallery/home.jpg",
   },
   {
+    title: "Commercial Office",
+    description: "Minimize operational downtime with our highly coordinated, after-hours office moving and setup services.",
+    icon: Building2,
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
     title: "Single Item Moves",
     description: "Precision care for your most valuable pieces. We expertly handle heavy, awkward, or delicate single items with white-glove care.",
     icon: Box,
-    image: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Packed.jpg",
-  },
-  {
-    title: "Furniture Assembly",
-    description: "Relax while our experts quickly and correctly assemble your new furniture, leaving your space clean and ready to enjoy.",
-    icon: Wrench,
-    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Fitness Equipment",
     description: "Complex gym setups made easy. We handle the heavy lifting and precise mechanical assembly of all fitness equipment.",
     icon: Dumbbell,
-    image: "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Furniture Assembly",
+    description: "Relax while our experts quickly and correctly assemble your new furniture, leaving your space clean and ready to enjoy.",
+    icon: Wrench,
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Junk Removal",
     description: "Reclaim your space. We efficiently and responsibly remove unwanted items, debris, and clutter from your property.",
     icon: Trash2,
-    image: "https://images.unsplash.com/photo-1516937941344-00b4e0337589?auto=format&fit=crop&w=1000&q=80",
-  },
-  {
-    title: "Commercial Office",
-    description: "Minimize operational downtime with our highly coordinated, after-hours office moving and setup services.",
-    icon: Building2,
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Expert Cleaning",
@@ -51,7 +51,7 @@ const services = [
     title: "Rent-A-Hand",
     description: "Need help with the little things? We offer side job services including basic painting, building a fan, and minor handyman work.",
     icon: Hammer,
-    image: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Working-Hard-1.jpg",
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=80",
   },
 ];
 

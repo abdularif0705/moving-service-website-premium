@@ -119,24 +119,40 @@ export default function Contact() {
 
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4 text-white/90">
-                <div className="bg-white/10 p-3 rounded-full"><Phone className="text-white" /></div>
+                <a href="tel:5199809577" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                  <Phone className="text-white" />
+                </a>
                 <div>
                   <p className="text-sm text-white/50">Call Us 24/7</p>
-                  <p className="font-serif text-xl tracking-wide text-accent">519-980-9577</p>
+                  <a href="tel:5199809577" className="font-serif text-xl tracking-wide text-accent hover:text-white transition-colors block">
+                    519-980-9577
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
-                <div className="bg-white/10 p-3 rounded-full"><Mail className="text-white" /></div>
+                <a href="mailto:rentahandwindsor@gmail.com" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                  <Mail className="text-white" />
+                </a>
                 <div>
                   <p className="text-sm text-white/50">Email Support</p>
-                  <p className="font-bold text-lg">rentahandwindsor@gmail.com</p>
+                  <a href="mailto:rentahandwindsor@gmail.com" className="font-bold text-lg hover:text-accent transition-colors block">
+                    rentahandwindsor@gmail.com
+                  </a>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
-                <div className="bg-white/10 p-3 rounded-full"><MapPin className="text-white" /></div>
+                {/* <a href="https://maps.app.goo.gl/h6U3V5ZgovVwWPwE9" target="_blank" rel="noopener noreferrer" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors"> */}
+                <div className="bg-white/10 p-3 rounded-full">
+                  <MapPin className="text-white" />
+                </div>
+                {/* </a> */}
                 <div>
                   <p className="text-sm text-white/50">Headquarters</p>
-                  <p className="font-bold text-lg">123 Ouellette Ave, Windsor, ON</p>
+                  {/* <a href="https://maps.app.goo.gl/h6U3V5ZgovVwWPwE9" target="_blank" rel="noopener noreferrer" className="font-bold text-lg hover:text-accent transition-colors block"> */}
+                  <p className="font-bold text-lg block">
+                    Windsor, Ontario
+                  </p>
+                  {/* </a> */}
                 </div>
               </div>
             </div>
