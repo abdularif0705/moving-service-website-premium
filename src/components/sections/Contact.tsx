@@ -10,9 +10,12 @@ export default function Contact() {
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    phone: "",
+    email: "",
     fromZip: "",
     toZip: "",
     moveSize: "Studio / 1 Bedroom",
+    moveDate: "",
   });
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -121,7 +124,7 @@ export default function Contact() {
             <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground/70 mb-2">First Name</label>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">First Name</label>
                   <input
                     type="text"
                     required
@@ -132,7 +135,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground/70 mb-2">Last Name</label>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Last Name</label>
                   <input
                     type="text"
                     required
@@ -146,7 +149,32 @@ export default function Contact() {
               
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-foreground/70 mb-2">Moving From (Zip)</label>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Phone Number</label>
+                  <input
+                    type="tel"
+                    required
+                    value={formData.phone}
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    placeholder="(519) 555-0123"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    required
+                    value={formData.email}
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    placeholder="john@example.com"
+                  />
+                </div>
+              </div>
+
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Moving From (Zip)</label>
                   <input
                     type="text"
                     required
@@ -157,7 +185,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-foreground/70 mb-2">Moving To (Zip)</label>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Moving To (Zip)</label>
                   <input
                     type="text"
                     required
@@ -169,18 +197,29 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div>
-                <label className="block text-sm font-medium text-foreground/70 mb-2">Move Size</label>
-                <select 
-                  value={formData.moveSize}
-                  onChange={(e) => setFormData({ ...formData, moveSize: e.target.value })}
-                  className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer"
-                >
-                  <option>Studio / 1 Bedroom</option>
-                  <option>2-3 Bedrooms</option>
-                  <option>4+ Bedrooms</option>
-                  <option>Commercial / Office</option>
-                </select>
+              <div className="grid sm:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Target Move Date</label>
+                  <input
+                    type="date"
+                    value={formData.moveDate}
+                    onChange={(e) => setFormData({ ...formData, moveDate: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all cursor-pointer"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Move Size</label>
+                  <select 
+                    value={formData.moveSize}
+                    onChange={(e) => setFormData({ ...formData, moveSize: e.target.value })}
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer"
+                  >
+                    <option>Studio / 1 Bedroom</option>
+                    <option>2-3 Bedrooms</option>
+                    <option>4+ Bedrooms</option>
+                    <option>Commercial / Office</option>
+                  </select>
+                </div>
               </div>
 
               <button

@@ -1,38 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Copyleft as Box, Truck, Home, Building2, PackageCheck, Shield } from "lucide-react";
+import { Truck, Box, Wrench, Dumbbell, Trash2, Building2 } from "lucide-react";
+import Image from "next/image";
 
 const services = [
   {
-    title: "Local Moving",
-    description: "Fast, reliable, and stress-free moving services across the city.",
-    icon: Home,
+    title: "Local & Long Distance",
+    description: "Whether across the street or across the country, experience a seamless transition with our premium transport service.",
+    icon: Truck,
+    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
   },
   {
-    title: "Long Distance",
-    description: "Secure cross-country transitions with dedicated tracking.",
-    icon: Truck,
+    title: "Single Item Moves",
+    description: "Precision care for your most valuable pieces. We expertly handle heavy, awkward, or delicate single items with white-glove care.",
+    icon: Box,
+    image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Furniture Assembly",
+    description: "Relax while our experts quickly and correctly assemble your new furniture, leaving your space clean and ready to enjoy.",
+    icon: Wrench,
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Fitness Equipment",
+    description: "Complex gym setups made easy. We handle the heavy lifting and precise mechanical assembly of all fitness equipment.",
+    icon: Dumbbell,
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Junk Removal",
+    description: "Reclaim your space. We efficiently and responsibly remove unwanted items, debris, and clutter from your property.",
+    icon: Trash2,
+    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Commercial Office",
-    description: "Minimize downtime with our expert office relocation team.",
+    description: "Minimize operational downtime with our highly coordinated, after-hours office moving and setup services.",
     icon: Building2,
-  },
-  {
-    title: "Professional Packing",
-    description: "We pack everything securely using premium materials.",
-    icon: PackageCheck,
-  },
-  {
-    title: "Secure Storage",
-    description: "Climate-controlled facilities for short or long-term storage.",
-    icon: Box,
-  },
-  {
-    title: "White Glove Handling",
-    description: "Specialized care for antiques, pianos, and fragile items.",
-    icon: Shield,
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
@@ -46,32 +53,40 @@ const containerVariants = {
   },
 };
 
-const itemVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+const itemVariants: any = {
+  hidden: { opacity: 0, scale: 0.95, y: 30 },
+  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
 };
 
 export default function Services() {
   return (
-    <section id="services" className="py-24 bg-foreground/5 dark:bg-background relative">
+    <section id="services" className="py-24 md:py-32 bg-foreground/5 dark:bg-background relative overflow-hidden">
+      {/* Decorative background elements */}
+      <div className="absolute top-0 right-0 -mr-40 -mt-40 w-96 h-96 rounded-full bg-accent/5 blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 -ml-40 -mb-40 w-[500px] h-[500px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-16">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-accent font-serif tracking-[0.15em] uppercase text-xs font-semibold mb-4"
+            className="flex items-center gap-4 mb-6"
           >
-            What We Do
-          </motion.h2>
+            <div className="h-[1px] w-12 bg-accent/70" />
+            <span className="text-accent font-serif tracking-[0.2em] uppercase text-xs font-semibold">
+              Premium Solutions
+            </span>
+            <div className="h-[1px] w-12 bg-accent/70" />
+          </motion.div>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl font-serif text-foreground sm:text-5xl"
+            transition={{ delay: 0.1, duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight"
           >
-            Comprehensive Moving Services
+            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic">Moving Services</span>
           </motion.h3>
         </div>
 
@@ -80,22 +95,40 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
-              whileHover={{ y: -10 }}
-              className="bg-white dark:bg-slate-900 rounded-3xl p-8 shadow-sm border border-foreground/10 hover:shadow-2xl transition-all duration-500 group"
+              className="relative overflow-hidden rounded-[2rem] h-[420px] group cursor-pointer border border-foreground/5 shadow-lg bg-black box-border"
             >
-              <div className="h-14 w-14 bg-white dark:bg-slate-800 ring-2 ring-black/10 dark:ring-white/20 shadow-sm rounded-2xl flex items-center justify-center mb-6 group-hover:scale-105 group-hover:bg-accent group-hover:ring-accent group-hover:shadow-[0_0_15px_rgba(202,160,82,0.4)] transition-all duration-500">
-                <service.icon className="text-foreground group-hover:text-primary transition-colors duration-500" size={28} />
+              {/* Background Image */}
+              <div className="absolute inset-0 w-full h-full">
+                <Image 
+                  src={service.image} 
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.15]"
+                />
               </div>
-              <h4 className="text-xl font-serif font-medium mb-3 text-foreground">{service.title}</h4>
-              <p className="text-foreground/70 leading-relaxed">
-                {service.description}
-              </p>
+              
+              {/* Gradient overlays */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 mix-blend-overlay z-10" />
+
+              {/* Content */}
+              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-20">
+                <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:bg-accent group-hover:text-black transition-all duration-500 border border-white/20 group-hover:border-transparent group-hover:shadow-[0_0_30px_rgba(202,160,82,0.6)]">
+                  <service.icon size={26} className="transition-colors duration-500" />
+                </div>
+                <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
+                  <h4 className="text-2xl font-serif font-medium mb-3">{service.title}</h4>
+                  <p className="text-white/70 leading-relaxed font-light text-sm md:text-base opacity-90 group-hover:text-white transition-all duration-500">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             </motion.div>
           ))}
         </motion.div>

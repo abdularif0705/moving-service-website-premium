@@ -6,45 +6,53 @@ import { ClipboardList, PackageOpen, Home } from "lucide-react";
 const steps = [
   {
     id: "01",
-    title: "Get a Free Quote",
-    description: "Provide your move details online or over the phone. We'll give you a transparent, guaranteed estimate.",
+    title: "Get Your Free Quote",
+    description: "Contact our team to discuss your specific needs. We'll provide a transparent, no-obligation estimate tailored exactly to your move.",
     icon: ClipboardList,
   },
   {
     id: "02",
-    title: "We Pack & Load",
-    description: "Our professional team arrives on time to securely pack, wrap, and load your belongings with absolute care.",
+    title: "Customize & Pack",
+    description: "Choose from our range of premium services. Our professionals will arrive on time to securely pack and load your belongings with white-glove care.",
     icon: PackageOpen,
   },
   {
     id: "03",
-    title: "Settle In",
-    description: "We deliver and unload your items at your new home exactly where you want them. Stress-free and easy.",
+    title: "Book & Relax",
+    description: "Once your plan is finalized, we take over the logistics. We handle the heavy lifting, delivering and unloading your items exactly where you want them.",
     icon: Home,
   },
 ];
 
 export default function Process() {
   return (
-    <section id="process" className="py-24 bg-background relative overflow-hidden">
+    <section id="process" className="py-32 bg-background relative overflow-hidden">
+      {/* Decorative gradient orb */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[120px] pointer-events-none" />
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center max-w-2xl mx-auto mb-20">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
+        <div className="text-center max-w-3xl mx-auto mb-24 flex flex-col items-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8 }}
+            whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
-            className="text-accent font-serif tracking-[0.15em] uppercase text-xs font-semibold mb-4"
+            className="flex items-center gap-4 mb-6"
           >
-            How It Works
-          </motion.h2>
+            <div className="h-[1px] w-12 bg-accent/70" />
+            <span className="text-accent font-serif tracking-[0.2em] uppercase text-xs font-semibold">
+              The Journey
+            </span>
+            <div className="h-[1px] w-12 bg-accent/70" />
+          </motion.div>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-            className="text-4xl font-serif text-foreground sm:text-5xl"
+            transition={{ delay: 0.1, duration: 0.7 }}
+            className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight"
           >
-            A Seamless Transition in 3 Steps
+            Your Moving Experience <br />
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic">in 3 Simple Steps</span>
           </motion.h3>
         </div>
 

@@ -46,13 +46,13 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center gap-3 cursor-pointer group"
             >
-              <div className="bg-white/95 dark:bg-white rounded-xl px-3 py-1.5 shadow-sm border border-stone-200/50 dark:border-white/10 transition-transform duration-300 group-hover:scale-[1.02]">
+              <div className="bg-transparent rounded-xl px-0 py-1.5 transition-transform duration-300 group-hover:scale-[1.02]">
                 <Image 
-                  src="/logo.png" 
+                  src="/logo_transparent.png" 
                   alt="Rent-A-Hand Logo" 
                   width={160} 
                   height={50} 
-                  className="w-auto h-10 sm:h-12 object-contain"
+                  className="w-auto h-12 sm:h-16 object-contain drop-shadow-md"
                   priority
                 />
               </div>

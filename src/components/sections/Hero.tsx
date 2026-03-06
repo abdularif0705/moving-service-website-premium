@@ -36,19 +36,19 @@ export default function Hero() {
           transition={{ duration: 1.2, ease: "easeOut" }}
           className="max-w-4xl mx-auto flex flex-col items-center"
         >
-          <div className="flex sm:inline-flex w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 sm:gap-3 px-1 sm:px-6 py-2 border border-accent/40 bg-accent/10 text-accent-light font-medium text-[10.5px] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] uppercase mb-10 rounded-full shadow-[0_0_15px_rgba(212,175,55,0.15)] backdrop-blur-sm">
-            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(212,175,55,0.8)] shrink-0"></span>
-            <span className="whitespace-nowrap">Exclusive White-Glove Service</span>
+          <div className="flex sm:inline-flex w-full max-w-[280px] sm:w-auto sm:max-w-none items-center justify-center gap-2 sm:gap-3 px-1 sm:px-6 py-2 border border-accent/40 bg-accent/10 text-accent font-medium text-[10.5px] sm:text-xs tracking-[0.1em] sm:tracking-[0.2em] uppercase mb-10 rounded-full shadow-[0_0_15px_rgba(239,161,1,0.15)] backdrop-blur-sm">
+            <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(239,161,1,0.8)] shrink-0"></span>
+            <span className="whitespace-nowrap">Windsor's Reliable Movers</span>
           </div>
           
           <TextReveal 
-            text="Moving, elevated to an art form." 
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-8"
+            text="We Handle the Heavy Lifting." 
+            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-8 uppercase"
             delay={0.1}
           />
           
           <p className="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl font-light leading-relaxed">
-            Windsor's premier moving service. Experience a seamless, stress-free transition across Ontario and beyond. Professional packing, bespoke transport, and absolute peace of mind.
+            Moving doesn't have to be stressful. Our team provides the muscle, the care, and the absolute peace of mind for a seamless, worry-free transition across Windsor and beyond.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">

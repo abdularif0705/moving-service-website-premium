@@ -4,12 +4,12 @@ import { Copyleft as Box, Truck, ShieldCheck, Users } from "lucide-react";
 
 export const metadata = {
   title: "About Us | Rent-A-Hand",
-  description: "Learn about Rent-A-Hand, Windsor's premium white-glove relocation experts.",
+  description: "Learn about Rent-A-Hand, Windsor's strong and dependable relocation experts.",
 };
 
 const values = [
-  { icon: ShieldCheck, title: "Uncompromising Integrity", desc: "Honesty in pricing, care in handling, and transparency in every interaction." },
-  { icon: Box, title: "Artisanal Packing", desc: "We don't just put things in boxes; we engineer protective environments for your valuables." },
+  { icon: ShieldCheck, title: "Unwavering Reliability", desc: "Honesty in pricing, strength in handling, and transparency in every interaction." },
+  { icon: Box, title: "Secure Packing", desc: "We engineer rugged, protective environments to ensure your valuables survive the journey." },
   { icon: Users, title: "Exceptional Personnel", desc: "Our staff are career professionals, extensively vetted, trained, and uniformed." },
   { icon: Truck, title: "Flawless Execution", desc: "Meticulous planning applied to modern, air-ride suspended transport." },
 ];
@@ -35,7 +35,7 @@ export default function AboutPage() {
               Redefining the <br /><span className="text-accent italic">Moving Experience.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-              Founded in Windsor, Ontario, Rent-A-Hand was built on a simple premise: relocation shouldn't be stressful. We brought white-glove concierge standards to an industry that desperately needed them.
+              Founded in Windsor, Ontario, Rent-A-Hand was built on a simple premise: relocation shouldn't be stressful. We provide the muscle and dependability that this industry desperately needed.
             </p>
           </div>
         </section>

@@ -6,23 +6,23 @@ import { Star } from "lucide-react";
 const reviews = [
   {
     id: 1,
-    content: "Absolutely phenomenal experience. The team arrived early, packed everything with extreme care, and moved us across the country without a single broken item. Worth every penny.",
-    author: "Sarah Jenkins",
-    role: "Long Distance Move",
+    content: "Good pricing, fast service, as well as top-quality service. Staff were very professional. My family and I use Rent-A-Hand repetitively for all our moving and junk removal and they do great. Support your local businesses, these individuals will go out of their way to give a great customer experience. Highly recommend.",
+    author: "Humam Khan",
+    role: "Moving & Junk Removal",
     rating: 5,
   },
   {
     id: 2,
-    content: "I've moved 5 times in the last 10 years, and Rent-A-Hand was by far the best company I've ever used. The crew was polite, efficient, and very professional.",
-    author: "Michael Chen",
+    content: "I recently used Rent-A-Hand Moving Company for my move, and I must say, I am very impressed with their service. The team arrived right on time and worked very efficiently. They were polite, hardworking, and took great care of all my belongings, especially the fragile items. The pricing was fair and reasonable. Highly recommended.",
+    author: "Muhash Sanjofy",
     role: "Local Move",
     rating: 5,
   },
   {
     id: 3,
-    content: "They handled our grand piano and delicate antiques flawlessly. The white-glove service is exactly as advertised. Highly recommended for premium moves.",
-    author: "Emily & David Thompson",
-    role: "Specialty Items Move",
+    content: "Moving from one small apartment to another in the same building, my wife and I got the light stuff but left the heavy stuff for the movers. In one hour, the movers got the heavy cabinets and stoves out and to the new apartment. Fast and no damage done. I have no complaints and only high praise for these movers.",
+    author: "Frank Mitchell",
+    role: "Small Apartment Move",
     rating: 5,
   },
 ];

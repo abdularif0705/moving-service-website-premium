@@ -1,47 +1,62 @@
 import { NextResponse } from 'next/server';
+import { Resend } from 'resend';
+
+// Initialize Resend with the API key from environment variables
+// It will gracefully fall back or error if not provided in Vercel
+const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
 
 export async function POST(request: Request) {
   try {
-    const body = await request.json();
-    const { firstName, lastName, fromZip, toZip, moveSize } = body;
+    const data = await request.json();
+    const { firstName, lastName, phone, email, fromZip, toZip, moveSize, moveDate } = data;
 
-    // Validate request
-    if (!firstName || !lastName || !fromZip || !toZip || !moveSize) {
+    // Validate required fields
+    if (!firstName || !lastName || !email) {
       return NextResponse.json(
-        { message: 'Missing required fields' },
+        { error: 'First Name, Last Name, and Email are required.' },
         { status: 400 }
       );
     }
 
-    // Here is where you will integrate your chosen email API.
-    // E.g., using Resend:
-    /*
-      import { Resend } from 'resend';
-      const resend = new Resend(process.env.RESEND_API_KEY);
-      
-      await resend.emails.send({
-        from: 'Quotes <onboarding@resend.dev>',
-        to: 'your_email@example.com',
-        subject: `New Moving Quote Request from ${firstName} ${lastName}`,
-        html: `<p><strong>Name:</strong> ${firstName} ${lastName}</p>
-               <p><strong>From Zip:</strong> ${fromZip}</p>
-               <p><strong>To Zip:</strong> ${toZip}</p>
-               <p><strong>Move Size:</strong> ${moveSize}</p>`
-      });
-    */
+    const htmlContent = `
+      <h2>New Moving Lead: ${firstName} ${lastName}</h2>
+      <p><strong>Contact Info:</strong></p>
+      <ul>
+        <li>Email: ${email}</li>
+        <li>Phone: ${phone || 'Not provided'}</li>
+      </ul>
+      <p><strong>Move Details:</strong></p>
+      <ul>
+        <li>From Zip: ${fromZip || 'Not provided'}</li>
+        <li>To Zip: ${toZip || 'Not provided'}</li>
+        <li>Move Size: ${moveSize}</li>
+        <li>Target Date: ${moveDate || 'Not provided'}</li>
+      </ul>
+    `;
 
-    // For now, simulate a network delay
-    await new Promise((resolve) => setTimeout(resolve, 1500));
+    // Send email using Resend
+    // We send it to rentahandwindsor@gmail.com 
+    const { data: resendData, error } = await resend.emails.send({
+      from: 'Rent-A-Hand Quotes <onboarding@resend.dev>', // You'll need to verify a domain in Resend for a custom 'from' address, using onboarding for now.
+      to: ['rentahandwindsor@gmail.com'],
+      subject: `New Quote Request from ${firstName} ${lastName}`,
+      replyTo: email,
+      html: htmlContent,
+    });
 
-    // Return a success response
+    if (error) {
+      console.error('Resend API Error:', error);
+      return NextResponse.json({ error: error.message }, { status: 400 });
+    }
+
     return NextResponse.json(
-      { message: 'Quote request submitted successfully' },
+      { success: true, message: 'Message sent successfully', data: resendData },
       { status: 200 }
     );
   } catch (error) {
-    console.error('Contact Form Error:', error);
+    console.error('Server error handling contact submission:', error);
     return NextResponse.json(
-      { message: 'Failed to submit request. Please try again later.' },
+      { error: 'Internal Server Error' },
       { status: 500 }
     );
   }

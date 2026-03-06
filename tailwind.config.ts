@@ -13,19 +13,19 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          DEFAULT: "#0F172A", // Midnight Navy (slate-900)
-          dark: "#020617", // slate-950
-          light: "#1E293B", // slate-800
+          DEFAULT: "#18181B", // zinc-900 (Deep Charcoal)
+          dark: "#09090B", // zinc-950
+          light: "#27272A", // zinc-800
         },
         accent: {
-          DEFAULT: "#D4AF37", // Muted Gold / Champagne
-          dark: "#B5952F",
-          light: "#F3E3A0"
+          DEFAULT: "#EFA101", // Rent-A-Hand Orange/Yellow
+          dark: "#D48F00",
+          light: "#FFB624"
         }
       },
       fontFamily: {
         sans: ["var(--font-inter)", "sans-serif"],
-        serif: ["var(--font-playfair)", "serif"],
+        serif: ["var(--font-oswald)", "sans-serif"], // Changed to strong sans-serif for headings
       }
     },
   },

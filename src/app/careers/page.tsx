@@ -15,10 +15,10 @@ const openRoles = [
     desc: "Seeking an experienced crew leader to manage high-end residential moves and oversee packing teams.",
   },
   {
-    title: "White-Glove Packer",
+    title: "Heavy-Duty Packing Specialist",
     type: "Full-Time / Part-Time",
     location: "Windsor, ON",
-    desc: "Detail-oriented individuals to securely pack fragile, high-value art, antiques, and electronics.",
+    desc: "Detail-oriented individuals to securely pack, wrap, and engineer protective transport for high-value items.",
   },
   {
     title: "Class DZ Driver",

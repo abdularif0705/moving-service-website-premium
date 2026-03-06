@@ -9,13 +9,13 @@ export default function Footer() {
           
           <div className="space-y-6">
             <div className="flex items-center gap-3 text-white mb-2">
-              <div className="bg-white rounded-xl px-3 py-1.5 shadow-sm border border-white/10">
+              <div className="bg-transparent rounded-xl px-0 py-1.5">
                 <Image 
-                  src="/logo.png" 
+                  src="/logo_transparent.png" 
                   alt="Rent-A-Hand Logo" 
                   width={160} 
                   height={50} 
-                  className="w-auto h-10 object-contain"
+                  className="w-auto h-12 object-contain drop-shadow-md"
                 />
               </div>
             </div>
