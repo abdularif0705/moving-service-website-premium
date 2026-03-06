@@ -49,7 +49,7 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
               <div className="bg-transparent rounded-xl px-0 py-1.5 transition-transform duration-300 group-hover:scale-[1.02]">
                 <Image 
                   src="/logo_transparent.png" 
-                  alt="Rent-A-Hand Logo" 
+                  alt="Rent-A-Hand Moving Company in Windsor Ontario Logo" 
                   width={160} 
                   height={50} 
                   className="w-auto h-12 sm:h-16 object-contain drop-shadow-md"
@@ -75,6 +75,7 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
             <button
               className="md:hidden p-2"
               onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open Mobile Menu"
             >
               <Menu size={28} />
             </button>
@@ -104,6 +105,7 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-2 rounded-full bg-stone-100 text-stone-600 hover:bg-stone-200 hover:text-stone-900 dark:bg-stone-800 dark:text-stone-300 dark:hover:bg-stone-700 dark:hover:text-white transition-colors"
+                  aria-label="Close Mobile Menu"
                 >
                   <X size={24} />
                 </button>

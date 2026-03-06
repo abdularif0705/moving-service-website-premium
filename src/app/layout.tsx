@@ -19,7 +19,7 @@ export const metadata: Metadata = {
   },
   description: "Experience a seamless, stress-free move in Windsor, Ontario and surrounding areas. Rent-A-Hand provides top-rated local moving services. Get a free quote today.",
   keywords: ["movers in Windsor", "moving companies Windsor Ontario", "Windsor movers", "Rent-A-Hand", "rent a hand moving", "local movers Windsor", "furniture moving Windsor", "movers Windsor ON", "best movers Windsor"],
-  metadataBase: new URL('https://rent-a-hand.ca'),
+  metadataBase: new URL('https://rentahandwindsor.ca'),
   openGraph: {
     type: "website",
     locale: "en_CA",

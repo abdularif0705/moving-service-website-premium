@@ -2,10 +2,19 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import Image from "next/image";
 import { Truck, Box, Wrench, Dumbbell, Trash2, Building2, Sparkles, Hammer, CheckCircle2, ArrowRight } from "lucide-react";
+import { ServiceSchema } from "@/components/seo/SchemaOrg";
 
 export const metadata = {
   title: "Premium Moving Services | Rent-A-Hand Windsor",
   description: "Comprehensive moving services in Windsor-Essex. From local and long-distance transport to single item moves, expert packing, and furniture assembly.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/services",
+  },
+  openGraph: {
+    title: "Premium Moving Services | Rent-A-Hand Windsor",
+    description: "Comprehensive moving services in Windsor-Essex. From local and long-distance transport to single item moves, expert packing, and furniture assembly.",
+    url: "https://rentahandwindsor.ca/services",
+  },
 };
 
 const detailedServices = [
@@ -126,6 +135,7 @@ const detailedServices = [
 export default function ServicesPage() {
   return (
     <>
+      <ServiceSchema services={detailedServices.map(s => ({ name: s.title, description: s.description, image: s.image.startsWith('http') ? s.image : `https://rentahandwindsor.ca${s.image}` }))} />
       <Navbar />
       <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pb-0">
         

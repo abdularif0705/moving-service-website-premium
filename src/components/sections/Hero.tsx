@@ -51,7 +51,7 @@ export default function Hero() {
               className="w-full sm:w-auto inline-flex items-center justify-center gap-3 bg-accent hover:bg-accent-light text-primary px-10 py-4 font-medium tracking-wide transition-all duration-300 hover:-translate-y-1 shadow-lg hover:shadow-xl hover:shadow-accent/20 border border-accent/20 rounded-full"
             >
               Request a Consultation
-              <ArrowRight size={18} />
+              <ArrowRight size={18} aria-hidden="true" />
             </a>
             <a
               href="#services"
@@ -64,15 +64,15 @@ export default function Hero() {
           {/* Trust Indicators */}
           <div className="flex flex-col sm:flex-row flex-wrap gap-8 sm:gap-12 items-center justify-center text-xs font-semibold text-stone-300 uppercase tracking-[0.15em]">
             <div className="flex items-center gap-3">
-              <ShieldCheck className="text-accent" size={18} />
+              <ShieldCheck className="text-accent" size={18} aria-hidden="true" />
               Fully Insured
             </div>
             <div className="flex items-center gap-3">
-              <Clock className="text-accent" size={18} />
+              <Clock className="text-accent" size={18} aria-hidden="true" />
               Guaranteed Precision
             </div>
             <div className="flex items-center gap-3">
-              <MapPin className="text-accent" size={18} />
+              <MapPin className="text-accent" size={18} aria-hidden="true" />
               Global & Local
             </div>
           </div>

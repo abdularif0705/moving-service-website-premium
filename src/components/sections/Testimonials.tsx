@@ -63,7 +63,7 @@ export default function Testimonials() {
             >
               <div className="flex gap-1 text-accent mb-6">
                 {[...Array(review.rating)].map((_, i) => (
-                  <Star key={i} size={20} fill="currentColor" />
+                  <Star key={i} size={20} fill="currentColor" aria-hidden="true" />
                 ))}
               </div>
               <p className="text-foreground/80 mb-8 text-lg italic leading-relaxed">

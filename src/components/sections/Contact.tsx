@@ -147,7 +147,7 @@ export default function Contact() {
 
             <div className="flex flex-col gap-6">
               <div className="flex items-center gap-4 text-white/90">
-                <a href="tel:5199809577" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                <a href="tel:5199809577" aria-label="Call Us" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
                   <Phone className="text-white" />
                 </a>
                 <div>
@@ -158,7 +158,7 @@ export default function Contact() {
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
-                <a href="mailto:rentahandwindsor@gmail.com" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
+                <a href="mailto:rentahandwindsor@gmail.com" aria-label="Email Us" className="bg-white/10 p-3 rounded-full hover:bg-white/20 transition-colors">
                   <Mail className="text-white" />
                 </a>
                 <div>
@@ -444,7 +444,7 @@ export default function Contact() {
               <div className="col-12 w-full flex justify-center sm:justify-start">
                 <ReCAPTCHA
                   ref={recaptchaRef}
-                  sitekey="6LciOR8sAAAAAEvJCvjFx_p7Cw9nZDh-BHEbc614"
+                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LcnfYESAAAAAP3zm0IOciOHpzatdWE6sDbK4A-e"}
                   onChange={(token) => {
                     setRecaptchaToken(token);
                     if (token) setError(null);

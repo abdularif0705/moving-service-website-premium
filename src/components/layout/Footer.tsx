@@ -12,7 +12,7 @@ export default function Footer() {
               <div className="bg-transparent rounded-xl px-0 py-1.5">
                 <Image 
                   src="/logo_transparent.png" 
-                  alt="Rent-A-Hand Logo" 
+                  alt="Rent-A-Hand Moving Company in Windsor Ontario Logo" 
                   width={160} 
                   height={50} 
                   className="w-auto h-12 object-contain drop-shadow-md"
@@ -23,15 +23,14 @@ export default function Footer() {
               Premium moving services designed to eliminate the stress of residential and commercial relocation. Fully licensed, bonded, and insured.
             </p>
             <div className="flex gap-4">
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Facebook size={20} /></a>
-              <a href="https://maps.app.goo.gl/h6U3V5ZgovVwWPwE9" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors">
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin">
+              <a href="#" aria-label="Facebook Page" className="text-white/40 hover:text-white transition-colors"><Facebook size={20} /></a>
+              <a href="https://maps.app.goo.gl/h6U3V5ZgovVwWPwE9" aria-label="Google Maps Location" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors">
+                <svg width="20" height="20" aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin">
                   <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
                   <circle cx="12" cy="10" r="3"/>
                 </svg>
               </a>
-              <a href="https://www.instagram.com/rent_a_hand_/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors"><Instagram size={20} /></a>
-              <a href="#" className="hidden"></a>
+              <a href="https://www.instagram.com/rent_a_hand_/" aria-label="Instagram Page" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors"><Instagram size={20} /></a>
             </div>
           </div>
 

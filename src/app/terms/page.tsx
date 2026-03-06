@@ -4,6 +4,14 @@ import Footer from "@/components/layout/Footer";
 export const metadata = {
   title: "Terms of Service | Rent-A-Hand",
   description: "Terms and conditions for Rent-A-Hand relocation services in Windsor, Ontario.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/terms",
+  },
+  openGraph: {
+    title: "Terms of Service | Rent-A-Hand",
+    description: "Terms and conditions for Rent-A-Hand relocation services in Windsor, Ontario.",
+    url: "https://rentahandwindsor.ca/terms",
+  },
 };
 
 export default function TermsPage() {

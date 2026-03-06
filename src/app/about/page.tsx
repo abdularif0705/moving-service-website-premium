@@ -5,6 +5,14 @@ import { Copyleft as Box, Truck, ShieldCheck, Users } from "lucide-react";
 export const metadata = {
   title: "About Us | Rent-A-Hand",
   description: "Learn about Rent-A-Hand, Windsor's strong and dependable relocation experts.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/about",
+  },
+  openGraph: {
+    title: "About Us | Rent-A-Hand",
+    description: "Learn about Rent-A-Hand, Windsor's strong and dependable relocation experts.",
+    url: "https://rentahandwindsor.ca/about",
+  },
 };
 
 const values = [

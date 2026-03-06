@@ -5,6 +5,14 @@ import { MapPin, Navigation, Building, Home, Map, ArrowRight } from "lucide-reac
 export const metadata = {
   title: "Areas We Serve | Windsor-Essex & Ontario Moving",
   description: "Rent-A-Hand provides elite relocation services across Windsor, LaSalle, Tecumseh, Lakeshore, Amherstburg, and long-distance throughout Ontario.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/locations",
+  },
+  openGraph: {
+    title: "Areas We Serve | Windsor-Essex & Ontario Moving",
+    description: "Rent-A-Hand provides elite relocation services across Windsor, LaSalle, Tecumseh, Lakeshore, Amherstburg, and long-distance throughout Ontario.",
+    url: "https://rentahandwindsor.ca/locations",
+  },
 };
 
 const locations = [

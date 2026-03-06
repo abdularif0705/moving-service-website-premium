@@ -5,6 +5,14 @@ import { ArrowRight, Briefcase, GraduationCap, HeartHandshake } from "lucide-rea
 export const metadata = {
   title: "Careers | Rent-A-Hand",
   description: "Join the Rent-A-Hand team. We are hiring professional movers and logistics experts in Windsor, ON.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/careers",
+  },
+  openGraph: {
+    title: "Careers | Rent-A-Hand",
+    description: "Join the Rent-A-Hand team. We are hiring professional movers and logistics experts in Windsor, ON.",
+    url: "https://rentahandwindsor.ca/careers",
+  },
 };
 
 const openRoles = [

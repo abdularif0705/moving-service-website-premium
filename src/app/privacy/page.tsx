@@ -4,6 +4,14 @@ import Footer from "@/components/layout/Footer";
 export const metadata = {
   title: "Privacy Policy | Rent-A-Hand",
   description: "How Rent-A-Hand protects your private data and moving information.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/privacy",
+  },
+  openGraph: {
+    title: "Privacy Policy | Rent-A-Hand",
+    description: "How Rent-A-Hand protects your private data and moving information.",
+    url: "https://rentahandwindsor.ca/privacy",
+  },
 };
 
 export default function PrivacyPage() {

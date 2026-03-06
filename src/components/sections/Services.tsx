@@ -136,7 +136,7 @@ export default function Services() {
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-20 overflow-hidden">
                 <div className="transform transition-transform duration-500 ease-out group-hover:-translate-y-14 pointer-events-none">
                   <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 border border-white/20 group-hover:bg-accent group-hover:text-black group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(202,160,82,0.4)]">
-                    <service.icon size={26} className="transition-colors duration-500" />
+                    <service.icon size={26} aria-hidden="true" className="transition-colors duration-500" />
                   </div>
                   <h4 className="text-2xl font-serif font-medium mb-3">{service.title}</h4>
                   <p className="text-white/70 leading-relaxed font-light text-sm md:text-base opacity-90 transition-all duration-500 group-hover:text-white">
@@ -154,7 +154,7 @@ export default function Services() {
                 >
                   <div className="flex items-center justify-between mb-2 text-accent">
                     <span className="font-semibold text-xs tracking-[0.2em] uppercase">Learn More</span>
-                    <ArrowRight size={16} className="transform -translate-x-4 transition-transform duration-500 ease-out group-hover:translate-x-0 delay-100" />
+                    <ArrowRight size={16} aria-hidden="true" className="transform -translate-x-4 transition-transform duration-500 ease-out group-hover:translate-x-0 delay-100" />
                   </div>
                   <div className="w-full h-[1.5px] bg-white/20 relative overflow-hidden">
                     <div className="absolute inset-y-0 left-0 bg-accent w-full transform -translate-x-full transition-transform duration-700 ease-out group-hover:translate-x-0 delay-150" />

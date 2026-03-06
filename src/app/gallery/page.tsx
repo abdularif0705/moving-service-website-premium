@@ -5,15 +5,23 @@ import Image from "next/image";
 export const metadata = {
   title: "Gallery & Results | Rent-A-Hand Moving",
   description: "View our portfolio of premium relocations, meticulously packed homes, and modern, high-capacity fleet.",
+  alternates: {
+    canonical: "https://rentahandwindsor.ca/gallery",
+  },
+  openGraph: {
+    title: "Gallery & Results | Rent-A-Hand Moving",
+    description: "View our portfolio of premium relocations, meticulously packed homes, and modern, high-capacity fleet.",
+    url: "https://rentahandwindsor.ca/gallery",
+  },
 };
 
 const galleryImages = [
-  { src: "/images/gallery/picture1_branded.png", span: "col-span-1 md:col-span-2 row-span-2" }, // Large feature intro
-  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Working-Hard-1.jpg", span: "col-span-1 row-span-1" }, // Office
-  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Packed.jpg", span: "col-span-1 row-span-1" }, // New home exterior
-  { src: "/images/gallery/picture4_branded.png", span: "col-span-1 row-span-2" }, // Tall image, boxes/warehouse
-  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Moving-Moving-Moving.jpg", span: "col-span-1 md:col-span-2 row-span-1" }, // Wide modern interior
-  { src: "/images/gallery/truck_with_577.png", span: "col-span-1 row-span-1" }, // Truck with updated phone digits
+  { src: "/images/gallery/picture1_branded.png", span: "col-span-1 md:col-span-2 row-span-2", alt: "Rent-A-Hand movers carefully packing and loading a residential home in Windsor" }, // Large feature intro
+  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Working-Hard-1.jpg", span: "col-span-1 row-span-1", alt: "Professional movers handling commercial office relocation equipment" }, // Office
+  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Packed.jpg", span: "col-span-1 row-span-1", alt: "Securely packed moving boxes ready for transport" }, // New home exterior
+  { src: "/images/gallery/picture4_branded.png", span: "col-span-1 row-span-2", alt: "Rent-A-Hand moving truck loaded with securely strapped furniture and boxes" }, // Tall image, boxes/warehouse
+  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Moving-Moving-Moving.jpg", span: "col-span-1 md:col-span-2 row-span-1", alt: "Moving crew navigating a large piece of furniture through a modern home" }, // Wide modern interior
+  { src: "/images/gallery/truck_with_577.png", span: "col-span-1 row-span-1", alt: "Rent-A-Hand premium moving truck fleet parked outside a Windsor residence" }, // Truck with updated phone digits
 ];
 
 export default function GalleryPage() {
@@ -46,7 +54,7 @@ export default function GalleryPage() {
                 >
                   <Image 
                     src={img.src}
-                    alt={`Rent-A-Hand Moving Gallery Image ${idx + 1}`}
+                    alt={img.alt}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     className="object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
