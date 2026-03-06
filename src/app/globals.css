@@ -8,7 +8,7 @@
 }
 
 body {
-  overflow-x: hidden;
+  /* overflow-x handled by main wrapper in layout.tsx for iOS scroll performance */
 }
 
 /* Premium smooth scroll */

@@ -66,7 +66,7 @@ export default function Process() {
                 key={step.id}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
+                viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: index * 0.2 }}
                 className="relative flex flex-col items-center text-center group"
               >

@@ -68,10 +68,6 @@ export default function Contact() {
       newErrors.push("Please select a target move date.");
     }
 
-    if (!recaptchaToken && !recaptchaRef.current?.getValue()) {
-      newErrors.push("Please complete the reCAPTCHA verification.");
-    }
-
     // Security check: Timing validation (>3 seconds)
     const timeSpent = Date.now() - formLoadTime;
     if (timeSpent < 3000) {
