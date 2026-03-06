@@ -82,7 +82,7 @@ export default function ServicesPage() {
               Elite Relocation
             </div>
             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
-              Our Premium <br /><span className="text-accent italic">Services.</span>
+              Our Premium <br /><span className="text-accent italic pr-2">Services.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
               We don't just move boxes. We engineer completely stress-free transitions for homes and businesses across Ontario, utilizing modern equipment and highly trained career professionals.

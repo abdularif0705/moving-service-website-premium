@@ -4,7 +4,7 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 
 export default function FAQPage() {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -38,56 +38,75 @@ export default function FAQPage() {
       <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pb-24">
         
         {/* Header */}
-        <section className="relative pt-40 pb-20 bg-primary overflow-hidden">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542289656-78ab7f8fdfe3?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-            <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+        <section className="relative pt-40 pb-32 bg-primary overflow-hidden">
+          <div className="absolute inset-0 bg-[url('/images/services/header.jpg')] bg-cover bg-center opacity-10 mix-blend-luminosity rounded-b-[3rem]"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/80 to-transparent pointer-events-none"></div>
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center flex flex-col items-center">
+            <div className="flex w-fit items-center gap-2 px-6 py-2 border border-accent/40 bg-accent/10 text-accent font-medium text-[10px] sm:text-xs tracking-[0.2em] uppercase mb-8 rounded-full shadow-[0_0_15px_rgba(239,161,1,0.15)] backdrop-blur-sm">
+              <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse shadow-[0_0_8px_rgba(239,161,1,0.8)] inline-block"></span>
+              Knowledge Base
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-6">
               Common <span className="text-accent italic pr-2">Questions.</span>
             </h1>
-            <p className="text-lg text-white/70 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed font-light">
               Clear, transparent answers regarding our premium moving process, policies, and pricing structures.
             </p>
           </div>
         </section>
 
         {/* FAQs */}
-        <section className="pt-24 max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="space-y-4">
-            {faqs.map((faq, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1 }}
-                className="bg-white dark:bg-slate-900 border border-foreground/5 dark:border-white/5 rounded-2xl overflow-hidden shadow-sm hover:border-accent/30 transition-colors"
-              >
-                <button
-                  onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                  className="w-full text-left px-6 py-5 flex justify-between items-center bg-transparent gap-4"
-                >
-                  <span className="font-serif text-lg font-medium text-foreground leading-snug">
-                    {faq.question}
-                  </span>
-                  <div className={`p-2 rounded-full border transition-all duration-300 shrink-0 ${openIndex === index ? 'bg-accent/10 border-accent/20 text-accent rotate-180' : 'bg-transparent border-foreground/10 text-foreground/50'}`}>
-                    {openIndex === index ? <Minus size={18} /> : <Plus size={18} />}
-                  </div>
-                </button>
-                <AnimatePresence>
-                  {openIndex === index && (
-                    <motion.div
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: "auto", opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: "easeInOut" }}
+        <section className="pt-24 pb-32 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="space-y-6">
+            <AnimatePresence initial={false}>
+              {faqs.map((faq, index) => {
+                const isOpen = openIndex === index;
+                
+                return (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: index * 0.1 }}
+                    className={`group bg-white dark:bg-slate-900/50 backdrop-blur-sm border ${isOpen ? 'border-accent/40 shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:shadow-[0_8px_30px_rgba(255,255,255,0.03)]' : 'border-foreground/5 dark:border-white/5 hover:border-accent/20'} rounded-[1.5rem] overflow-hidden transition-all duration-500`}
+                  >
+                    <button
+                      onClick={() => setOpenIndex(isOpen ? null : index)}
+                      className="w-full text-left px-8 py-6 md:py-8 flex justify-between items-center bg-transparent gap-6 group-hover:bg-foreground/[0.01] transition-colors duration-300"
                     >
-                      <div className="px-6 pb-6 pt-2 text-foreground/70 leading-relaxed text-[15px] border-t border-foreground/5 dark:border-white/5 mx-6 mt-1">
-                        {faq.answer}
+                      <span className={`font-serif text-xl md:text-2xl leading-snug transition-colors duration-300 ${isOpen ? 'text-accent' : 'text-foreground group-hover:text-foreground/80'}`}>
+                        {faq.question}
+                      </span>
+                      <div className={`flex items-center justify-center w-12 h-12 rounded-full border transition-all duration-500 shrink-0 ${isOpen ? 'bg-accent/10 border-accent/30 text-accent' : 'bg-transparent border-foreground/10 text-foreground/40 group-hover:border-accent/30 group-hover:text-accent'}`}>
+                        <ChevronDown size={20} className={`transition-transform duration-500 transform ${isOpen ? 'rotate-180' : 'rotate-0'}`} />
                       </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </motion.div>
-            ))}
+                    </button>
+                    <AnimatePresence initial={false}>
+                      {isOpen && (
+                        <motion.section
+                          key="content"
+                          initial="collapsed"
+                          animate="open"
+                          exit="collapsed"
+                          variants={{
+                            open: { opacity: 1, height: "auto" },
+                            collapsed: { opacity: 0, height: 0 }
+                          }}
+                          transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                          className="overflow-hidden"
+                        >
+                          <div className="px-8 pb-8 pt-0 text-foreground/70 font-light leading-relaxed text-[16px] md:text-lg border-t border-foreground/5 dark:border-white/5 mx-8 mt-2">
+                            <div className="pt-6">
+                              {faq.answer}
+                            </div>
+                          </div>
+                        </motion.section>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+                );
+              })}
+            </AnimatePresence>
           </div>
         </section>
 

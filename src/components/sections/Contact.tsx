@@ -111,7 +111,7 @@ export default function Contact() {
           >
             <h2 className="text-4xl md:text-5xl font-serif mb-6 leading-tight">
               Ready for a smooth move? <br />
-              <span className="text-accent italic">Let's get started.</span>
+              <span className="text-accent italic pr-2">Let's</span> <span className="text-accent italic pr-2">get</span> <span className="text-accent italic pr-2">started.</span>
             </h2>
             <p className="text-white/70 text-lg mb-10 max-w-md leading-relaxed">
               Fill out the form to request your free, no-obligation moving quote. Our team will get back to you within 24 hours.

@@ -13,7 +13,7 @@ const galleryImages = [
   { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Packed.jpg", span: "col-span-1 row-span-1" }, // New home exterior
   { src: "/images/gallery/picture4_branded.png", span: "col-span-1 row-span-2" }, // Tall image, boxes/warehouse
   { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Moving-Moving-Moving.jpg", span: "col-span-1 md:col-span-2 row-span-1" }, // Wide modern interior
-  { src: "https://torontopromovingandstorage.ca/wp-content/uploads/Moving-Company-Toronto-Setup-the-Car.jpg", span: "col-span-1 row-span-1" }, // Clean interior living room
+  { src: "/images/gallery/truck_with_577.png", span: "col-span-1 row-span-1" }, // Truck with updated phone digits
 ];
 
 export default function GalleryPage() {
