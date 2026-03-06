@@ -24,7 +24,7 @@ export default function LocationsPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pb-0">
+      <div className="flex-col bg-foreground/5 dark:bg-background pb-0">
         
         {/* Header */}
         <section className="relative pt-40 pb-32 bg-primary overflow-hidden">
@@ -147,7 +147,7 @@ export default function LocationsPage() {
           </div>
         </section>
 
-      </main>
+      </div>
       <Footer />
     </>
   );

@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <main className="flex-col overflow-hidden">
+      <div className="flex-col">
         <Hero />
         <TrustBadges />
         <Services />
@@ -20,7 +20,7 @@ export default function Home() {
         <Comparison />
         <Testimonials />
         <Contact />
-      </main>
+      </div>
       <Footer />
     </>
   );

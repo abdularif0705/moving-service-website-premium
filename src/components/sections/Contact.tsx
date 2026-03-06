@@ -192,74 +192,7 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
-            <style>
-              {`
-                .success-container {
-                    text-align: center;
-                    padding: 3rem 2rem;
-                    animation: fadeInUp 0.5s ease;
-                }
-                .success-checkmark {
-                    width: 100px;
-                    height: 100px;
-                    margin: 0 auto 1.5rem;
-                    border-radius: 50%;
-                    background: #212529;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    animation: scaleIn 0.5s ease, pulse 2s ease infinite;
-                    box-shadow: 0 10px 40px rgba(33, 37, 41, 0.3);
-                }
-                .success-checkmark svg {
-                    width: 3rem;
-                    height: 3rem;
-                    color: white;
-                    animation: checkDraw 0.5s ease 0.2s both;
-                }
-                .success-title {
-                    font-size: 1.75rem;
-                    font-weight: 700;
-                    color: #212529;
-                    margin-bottom: 0.75rem;
-                }
-                .success-message {
-                    color: #666;
-                    font-size: 1.1rem;
-                    margin-bottom: 1.5rem;
-                }
-                @keyframes fadeInUp {
-                    from { opacity: 0; transform: translateY(20px); }
-                    to { opacity: 1; transform: translateY(0); }
-                }
-                @keyframes scaleIn {
-                    from { transform: scale(0); }
-                    to { transform: scale(1); }
-                }
-                @keyframes checkDraw {
-                    from { opacity: 0; transform: scale(0.5); }
-                    to { opacity: 1; transform: scale(1); }
-                }
-                @keyframes pulse {
-                    0%, 100% { box-shadow: 0 10px 40px rgba(40, 167, 69, 0.3); }
-                    50% { box-shadow: 0 10px 60px rgba(40, 167, 69, 0.5); }
-                }
 
-                .dark .success-checkmark {
-                    background: #f8fafc;
-                    box-shadow: 0 10px 40px rgba(248, 250, 252, 0.2);
-                }
-                .dark .success-checkmark svg {
-                    color: #0f172a;
-                }
-                .dark .success-title {
-                    color: #f8fafc;
-                }
-                .dark .success-message {
-                    color: #94a3b8;
-                }
-              `}
-            </style>
             
             <div className="absolute -top-5 right-4 sm:-right-6 bg-accent text-primary border border-primary/40 px-6 py-1.5 rounded-full font-bold text-[10px] tracking-[0.25em] uppercase shadow-xl shadow-black/30 transform rotate-3 z-10 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 cursor-default ring-1 ring-white/20 ring-inset">
               Priority Response
@@ -453,7 +386,7 @@ export default function Contact() {
                    <div className="flex justify-center mb-8 overflow-hidden rounded-xl">
                       <ReCAPTCHA
                         ref={recaptchaRef}
-                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LdEgYEsAAAAAE3RNvvGJksJ1RoRw920QXUIUODQ"}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY!}
                         onChange={(token) => {
                           if (token) submitToAPI(token);
                         }}

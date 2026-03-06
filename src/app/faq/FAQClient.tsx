@@ -38,7 +38,7 @@ export default function FAQClient() {
     <>
       <FAQSchema faqs={faqs} />
       <Navbar />
-      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background pb-24">
+      <div className="flex-col bg-foreground/5 dark:bg-background pb-24">
         
         {/* Header */}
         <section className="relative pt-40 pb-32 bg-primary overflow-hidden">
@@ -113,7 +113,7 @@ export default function FAQClient() {
           </div>
         </section>
 
-      </main>
+      </div>
       <Footer />
     </>
   );

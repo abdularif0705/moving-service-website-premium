@@ -26,7 +26,7 @@ export default function AboutPage() {
   return (
     <>
       <Navbar />
-      <main className="flex-col overflow-hidden bg-foreground/5 dark:bg-background">
+      <div className="flex-col bg-foreground/5 dark:bg-background">
         
         {/* Hero Section */}
         <section className="relative pt-40 pb-24 sm:pt-48 sm:pb-32 overflow-hidden">
@@ -125,7 +125,7 @@ export default function AboutPage() {
           </div>
         </section>
 
-      </main>
+      </div>
       <Footer />
     </>
   );
