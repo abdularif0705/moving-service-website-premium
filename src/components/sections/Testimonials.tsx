@@ -13,16 +13,16 @@ const reviews = [
   },
   {
     id: 2,
-    content: "I recently used Rent-A-Hand Moving Company for my move, and I must say, I am very impressed with their service. The team arrived right on time and worked very efficiently. They were polite, hardworking, and took great care of all my belongings, especially the fragile items. The pricing was fair and reasonable. Highly recommended.",
-    author: "Muhash Sanjofy",
-    role: "Local Move",
+    content: "Rent-A-Hand is FAST, and has a GREAT PRICE with FRIENDLY staff. I am so happy for the timely service. 100% would call back.",
+    author: "Rosanna D",
+    role: "Moving Service",
     rating: 5,
   },
   {
     id: 3,
-    content: "Moving from one small apartment to another in the same building, my wife and I got the light stuff but left the heavy stuff for the movers. In one hour, the movers got the heavy cabinets and stoves out and to the new apartment. Fast and no damage done. I have no complaints and only high praise for these movers.",
-    author: "Frank Mitchell",
-    role: "Small Apartment Move",
+    content: "Hired Rent-A-Hand to help with my move across town and was a happy customer. They were fast and efficient, and were done in a few hours. Customer service was great and they were responsive.",
+    author: "Vivianne Owino",
+    role: "Local Move",
     rating: 5,
   },
 ];

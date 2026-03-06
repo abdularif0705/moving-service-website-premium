@@ -48,7 +48,7 @@ export default function Hero() {
           />
           
           <p className="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl font-light leading-relaxed">
-            Moving doesn't have to be stressful. Our team provides the muscle, the care, and the absolute peace of mind for a seamless, worry-free transition across Windsor and beyond.
+            Moving is stressful, but it doesn't have to be. Let our expert team handle the heavy lifting while you enjoy a seamless, worry-free transition. We are committed to providing honest, reliable service—because your peace of mind is our priority.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">

@@ -24,8 +24,13 @@ export default function Footer() {
             </p>
             <div className="flex gap-4">
               <a href="#" className="text-white/40 hover:text-white transition-colors"><Facebook size={20} /></a>
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Twitter size={20} /></a>
-              <a href="#" className="text-white/40 hover:text-white transition-colors"><Instagram size={20} /></a>
+              <a href="https://maps.app.goo.gl/h6U3V5ZgovVwWPwE9" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-map-pin">
+                  <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                  <circle cx="12" cy="10" r="3"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/rent_a_hand_/" target="_blank" rel="noopener noreferrer" className="text-white/40 hover:text-white transition-colors"><Instagram size={20} /></a>
               <a href="#" className="hidden"></a>
             </div>
           </div>

@@ -35,7 +35,7 @@ export default function AboutPage() {
               Redefining the <br /><span className="text-accent italic">Moving Experience.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-              Founded in Windsor, Ontario, Rent-A-Hand was built on a simple premise: relocation shouldn't be stressful. We provide the muscle and dependability that this industry desperately needed.
+              Founded in Windsor, Ontario, Rent-A-Hand was built on a simple premise: moving is stressful, but it doesn't have to be. We handle the heavy lifting while you enjoy a seamless, worry-free move, providing the honest and reliable service this industry desperately needed.
             </p>
           </div>
         </section>
