@@ -41,14 +41,19 @@ export default function Hero() {
             <span className="whitespace-nowrap">Windsor's Reliable Movers</span>
           </div>
           
-          <TextReveal 
-            text="We Handle the Heavy Lifting." 
-            className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-8 uppercase"
-            delay={0.1}
-          />
+          <h1 className="relative w-full flex flex-col items-center">
+            <span className="sr-only">Rent-A-Hand | The Best Movers in Windsor, Ontario. We handle the heavy lifting.</span>
+            <div aria-hidden="true" className="w-full">
+              <TextReveal 
+                text="We Handle the Heavy Lifting." 
+                className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-8 uppercase"
+                delay={0.1}
+              />
+            </div>
+          </h1>
           
           <p className="text-lg md:text-xl text-stone-200 mb-12 max-w-2xl font-light leading-relaxed">
-            Moving is stressful, but it doesn't have to be. Let our expert team handle the heavy lifting while you enjoy a seamless, worry-free transition. We are committed to providing honest, reliable service—because your peace of mind is our priority.
+            Moving is stressful, but it doesn't have to be. Let our expert team handle the heavy lifting while you enjoy a seamless, worry-free transition. We are committed to providing honest, reliable service - because your peace of mind is our priority.
           </p>
           
           <div className="flex flex-col sm:flex-row items-center gap-6 mb-20 w-full sm:w-auto">

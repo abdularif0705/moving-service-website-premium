@@ -51,10 +51,10 @@ export default function AboutPage() {
                     Rent-A-Hand was founded by Usman Shahzad with a singular vision: to bring honest, reliable, and premium relocation services to the hardworking people of Windsor and Essex County.
                   </p>
                   <p>
-                    As a proud member of the Windsor community, Usman saw firsthand how stressful moving could be—often plagued by hidden fees, careless handling, and poor communication. He set out to change that by building a company rooted in absolute transparency and a genuine desire to help his neighbors transition to their new homes seamlessly. 
+                    As a proud member of the Windsor community, Usman saw firsthand how stressful moving could be - often plagued by hidden fees, careless handling, and poor communication. He set out to change that by building a company rooted in absolute transparency and a genuine desire to help his neighbors transition to their new homes seamlessly. 
                   </p>
                   <p>
-                    Today, Rent-A-Hand isn't just about transporting boxes; it's about lifting the burden off families and businesses. Under Usman's leadership, every member of our team treats your cherished possessions—and your peace of mind—as our highest priority.
+                    Today, Rent-A-Hand isn't just about transporting boxes; it's about lifting the burden off families and businesses. Under Usman's leadership, every member of our team treats your cherished possessions - and your peace of mind - as our highest priority.
                   </p>
                 </div>
               </div>

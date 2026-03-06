@@ -7,7 +7,7 @@ import Image from "next/image";
 const services = [
   {
     title: "Local & Long Distance",
-    description: "Whether across the street or across the country, experience a seamless transition with our premium transport service.",
+    description: "Whether across Windsor, Essex County, or across the country, experience a seamless transition with our premium transport service.",
     icon: Truck,
     image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
   },
