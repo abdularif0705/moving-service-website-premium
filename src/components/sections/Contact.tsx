@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 import { Send, Phone, Mail, MapPin, Loader2, Check } from "lucide-react";
 import ReCAPTCHA from "react-google-recaptcha";
 
@@ -9,6 +9,7 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [showSecurityModal, setShowSecurityModal] = useState(false);
   const [formLoadTime, setFormLoadTime] = useState<number>(0);
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
@@ -86,21 +87,24 @@ export default function Contact() {
     return true;
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateForm()) return;
     
+    // Open the security modal instead of submitting directly
+    setShowSecurityModal(true);
+  };
+
+  const submitToAPI = async (token: string) => {
     setIsSubmitting(true);
     
     try {
-      const currentToken = recaptchaToken || recaptchaRef.current?.getValue() || "";
-      
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           ...formData,
-          recaptchaToken: currentToken
+          recaptchaToken: token
         }),
       });
       
@@ -109,14 +113,12 @@ export default function Contact() {
       } else {
         const errorData = await res.json();
         setError(errorData.error || "Something went wrong sending your quote. Please call us directly.");
-        recaptchaRef.current?.reset();
-        setRecaptchaToken(null);
+        setShowSecurityModal(false);
       }
     } catch (error) {
       console.error(error);
       setError("An unexpected network error occurred. Please try again.");
-      recaptchaRef.current?.reset();
-      setRecaptchaToken(null);
+      setShowSecurityModal(false);
     } finally {
       setIsSubmitting(false);
     }
@@ -268,37 +270,6 @@ export default function Contact() {
             </div>
             <h3 className="text-3xl font-serif text-foreground mb-8 text-center sm:text-left">Request a Consultation</h3>
             
-            {isSuccess ? (
-              <div id="successContainer">
-                <div className="success-container">
-                    <div className="success-checkmark">
-                        <Check strokeWidth={3} />
-                    </div>
-                    <h3 className="success-title">Message Sent!</h3>
-                    <p className="success-message">Thank you for reaching out. We'll get back to you within 24 hours.</p>
-
-                    <button 
-                      onClick={() => {
-                        setIsSuccess(false);
-                        setFormLoadTime(Date.now());
-                        setFormData({
-                          firstName: "",
-                          lastName: "",
-                          phone: "",
-                          email: "",
-                          fromZip: "",
-                          toZip: "",
-                          moveSize: "Studio / 1 Bedroom",
-                          moveDate: "",
-                        });
-                      }}
-                      className="mt-8 text-sm font-medium text-accent hover:text-accent-dark transition-colors"
-                    >
-                      Submit another request
-                    </button>
-                </div>
-              </div>
-            ) : (
             <form className="space-y-6" onSubmit={handleSubmit}>
               
               {/* Error Message Display */}
@@ -440,19 +411,6 @@ export default function Contact() {
                 </div>
               </div>
 
-              {/* Google reCAPTCHA v2 */}
-              <div className="col-12 w-full flex justify-center sm:justify-start">
-                <ReCAPTCHA
-                  ref={recaptchaRef}
-                  sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LcnfYESAAAAAP3zm0IOciOHpzatdWE6sDbK4A-e"}
-                  onChange={(token) => {
-                    setRecaptchaToken(token);
-                    if (token) setError(null);
-                  }}
-                  onExpired={() => setRecaptchaToken(null)}
-                />
-              </div>
-
               <button
                 type="submit"
                 disabled={isSubmitting}
@@ -465,11 +423,96 @@ export default function Contact() {
                 )}
               </button>
             </form>
-            )}
           </motion.div>
 
         </div>
       </div>
+
+      {/* Security/reCAPTCHA & Success Modal Overlay */}
+      <AnimatePresence>
+        {showSecurityModal && (
+          <div className="fixed inset-0 z-[100] flex items-center justify-center p-4">
+             {/* Backdrop */}
+             <motion.div 
+               initial={{opacity: 0}} 
+               animate={{opacity: 1}} 
+               exit={{opacity: 0}} 
+               className="absolute inset-0 bg-slate-900/60 backdrop-blur-md" 
+               onClick={() => {
+                 if (!isSubmitting && !isSuccess) setShowSecurityModal(false);
+               }} 
+             />
+             
+             {/* Modal Content */}
+             <motion.div 
+               initial={{opacity: 0, scale: 0.95, y: 20}} 
+               animate={{opacity: 1, scale: 1, y: 0}} 
+               exit={{opacity: 0, scale: 0.95, y: 20}} 
+               className="relative bg-white dark:bg-slate-800 rounded-3xl p-8 shadow-2xl max-w-md w-full text-center border border-white/10"
+             >
+               {!isSuccess && !isSubmitting && (
+                 <>
+                   <h3 className="text-2xl font-bold mb-2 text-foreground">One Last Step</h3>
+                   <p className="text-foreground/70 mb-8">Please confirm you are human to send your request.</p>
+                   <div className="flex justify-center mb-8 overflow-hidden rounded-xl">
+                      <ReCAPTCHA
+                        ref={recaptchaRef}
+                        sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || "6LdEgYEsAAAAAE3RNvvGJksJ1RoRw920QXUIUODQ"}
+                        onChange={(token) => {
+                          if (token) submitToAPI(token);
+                        }}
+                      />
+                   </div>
+                   <button 
+                     onClick={() => setShowSecurityModal(false)} 
+                     className="text-foreground/60 hover:text-foreground font-medium pb-1 border-b border-transparent hover:border-foreground/30 transition-all"
+                   >
+                     Cancel
+                   </button>
+                 </>
+               )}
+
+               {isSubmitting && (
+                 <div className="py-12 flex flex-col items-center">
+                   <Loader2 size={48} className="animate-spin text-accent mb-6" />
+                   <p className="font-medium text-foreground text-lg">Sending your request...</p>
+                 </div>
+               )}
+
+               {isSuccess && (
+                  <div className="py-6">
+                    <div className="success-checkmark mx-auto">
+                       <Check strokeWidth={3} />
+                    </div>
+                    <h3 className="success-title">Message Sent!</h3>
+                    <p className="success-message">Thank you for reaching out.<br />We'll get back to you within 24 hours.</p>
+                    <button 
+                      onClick={() => {
+                        setShowSecurityModal(false);
+                        setIsSuccess(false);
+                        setFormLoadTime(Date.now());
+                        setFormData({
+                          firstName: "",
+                          lastName: "",
+                          phone: "",
+                          email: "",
+                          fromZip: "",
+                          toZip: "",
+                          moveSize: "Studio / 1 Bedroom",
+                          moveDate: "",
+                        });
+                      }}
+                      className="mt-6 bg-accent hover:bg-accent-light text-primary font-bold tracking-wide py-3 px-10 rounded-full shadow-lg hover:shadow-accent/20 transition-all active:scale-[0.98]"
+                    >
+                      Done
+                    </button>
+                  </div>
+               )}
+             </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
     </section>
   );
 }
