@@ -12,7 +12,7 @@ const stats = [
 export default function TrustBadges() {
   return (
     <div className="bg-primary-dark py-12 border-y border-white/10 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 mix-blend-overlay"></div>
+      <div className="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-[0.03]"></div>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <dl className="grid grid-cols-2 gap-x-8 gap-y-16 text-center lg:grid-cols-4">
           {stats.map((stat, index) => (

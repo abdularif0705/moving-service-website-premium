@@ -292,7 +292,7 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, firstName: e.target.value })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300"
                     placeholder="John"
                   />
                 </div>
@@ -306,7 +306,7 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, lastName: e.target.value })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300"
                     placeholder="Doe"
                   />
                 </div>
@@ -323,7 +323,7 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, phone: e.target.value })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300"
                     placeholder="(519) 555-0123"
                   />
                 </div>
@@ -337,7 +337,7 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, email: e.target.value })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300"
                     placeholder="john@example.com"
                   />
                 </div>
@@ -355,7 +355,7 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, fromZip: formatPostalCode(e.target.value) })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all uppercase"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300 uppercase"
                     placeholder="N8X 1A1"
                   />
                 </div>
@@ -370,14 +370,14 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, toZip: formatPostalCode(e.target.value) })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all uppercase"
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300 uppercase"
                     placeholder="M5V 2H1"
                   />
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6 w-full max-w-full overflow-hidden">
-                <div className="w-full max-w-full overflow-hidden">
+              <div className="grid sm:grid-cols-2 gap-6 w-full max-w-full">
+                <div className="w-full max-w-full">
                   <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Target Move Date</label>
                   <input
                     type="date"
@@ -387,16 +387,16 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, moveDate: e.target.value })
                     }}
-                    className="flex w-full min-w-0 px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all cursor-pointer"
+                    className="flex w-full min-w-0 px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300 cursor-pointer"
                     style={{ WebkitAppearance: 'none', width: '100%' }}
                   />
                 </div>
-                <div className="w-full max-w-full overflow-hidden">
+                <div className="w-full max-w-full">
                   <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Move Size</label>
                   <select 
                     value={formData.moveSize}
                     onChange={(e) => setFormData({ ...formData, moveSize: e.target.value })}
-                    className="flex w-full min-w-0 px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer"
+                    className="flex w-full min-w-0 px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none hover:border-accent/50 focus:ring-0 focus:border-accent focus:shadow-[0_0_15px_rgba(239,161,1,0.2)] transition-all duration-300 appearance-none cursor-pointer"
                     style={{ width: '100%' }}
                   >
                     <option>Studio / 1 Bedroom</option>

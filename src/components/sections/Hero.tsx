@@ -15,7 +15,7 @@ export default function Hero() {
         }}
       />
       {/* Overlay to ensure text readability */}
-      <div className="absolute inset-0 z-0 bg-primary/70 mix-blend-multiply" />
+      <div className="absolute inset-0 z-0 bg-primary/80" />
       <div className="absolute inset-0 z-0 bg-gradient-to-b from-primary/50 via-primary/30 to-background/90" />
 
       <div className="max-w-7xl mx-auto px-6 md:px-8 relative z-10 w-full pt-32 pb-20 flex flex-col items-center text-center">
