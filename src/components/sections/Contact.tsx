@@ -7,6 +7,7 @@ import { Send, Phone, Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react";
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -18,8 +19,58 @@ export default function Contact() {
     moveDate: "",
   });
 
+  // Automatically formats postal codes like 'n8x1a1' into 'N8X 1A1'
+  const formatPostalCode = (value: string) => {
+    // Remove all non-alphanumeric characters, convert to upper
+    const cleaned = value.replace(/[^a-zA-Z0-9]/g, '').toUpperCase();
+    if (cleaned.length > 3) {
+      return `${cleaned.slice(0, 3)} ${cleaned.slice(3, 6)}`;
+    }
+    return cleaned;
+  };
+
+  const validateForm = () => {
+    const newErrors = [];
+
+    // Basic email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      newErrors.push("Please enter a valid email address.");
+    }
+
+    // Phone validation (strip non-digits and check if at least 10)
+    const phoneDigits = formData.phone.replace(/\D/g, '');
+    if (phoneDigits.length < 10) {
+      newErrors.push("Please enter a valid 10-digit phone number.");
+    }
+
+    // Canadian Postal Code validation (A1A 1A1)
+    const postalRegex = /^[A-Z]\d[A-Z]\s?\d[A-Z]\d$/i;
+    // Allow standard inputs but validate length / pattern
+    if (!postalRegex.test(formData.fromZip.replace(/\s/g, ''))) {
+      if (formData.fromZip.length < 5) newErrors.push("'Moving From' must be a valid zip or postal code.");
+    }
+    if (!postalRegex.test(formData.toZip.replace(/\s/g, ''))) {
+      if (formData.toZip.length < 5) newErrors.push("'Moving To' must be a valid zip or postal code.");
+    }
+
+    if (!formData.moveDate) {
+      newErrors.push("Please select a target move date.");
+    }
+
+    if (newErrors.length > 0) {
+      setError(newErrors.join('\n'));
+      return false;
+    }
+    
+    setError(null);
+    return true;
+  };
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (!validateForm()) return;
+    
     setIsSubmitting(true);
     
     try {
@@ -31,9 +82,13 @@ export default function Contact() {
       
       if (res.ok) {
         setIsSuccess(true);
+      } else {
+        const errorData = await res.json();
+        setError(errorData.error || "Something went wrong sending your quote. Please call us directly.");
       }
     } catch (error) {
       console.error(error);
+      setError("An unexpected network error occurred. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
@@ -122,6 +177,18 @@ export default function Contact() {
               </motion.div>
             ) : (
             <form className="space-y-6" onSubmit={handleSubmit}>
+              
+              {/* Error Message Display */}
+              {error && (
+                <motion.div 
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 p-4 rounded-xl text-sm font-medium border border-red-200 dark:border-red-800/50 flex items-start gap-3"
+                >
+                  <div className="mt-0.5 whitespace-pre-line">{error}</div>
+                </motion.div>
+              )}
+
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">First Name</label>
@@ -129,7 +196,10 @@ export default function Contact() {
                     type="text"
                     required
                     value={formData.firstName}
-                    onChange={(e) => setFormData({ ...formData, firstName: e.target.value })}
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, firstName: e.target.value })
+                    }}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="John"
                   />
@@ -140,7 +210,10 @@ export default function Contact() {
                     type="text"
                     required
                     value={formData.lastName}
-                    onChange={(e) => setFormData({ ...formData, lastName: e.target.value })}
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, lastName: e.target.value })
+                    }}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="Doe"
                   />
@@ -154,7 +227,10 @@ export default function Contact() {
                     type="tel"
                     required
                     value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, phone: e.target.value })
+                    }}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="(519) 555-0123"
                   />
@@ -165,7 +241,10 @@ export default function Contact() {
                     type="email"
                     required
                     value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, email: e.target.value })
+                    }}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
                     placeholder="john@example.com"
                   />
@@ -178,9 +257,13 @@ export default function Contact() {
                   <input
                     type="text"
                     required
+                    maxLength={7}
                     value={formData.fromZip}
-                    onChange={(e) => setFormData({ ...formData, fromZip: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, fromZip: formatPostalCode(e.target.value) })
+                    }}
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all uppercase"
                     placeholder="N8X 1A1"
                   />
                 </div>
@@ -189,9 +272,13 @@ export default function Contact() {
                   <input
                     type="text"
                     required
+                    maxLength={7}
                     value={formData.toZip}
-                    onChange={(e) => setFormData({ ...formData, toZip: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all"
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, toZip: formatPostalCode(e.target.value) })
+                    }}
+                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all uppercase"
                     placeholder="M5V 2H1"
                   />
                 </div>
@@ -202,8 +289,12 @@ export default function Contact() {
                   <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Target Move Date</label>
                   <input
                     type="date"
+                    required
                     value={formData.moveDate}
-                    onChange={(e) => setFormData({ ...formData, moveDate: e.target.value })}
+                    onChange={(e) => {
+                      setError(null);
+                      setFormData({ ...formData, moveDate: e.target.value })
+                    }}
                     className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all cursor-pointer"
                   />
                 </div>

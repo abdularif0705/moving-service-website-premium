@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Truck, Box, Wrench, Dumbbell, Trash2, Building2 } from "lucide-react";
+import { Truck, Box, Wrench, Dumbbell, Trash2, Building2, Sparkles, Hammer, ArrowRight } from "lucide-react";
 import Image from "next/image";
 
 const services = [
@@ -40,6 +40,18 @@ const services = [
     description: "Minimize operational downtime with our highly coordinated, after-hours office moving and setup services.",
     icon: Building2,
     image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Expert Cleaning",
+    description: "Deep cleaning, office, move-in/out, and carpet & upholstery cleaning. 10% off for first-time customers!",
+    icon: Sparkles,
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80",
+  },
+  {
+    title: "Rent-A-Hand",
+    description: "Need help with the little things? We offer side job services including basic painting, building a fan, and minor handyman work.",
+    icon: Hammer,
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=80",
   },
 ];
 
@@ -86,7 +98,7 @@ export default function Services() {
             transition={{ delay: 0.1, duration: 0.7 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight"
           >
-            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic">Moving Services</span>
+            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">Moving Services</span>
           </motion.h3>
         </div>
 
@@ -95,13 +107,16 @@ export default function Services() {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
-          className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8"
+          className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8"
         >
           {services.map((service, index) => (
             <motion.div
               key={service.title}
               variants={itemVariants}
-              className="relative overflow-hidden rounded-[2rem] h-[420px] group cursor-pointer border border-foreground/5 shadow-lg bg-black box-border"
+              className={`relative overflow-hidden rounded-[2rem] h-[420px] group cursor-pointer border border-foreground/5 shadow-lg bg-black box-border col-span-1 lg:col-span-2 ${
+                index === 6 ? "lg:col-start-2" : ""
+              }`}
+              onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
@@ -109,24 +124,34 @@ export default function Services() {
                   src={service.image} 
                   alt={service.title}
                   fill
-                  className="object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-[1.15]"
+                  className="object-cover transition-all duration-1000 ease-out group-hover:scale-[1.03]"
                 />
               </div>
               
               {/* Gradient overlays */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/50 to-transparent transition-opacity duration-500 z-10" />
-              <div className="absolute inset-0 bg-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-700 mix-blend-overlay z-10" />
+              <div className="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-10" />
+              <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 mix-blend-overlay z-10" />
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-20">
-                <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:-translate-y-2 group-hover:bg-accent group-hover:text-black transition-all duration-500 border border-white/20 group-hover:border-transparent group-hover:shadow-[0_0_30px_rgba(202,160,82,0.6)]">
+                <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-black transition-all duration-500 border border-white/20 group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(202,160,82,0.4)]">
                   <service.icon size={26} className="transition-colors duration-500" />
                 </div>
-                <div className="transform transition-transform duration-500 group-hover:-translate-y-2">
-                  <h4 className="text-2xl font-serif font-medium mb-3">{service.title}</h4>
-                  <p className="text-white/70 leading-relaxed font-light text-sm md:text-base opacity-90 group-hover:text-white transition-all duration-500">
-                    {service.description}
-                  </p>
+                <h4 className="text-2xl font-serif font-medium mb-3">{service.title}</h4>
+                <p className="text-white/70 leading-relaxed font-light text-sm md:text-base opacity-90 group-hover:text-white transition-all duration-500">
+                  {service.description}
+                </p>
+                
+                {/* Expandable Learn More Block */}
+                <div className="max-h-0 mt-0 overflow-hidden opacity-0 group-hover:max-h-[60px] group-hover:opacity-100 transition-all duration-500 ease-in-out group-hover:mt-4">
+                  <div className="flex items-center justify-between mb-2 text-accent">
+                    <span className="font-semibold text-xs tracking-[0.2em] uppercase">Learn More</span>
+                    <ArrowRight size={16} className="transform -translate-x-4 group-hover:translate-x-0 transition-transform duration-500 ease-out delay-150" />
+                  </div>
+                  <div className="w-full h-[1.5px] bg-white/20 relative overflow-hidden">
+                    <div className="absolute inset-y-0 left-0 bg-accent w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-150" />
+                  </div>
                 </div>
               </div>
             </motion.div>
