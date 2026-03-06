@@ -134,23 +134,25 @@ export default function Services() {
               <div className="absolute inset-0 bg-accent/10 opacity-0 group-hover:opacity-100 transition-opacity duration-700 mix-blend-overlay z-10" />
 
               {/* Content */}
-              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-20">
-                <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-accent group-hover:text-black transition-all duration-500 border border-white/20 group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(202,160,82,0.4)]">
-                  <service.icon size={26} className="transition-colors duration-500" />
+              <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-20 overflow-hidden">
+                <div className="transform transition-transform duration-500 ease-out group-hover:-translate-y-14">
+                  <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 border border-white/20 group-hover:bg-accent group-hover:text-black group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(202,160,82,0.4)]">
+                    <service.icon size={26} className="transition-colors duration-500" />
+                  </div>
+                  <h4 className="text-2xl font-serif font-medium mb-3">{service.title}</h4>
+                  <p className="text-white/70 leading-relaxed font-light text-sm md:text-base opacity-90 transition-all duration-500 group-hover:text-white">
+                    {service.description}
+                  </p>
                 </div>
-                <h4 className="text-2xl font-serif font-medium mb-3">{service.title}</h4>
-                <p className="text-white/70 leading-relaxed font-light text-sm md:text-base opacity-90 group-hover:text-white transition-all duration-500">
-                  {service.description}
-                </p>
                 
-                {/* Expandable Learn More Block */}
-                <div className="max-h-0 mt-0 overflow-hidden opacity-0 group-hover:max-h-[60px] group-hover:opacity-100 transition-all duration-500 ease-in-out group-hover:mt-4">
+                {/* Learn More Block (Absolutely positioned to prevent layout push & clipping) */}
+                <div className="absolute bottom-8 left-8 right-8 pointer-events-none opacity-0 transform translate-y-4 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-500">
                   <div className="flex items-center justify-between mb-2 text-accent">
                     <span className="font-semibold text-xs tracking-[0.2em] uppercase">Learn More</span>
-                    <ArrowRight size={16} className="transform -translate-x-4 group-hover:translate-x-0 transition-transform duration-500 ease-out delay-150" />
+                    <ArrowRight size={16} className="transform -translate-x-4 transition-transform duration-500 ease-out group-hover:translate-x-0 delay-100" />
                   </div>
                   <div className="w-full h-[1.5px] bg-white/20 relative overflow-hidden">
-                    <div className="absolute inset-y-0 left-0 bg-accent w-full transform -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-out delay-150" />
+                    <div className="absolute inset-y-0 left-0 bg-accent w-full transform -translate-x-full transition-transform duration-700 ease-out group-hover:translate-x-0 delay-150" />
                   </div>
                 </div>
               </div>
