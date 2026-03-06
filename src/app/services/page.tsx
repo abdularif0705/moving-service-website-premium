@@ -14,7 +14,7 @@ const detailedServices = [
     subtitle: "Flawless Transport Across the Street or Across the Country",
     description: "Experience a seamless, stress-free transition with our premium transport service. We handle the intense logistics, route planning, and heavy lifting so you don't have to.",
     icon: Truck,
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
+    image: "/images/gallery/home.jpg",
     features: [
       "Rigorous route planning to minimize transit time",
       "Air-ride suspended trucks for maximum cargo safety",
