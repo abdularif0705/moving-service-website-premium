@@ -3,8 +3,8 @@ import Footer from "@/components/layout/Footer";
 import { ArrowRight, Briefcase, GraduationCap, HeartHandshake } from "lucide-react";
 
 export const metadata = {
-  title: "Careers | SwiftMove",
-  description: "Join the SwiftMove team. We are hiring professional movers and logistics experts in Windsor, ON.",
+  title: "Careers | Rent-A-Hand",
+  description: "Join the Rent-A-Hand team. We are hiring professional movers and logistics experts in Windsor, ON.",
 };
 
 const openRoles = [
@@ -89,7 +89,7 @@ export default function CareersPage() {
               ))}
             </div>
             <div className="text-center mt-12 text-foreground/60">
-              Don't see a fit? Send your resume to <a href="mailto:careers@swiftmove.com" className="text-accent font-medium hover:underline">careers@swiftmove.com</a>
+              Don't see a fit? Send your resume to <a href="mailto:rentahandwindsor@gmail.com" className="text-accent font-medium hover:underline">rentahandwindsor@gmail.com</a>
             </div>
           </div>
         </div>

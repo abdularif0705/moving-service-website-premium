@@ -42,7 +42,7 @@ export default function Comparison() {
             viewport={{ once: true }}
             className="text-accent font-serif tracking-[0.15em] uppercase text-xs font-semibold mb-4"
           >
-            The SwiftMove Difference
+            The Rent-A-Hand Difference
           </motion.h2>
           <motion.h3
             initial={{ opacity: 0, y: 20 }}
@@ -67,7 +67,7 @@ export default function Comparison() {
               <span className="font-serif font-medium tracking-wide text-white/50 uppercase text-[10px] sm:text-sm">Feature</span>
             </div>
             <div className="col-span-1 sm:col-span-4 flex items-center justify-center sm:justify-start px-1 sm:px-0">
-              <span className="font-serif text-[13px] sm:text-2xl text-accent text-center sm:text-left leading-tight">SwiftMove</span>
+              <span className="font-serif text-[13px] sm:text-2xl text-accent text-center sm:text-left leading-tight">Rent-A-Hand</span>
             </div>
             <div className="col-span-1 sm:col-span-4 flex items-center justify-center sm:justify-start px-1 sm:px-0">
               <span className="font-serif text-[13px] sm:text-xl text-white/60 text-center sm:text-left leading-tight">Other Movers</span>

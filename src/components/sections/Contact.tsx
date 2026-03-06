@@ -64,14 +64,14 @@ export default function Contact() {
                 <div className="bg-white/10 p-3 rounded-full"><Phone className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Call Us 24/7</p>
-                  <p className="font-serif text-xl tracking-wide text-accent">1-800-555-MOVE</p>
+                  <p className="font-serif text-xl tracking-wide text-accent">519-980-9577</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">
                 <div className="bg-white/10 p-3 rounded-full"><Mail className="text-white" /></div>
                 <div>
                   <p className="text-sm text-white/50">Email Support</p>
-                  <p className="font-bold text-lg">quotes@swiftmove.com</p>
+                  <p className="font-bold text-lg">rentahandwindsor@gmail.com</p>
                 </div>
               </div>
               <div className="flex items-center gap-4 text-white/90">

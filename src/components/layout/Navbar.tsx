@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Truck } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function Navbar({ transparentTextColor = "white" }: { transparentTextColor?: "white" | "dark" }) {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -45,18 +46,16 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
               onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
               className="flex items-center gap-3 cursor-pointer group"
             >
-              <div className={`p-2 rounded-xl border transition-colors duration-300 ${
-                isScrolled 
-                  ? 'bg-primary text-accent-light border-accent/20 group-hover:bg-accent group-hover:text-primary' 
-                  : transparentTextColor === 'dark'
-                    ? 'bg-primary/5 text-accent border-accent/20 group-hover:bg-primary/10 dark:text-accent dark:border-white/20'
-                    : 'bg-white/10 text-accent border-white/20 group-hover:bg-white/20'
-              }`}>
-                <Truck size={24} />
+              <div className="bg-white/95 dark:bg-white rounded-xl px-3 py-1.5 shadow-sm border border-stone-200/50 dark:border-white/10 transition-transform duration-300 group-hover:scale-[1.02]">
+                <Image 
+                  src="/logo.png" 
+                  alt="Rent-A-Hand Logo" 
+                  width={160} 
+                  height={50} 
+                  className="w-auto h-10 sm:h-12 object-contain"
+                  priority
+                />
               </div>
-              <span className="text-2xl font-bold tracking-tight font-serif">
-                SwiftMove
-              </span>
             </Link>
 
             <nav className="hidden md:flex gap-8 items-center">

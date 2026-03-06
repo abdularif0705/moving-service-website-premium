@@ -2,8 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Terms of Service | SwiftMove",
-  description: "Terms and conditions for SwiftMove relocation services in Windsor, Ontario.",
+  title: "Terms of Service | Rent-A-Hand",
+  description: "Terms and conditions for Rent-A-Hand relocation services in Windsor, Ontario.",
 };
 
 export default function TermsPage() {
@@ -18,7 +18,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-serif text-foreground mb-4">1. Agreement to Terms</h2>
               <p>
-                By accessing or using SwiftMove's services, website, or booking a move, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
+                By accessing or using Rent-A-Hand's services, website, or booking a move, you agree to be bound by these Terms of Service. If you disagree with any part of these terms, you may not access our services.
               </p>
             </section>
 
@@ -36,7 +36,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-serif text-foreground mb-4">3. Liability & Insurance</h2>
               <p className="mb-4">
-                SwiftMove operates under standard basic liability ($0.60 per pound per article) unless Full Value Protection is explicitly purchased and documented prior to the move.
+                Rent-A-Hand operates under standard basic liability ($0.60 per pound per article) unless Full Value Protection is explicitly purchased and documented prior to the move.
               </p>
               <p>
                 We are not liable for damage to inherently fragile items (e.g., pressed wood furniture, unboxed electronics, or items packed by the customer) unless negligence on our part is unequivocally proven.
@@ -52,7 +52,7 @@ export default function TermsPage() {
 
             <div className="pt-8 mt-12 border-t border-foreground/10 dark:border-white/10 text-sm opacity-70">
               Last Updated: March 2026<br />
-              For legal inquiries: legal@swiftmove.com
+              For legal inquiries: rentahandwindsor@gmail.com
             </div>
           </div>
         </div>

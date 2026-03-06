@@ -2,8 +2,8 @@ import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
 
 export const metadata = {
-  title: "Privacy Policy | SwiftMove",
-  description: "How SwiftMove protects your private data and moving information.",
+  title: "Privacy Policy | Rent-A-Hand",
+  description: "How Rent-A-Hand protects your private data and moving information.",
 };
 
 export default function PrivacyPage() {
@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           <div className="space-y-8 text-foreground/80 dark:text-stone-300 leading-relaxed">
             <section>
               <p className="mb-4">
-                At SwiftMove, we take your privacy seriously. This Privacy Policy outlines the types of personal information we collect, how it is used, and the steps we take to protect your data during your relocation process.
+                At Rent-A-Hand, we take your privacy seriously. This Privacy Policy outlines the types of personal information we collect, how it is used, and the steps we take to protect your data during your relocation process.
               </p>
             </section>
 

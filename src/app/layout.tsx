@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const playfair = Playfair_Display({ subsets: ["latin"], variable: "--font-playfair" });
 
 export const metadata: Metadata = {
-  title: "Premium Windsor Moving Services | SwiftMove",
+  title: "Premium Windsor Moving Services | Rent-A-Hand",
   description: "Experience a seamless, stress-free move in Windsor, Ontario and surrounding regions. Get a free quote today.",
 };
 

@@ -13,7 +13,7 @@ const reviews = [
   },
   {
     id: 2,
-    content: "I've moved 5 times in the last 10 years, and SwiftMove was by far the best company I've ever used. The crew was polite, efficient, and very professional.",
+    content: "I've moved 5 times in the last 10 years, and Rent-A-Hand was by far the best company I've ever used. The crew was polite, efficient, and very professional.",
     author: "Michael Chen",
     role: "Local Move",
     rating: 5,

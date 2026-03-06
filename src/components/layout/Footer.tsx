@@ -1,4 +1,5 @@
-import { Truck, Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,13 +8,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           
           <div className="space-y-6">
-            <div className="flex items-center gap-3 text-white">
-              <div className="bg-white/5 text-accent p-2 rounded-xl border border-accent/20">
-                <Truck size={24} />
+            <div className="flex items-center gap-3 text-white mb-2">
+              <div className="bg-white rounded-xl px-3 py-1.5 shadow-sm border border-white/10">
+                <Image 
+                  src="/logo.png" 
+                  alt="Rent-A-Hand Logo" 
+                  width={160} 
+                  height={50} 
+                  className="w-auto h-10 object-contain"
+                />
               </div>
-              <span className="text-2xl font-bold tracking-tight font-serif">
-                SwiftMove
-              </span>
             </div>
             <p className="text-white/60 text-sm leading-relaxed max-w-xs">
               Premium moving services designed to eliminate the stress of residential and commercial relocation. Fully licensed, bonded, and insured.
@@ -63,7 +67,7 @@ export default function Footer() {
 
         <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-4 text-white/40 text-sm">
           <div className="flex flex-col gap-2 relative z-20 text-center md:text-left">
-            <p>&copy; {new Date().getFullYear()} SwiftMove Relocation. All rights reserved.</p>
+            <p>&copy; {new Date().getFullYear()} Rent-A-Hand Windsor. All rights reserved.</p>
             <p className="text-white/30 text-xs">
               Designed & Developed by <a href="https://abdularif.me" target="_blank" rel="noopener noreferrer" className="text-accent hover:text-white transition-colors underline underline-offset-2">Abdul Rehman Arif</a>
             </p>

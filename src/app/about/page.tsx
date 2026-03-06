@@ -3,8 +3,8 @@ import Footer from "@/components/layout/Footer";
 import { Copyleft as Box, Truck, ShieldCheck, Users } from "lucide-react";
 
 export const metadata = {
-  title: "About Us | SwiftMove",
-  description: "Learn about SwiftMove, Windsor's premium white-glove relocation experts.",
+  title: "About Us | Rent-A-Hand",
+  description: "Learn about Rent-A-Hand, Windsor's premium white-glove relocation experts.",
 };
 
 const values = [
@@ -35,7 +35,7 @@ export default function AboutPage() {
               Redefining the <br /><span className="text-accent italic">Moving Experience.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
-              Founded in Windsor, Ontario, SwiftMove was built on a simple premise: relocation shouldn't be stressful. We brought white-glove concierge standards to an industry that desperately needed them.
+              Founded in Windsor, Ontario, Rent-A-Hand was built on a simple premise: relocation shouldn't be stressful. We brought white-glove concierge standards to an industry that desperately needed them.
             </p>
           </div>
         </section>
@@ -48,13 +48,13 @@ export default function AboutPage() {
                 <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">Built on Integrity. Driven by <span className="text-accent italic">Community.</span></h2>
                 <div className="space-y-6 text-foreground/70 leading-relaxed text-lg">
                   <p>
-                    SwiftMove was founded by Usman Shahzad with a singular vision: to bring honest, reliable, and premium relocation services to the hardworking people of Windsor and Essex County.
+                    Rent-A-Hand was founded by Usman Shahzad with a singular vision: to bring honest, reliable, and premium relocation services to the hardworking people of Windsor and Essex County.
                   </p>
                   <p>
                     As a proud member of the Windsor community, Usman saw firsthand how stressful moving could be—often plagued by hidden fees, careless handling, and poor communication. He set out to change that by building a company rooted in absolute transparency and a genuine desire to help his neighbors transition to their new homes seamlessly. 
                   </p>
                   <p>
-                    Today, SwiftMove isn't just about transporting boxes; it's about lifting the burden off families and businesses. Under Usman's leadership, every member of our team treats your cherished possessions—and your peace of mind—as our highest priority.
+                    Today, Rent-A-Hand isn't just about transporting boxes; it's about lifting the burden off families and businesses. Under Usman's leadership, every member of our team treats your cherished possessions—and your peace of mind—as our highest priority.
                   </p>
                 </div>
               </div>
