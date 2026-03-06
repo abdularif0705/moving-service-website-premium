@@ -68,7 +68,7 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
                 href="/#quote"
                 className="bg-accent text-primary hover:bg-accent-light px-7 py-2.5 font-medium transition-colors duration-300 tracking-wide rounded-full shadow-md"
               >
-                Get a Quote
+                Get a Free Quote
               </Link>
             </nav>
 
@@ -121,9 +121,9 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
                 <Link
                   href="/#quote"
                   onClick={() => setMobileMenuOpen(false)}
-                  className="block w-full bg-accent hover:bg-accent-light text-primary py-4 font-semibold tracking-wide text-center transition-colors duration-300 rounded-xl shadow-md text-lg"
+                  className="block w-full bg-accent hover:bg-accent-light text-primary py-4 font-semibold tracking-wide text-center transition-colors duration-300 rounded-xl shadow-md text-lg cursor-pointer"
                 >
-                  Get a Quote
+                  Get a Free Quote
                 </Link>
               </div>
             </motion.div>

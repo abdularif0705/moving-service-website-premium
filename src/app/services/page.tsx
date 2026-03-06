@@ -14,7 +14,7 @@ const detailedServices = [
     subtitle: "Flawless Transport Across the Street or Across the Country",
     description: "Experience a seamless, stress-free transition with our premium transport service. We handle the intense logistics, route planning, and heavy lifting so you don't have to.",
     icon: Truck,
-    image: "/images/gallery/picture1_branded.png",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
     features: [
       "Rigorous route planning to minimize transit time",
       "Air-ride suspended trucks for maximum cargo safety",
@@ -28,7 +28,7 @@ const detailedServices = [
     subtitle: "Minimizing Operational Downtime",
     description: "Relocating a business requires extreme precision. We coordinate highly efficient, after-hours office moves to ensure your team is back to work without skipping a beat.",
     icon: Building2,
-    image: "/images/services/commercial.jpg",
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80",
     features: [
       "After-hours and weekend availability",
       "IT equipment and server rack handling",
@@ -42,7 +42,7 @@ const detailedServices = [
     subtitle: "White-Glove Care for Your Most Valuable Pieces",
     description: "Precision care for items that require specialized knowledge. We expertly handle heavy, awkward, delicate, or extremely high-value single items.",
     icon: Box,
-    image: "/images/services/single_item.jpg",
+    image: "https://images.unsplash.com/photo-1594026112284-02bb6f3352fe?auto=format&fit=crop&w=1000&q=80",
     features: [
       "Grand piano and upright piano moving",
       "Safe and heavy machinery transport",
@@ -56,12 +56,68 @@ const detailedServices = [
     subtitle: "Complex Mechanical Setups Made Easy",
     description: "Don't risk injury or property damage. Our crews handle the heavy lifting, precise mechanical assembly, and calibration of all home and commercial fitness equipment.",
     icon: Dumbbell,
-    image: "/images/services/fitness.jpg",
+    image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?auto=format&fit=crop&w=1000&q=80",
     features: [
       "Treadmill and elliptical transport",
       "Home gym multi-station assembly",
       "Weight rack secure installation",
       "Commercial gym equipment deployment"
+    ],
+    reverse: true
+  },
+  {
+    title: "Furniture Assembly",
+    subtitle: "Stress-Free Setup for Your Home or Office",
+    description: "Relax while our experts quickly and correctly assemble your new furniture. We handle the complex instructions and heavy parts, leaving your space clean and ready to enjoy.",
+    icon: Wrench,
+    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?auto=format&fit=crop&w=1000&q=80",
+    features: [
+      "Quick and correct assembly of new furniture",
+      "IKEA systems and custom bedroom sets",
+      "Office desk and partition setups",
+      "Packaging cleanup and removal"
+    ],
+    reverse: false
+  },
+  {
+    title: "Junk Removal",
+    subtitle: "Reclaim Your Space",
+    description: "We efficiently and responsibly remove unwanted items, debris, and clutter from your property. Whether you're clearing an estate, or decluttering before a move.",
+    icon: Trash2,
+    image: "https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=1000&q=80",
+    features: [
+      "Responsible disposal and recycling",
+      "Appliance and heavy item removal",
+      "Construction and yard debris clearing",
+      "Donation of usable items to local charities"
+    ],
+    reverse: true
+  },
+  {
+    title: "Expert Cleaning",
+    subtitle: "Immaculate Spaces from Top to Bottom",
+    description: "Leave the heavy scrubbing to us. Whether it's move-in/move-out cleans, regular house cleanings, or revitalizing carpets, our expert team ensures your space is pristine.",
+    icon: Sparkles,
+    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1000&q=80",
+    features: [
+      "Comprehensive move-in and move-out deep cleaning",
+      "Carpet and upholstery steam cleaning",
+      "Post-construction and renovation dust removal",
+      "10% off for first-time customers!"
+    ],
+    reverse: false
+  },
+  {
+    title: "Rent-A-Hand Services",
+    subtitle: "Professional Help for the Little Things",
+    description: "Need an extra pair of hands? We offer premium side-job services for all those minor tasks around your home or office that you simply don't have the time or tools for.",
+    icon: Hammer,
+    image: "https://images.unsplash.com/photo-1504148455328-c376907d081c?auto=format&fit=crop&w=1000&q=80",
+    features: [
+      "Minor handyman repairs and touch-ups",
+      "Basic painting and wall patching",
+      "Ceiling fan and light fixture installations",
+      "TV mounting and picture hanging"
     ],
     reverse: true
   },
@@ -162,36 +218,7 @@ export default function ServicesPage() {
           ))}
         </section>
 
-        {/* Minor Services Grid */}
-        <section className="py-24 bg-white dark:bg-slate-950 border-t border-foreground/5 dark:border-white/5">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16">
-              <h2 className="text-3xl font-serif text-foreground mb-4">Additional Support Services</h2>
-              <p className="text-foreground/70 text-lg max-w-2xl mx-auto">We offer supplementary services to ensure your entire transition is fully accommodated.</p>
-            </div>
-            
-            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="group bg-white dark:bg-white/[0.02] p-8 md:p-10 rounded-[2xl] md:rounded-[2rem] border border-foreground/5 dark:border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-[1.5] group-hover:bg-accent/10"></div>
-                <Wrench className="text-accent mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110" size={32} />
-                <h3 className="text-xl font-serif text-foreground mb-3 relative z-10">General Furniture Assembly</h3>
-                <p className="text-foreground/70 leading-relaxed text-sm relative z-10">Expert teardown and reassembly of complex furniture pieces, including IKEA systems and custom bedroom sets.</p>
-              </div>
-              <div className="group bg-white dark:bg-white/[0.02] p-8 md:p-10 rounded-[2xl] md:rounded-[2rem] border border-foreground/5 dark:border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-[1.5] group-hover:bg-accent/10"></div>
-                <Trash2 className="text-accent mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110" size={32} />
-                <h3 className="text-xl font-serif text-foreground mb-3 relative z-10">Responsible Junk Removal</h3>
-                <p className="text-foreground/70 leading-relaxed text-sm relative z-10">Efficient clearing of unwanted items, debris, and clutter prior to moving, handled in an environmentally responsible manner.</p>
-              </div>
-              <div className="group bg-white dark:bg-white/[0.02] p-8 md:p-10 rounded-[2xl] md:rounded-[2rem] border border-foreground/5 dark:border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
-                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-[1.5] group-hover:bg-accent/10"></div>
-                <Sparkles className="text-accent mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110" size={32} />
-                <h3 className="text-xl font-serif text-foreground mb-3 relative z-10">Post-Move Cleaning</h3>
-                <p className="text-foreground/70 leading-relaxed text-sm relative z-10">Deep cleaning services for your old or new residence, ensuring you leave a spotless space or walk into a pristine home.</p>
-              </div>
-            </div>
-          </div>
-        </section>
+
 
         {/* Bottom CTA */}
         <section className="py-24 bg-primary text-center px-4 relative overflow-hidden">

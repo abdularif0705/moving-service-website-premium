@@ -38,7 +38,8 @@ export const metadata: Metadata = {
 };
 
 import ScrollProgress from "@/components/ui/ScrollProgress";
-import FloatingCTA from "@/components/ui/FloatingCTA";
+
+import Script from "next/script";
 
 export default function RootLayout({
   children,
@@ -49,7 +50,6 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${inter.variable} ${oswald.variable} font-sans antialiased min-h-screen flex flex-col overflow-x-hidden text-primary bg-[#FAFAF9]`}>
         <ScrollProgress />
-        <FloatingCTA />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -78,6 +78,13 @@ export default function RootLayout({
               },
               "priceRange": "$$"
             })
+          }}
+        />
+        <Script
+          id="chatbase-script"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: `(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="8cVeuVwZnNYmd22RptSZz";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();`
           }}
         />
         {children}

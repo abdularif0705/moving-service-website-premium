@@ -6,7 +6,7 @@ const stats = [
   { id: 1, name: "Successful Moves", value: "300+" },
   { id: 2, name: "Customer Rating", value: "4.9/5" },
   { id: 3, name: "Years Experience", value: "5+" },
-  { id: 4, name: "Cities Covered", value: "50+" },
+  { id: 4, name: "Cities Covered", value: "15+" },
 ];
 
 export default function TrustBadges() {

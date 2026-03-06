@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../pressure-washing-site"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "moving-service-website"
+	}
+}

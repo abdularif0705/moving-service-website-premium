@@ -9,7 +9,7 @@ const services = [
     title: "Local & Long Distance",
     description: "Whether across Windsor, Essex County, or across the country, experience a seamless transition with our premium transport service.",
     icon: Truck,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1000&q=80",
+    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=1000&q=80",
   },
   {
     title: "Single Item Moves",
