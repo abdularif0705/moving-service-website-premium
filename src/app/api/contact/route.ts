@@ -8,12 +8,77 @@ const resend = new Resend(process.env.RESEND_API_KEY || 're_placeholder');
 export async function POST(request: Request) {
   try {
     const data = await request.json();
-    const { firstName, lastName, phone, email, fromZip, toZip, moveSize, moveDate } = data;
+    const { firstName, lastName, phone, email, fromZip, toZip, moveSize, moveDate, recaptchaToken } = data;
 
     // Validate required fields
     if (!firstName || !lastName || !email) {
       return NextResponse.json(
         { error: 'First Name, Last Name, and Email are required.' },
+        { status: 400 }
+      );
+    }
+
+    // 2. Validate reCAPTCHA token
+    if (!recaptchaToken) {
+      return NextResponse.json(
+        { error: 'Please complete the reCAPTCHA verification' },
+        { status: 400 }
+      );
+    }
+
+    // 3. Verify reCAPTCHA with Google
+    const recaptchaSecret = process.env.RECAPTCHA_SECRET_KEY;
+    if (!recaptchaSecret) {
+      console.error("❌ RECAPTCHA_SECRET_KEY not configured");
+      return NextResponse.json(
+        { error: 'reCAPTCHA not configured on server' },
+        { status: 500 }
+      );
+    }
+
+    try {
+      const recaptchaResponse = await fetch("https://www.google.com/recaptcha/api/siteverify", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: `secret=${recaptchaSecret}&response=${recaptchaToken}`
+      });
+      
+      const recaptchaResult = await recaptchaResponse.json();
+      
+      if (!recaptchaResult.success) {
+        console.error("❌ reCAPTCHA verification failed:", recaptchaResult);
+        return NextResponse.json(
+          { error: 'reCAPTCHA verification failed. Please try again.' },
+          { status: 400 }
+        );
+      }
+      console.log("✅ reCAPTCHA verified successfully");
+    } catch (err) {
+      console.error("reCAPTCHA fetch error:", err);
+      return NextResponse.json(
+        { error: 'Network error verifying reCAPTCHA' },
+        { status: 500 }
+      );
+    }
+
+    // 4. Spam detection - check for suspicious patterns
+    const concatenatedText = `${firstName} ${lastName}`.toLowerCase();
+    const spamKeywords = ['blockchain', 'bitcoin', 'crypto', 'neural network', 'free money', 'viagra', 'casino'];
+    for (const keyword of spamKeywords) {
+      if (concatenatedText.includes(keyword)) {
+        console.log(`🚫 Spam detected: keyword "${keyword}" found`);
+        return NextResponse.json(
+          { error: 'Your request was flagged as spam.' },
+          { status: 400 }
+        );
+      }
+    }
+
+    // Block URLs in name fields as they are a clear sign of spam
+    if (concatenatedText.includes('http://') || concatenatedText.includes('https://')) {
+      console.log("🚫 Spam detected: URL in name fields");
+      return NextResponse.json(
+        { error: 'Please do not include URLs in the form fields.' },
         { status: 400 }
       );
     }

@@ -1,13 +1,22 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { motion } from "framer-motion";
-import { Send, Phone, Mail, MapPin, Loader2, CheckCircle2 } from "lucide-react";
+import { Send, Phone, Mail, MapPin, Loader2, Check } from "lucide-react";
+import ReCAPTCHA from "react-google-recaptcha";
 
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const [formLoadTime, setFormLoadTime] = useState<number>(0);
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
+  const [recaptchaToken, setRecaptchaToken] = useState<string | null>(null);
+
+  useEffect(() => {
+    setFormLoadTime(Date.now());
+  }, []);
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -58,6 +67,16 @@ export default function Contact() {
       newErrors.push("Please select a target move date.");
     }
 
+    if (!recaptchaToken && !recaptchaRef.current?.getValue()) {
+      newErrors.push("Please complete the reCAPTCHA verification.");
+    }
+
+    // Security check: Timing validation (>3 seconds)
+    const timeSpent = Date.now() - formLoadTime;
+    if (timeSpent < 3000) {
+      newErrors.push("Please take a moment to fill out the form completely.");
+    }
+
     if (newErrors.length > 0) {
       setError(newErrors.join('\n'));
       return false;
@@ -74,10 +93,15 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
+      const currentToken = recaptchaToken || recaptchaRef.current?.getValue() || "";
+      
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          ...formData,
+          recaptchaToken: currentToken
+        }),
       });
       
       if (res.ok) {
@@ -85,10 +109,14 @@ export default function Contact() {
       } else {
         const errorData = await res.json();
         setError(errorData.error || "Something went wrong sending your quote. Please call us directly.");
+        recaptchaRef.current?.reset();
+        setRecaptchaToken(null);
       }
     } catch (error) {
       console.error(error);
       setError("An unexpected network error occurred. Please try again.");
+      recaptchaRef.current?.reset();
+      setRecaptchaToken(null);
     } finally {
       setIsSubmitting(false);
     }
@@ -166,31 +194,110 @@ export default function Contact() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="bg-white dark:bg-slate-800 rounded-3xl p-8 sm:p-10 shadow-2xl relative"
           >
+            <style>
+              {`
+                .success-container {
+                    text-align: center;
+                    padding: 3rem 2rem;
+                    animation: fadeInUp 0.5s ease;
+                }
+                .success-checkmark {
+                    width: 100px;
+                    height: 100px;
+                    margin: 0 auto 1.5rem;
+                    border-radius: 50%;
+                    background: #212529;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    animation: scaleIn 0.5s ease, pulse 2s ease infinite;
+                    box-shadow: 0 10px 40px rgba(33, 37, 41, 0.3);
+                }
+                .success-checkmark svg {
+                    width: 3rem;
+                    height: 3rem;
+                    color: white;
+                    animation: checkDraw 0.5s ease 0.2s both;
+                }
+                .success-title {
+                    font-size: 1.75rem;
+                    font-weight: 700;
+                    color: #212529;
+                    margin-bottom: 0.75rem;
+                }
+                .success-message {
+                    color: #666;
+                    font-size: 1.1rem;
+                    margin-bottom: 1.5rem;
+                }
+                @keyframes fadeInUp {
+                    from { opacity: 0; transform: translateY(20px); }
+                    to { opacity: 1; transform: translateY(0); }
+                }
+                @keyframes scaleIn {
+                    from { transform: scale(0); }
+                    to { transform: scale(1); }
+                }
+                @keyframes checkDraw {
+                    from { opacity: 0; transform: scale(0.5); }
+                    to { opacity: 1; transform: scale(1); }
+                }
+                @keyframes pulse {
+                    0%, 100% { box-shadow: 0 10px 40px rgba(40, 167, 69, 0.3); }
+                    50% { box-shadow: 0 10px 60px rgba(40, 167, 69, 0.5); }
+                }
+
+                .dark .success-checkmark {
+                    background: #f8fafc;
+                    box-shadow: 0 10px 40px rgba(248, 250, 252, 0.2);
+                }
+                .dark .success-checkmark svg {
+                    color: #0f172a;
+                }
+                .dark .success-title {
+                    color: #f8fafc;
+                }
+                .dark .success-message {
+                    color: #94a3b8;
+                }
+              `}
+            </style>
+            
             <div className="absolute -top-5 right-4 sm:-right-6 bg-accent text-primary border border-primary/40 px-6 py-1.5 rounded-full font-bold text-[10px] tracking-[0.25em] uppercase shadow-xl shadow-black/30 transform rotate-3 z-10 hover:rotate-0 hover:-translate-y-1 transition-all duration-300 cursor-default ring-1 ring-white/20 ring-inset">
               Priority Response
             </div>
             <h3 className="text-3xl font-serif text-foreground mb-8 text-center sm:text-left">Request a Consultation</h3>
             
             {isSuccess ? (
-              <motion.div 
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                className="flex flex-col items-center justify-center py-12 text-center"
-              >
-                <div className="w-16 h-16 bg-emerald-100 dark:bg-emerald-900/30 text-emerald-600 rounded-full flex items-center justify-center mb-6">
-                  <CheckCircle2 size={32} />
+              <div id="successContainer">
+                <div className="success-container">
+                    <div className="success-checkmark">
+                        <Check strokeWidth={3} />
+                    </div>
+                    <h3 className="success-title">Message Sent!</h3>
+                    <p className="success-message">Thank you for reaching out. We'll get back to you within 24 hours.</p>
+
+                    <button 
+                      onClick={() => {
+                        setIsSuccess(false);
+                        setFormLoadTime(Date.now());
+                        setFormData({
+                          firstName: "",
+                          lastName: "",
+                          phone: "",
+                          email: "",
+                          fromZip: "",
+                          toZip: "",
+                          moveSize: "Studio / 1 Bedroom",
+                          moveDate: "",
+                        });
+                      }}
+                      className="mt-8 text-sm font-medium text-accent hover:text-accent-dark transition-colors"
+                    >
+                      Submit another request
+                    </button>
                 </div>
-                <h4 className="text-2xl font-serif text-foreground mb-3">Request Received</h4>
-                <p className="text-foreground/70 max-w-sm">
-                  Thank you, {formData.firstName}. We've received your details and our premium moving concierge will contact you shortly.
-                </p>
-                <button 
-                  onClick={() => setIsSuccess(false)}
-                  className="mt-8 text-sm font-medium text-accent hover:text-accent-dark transition-colors"
-                >
-                  Submit another request
-                </button>
-              </motion.div>
+              </div>
             ) : (
             <form className="space-y-6" onSubmit={handleSubmit}>
               
@@ -204,6 +311,8 @@ export default function Contact() {
                   <div className="mt-0.5 whitespace-pre-line">{error}</div>
                 </motion.div>
               )}
+
+              <input type="hidden" id="formLoadTime" value={formLoadTime} />
 
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
@@ -329,6 +438,19 @@ export default function Contact() {
                     <option>Commercial / Office</option>
                   </select>
                 </div>
+              </div>
+
+              {/* Google reCAPTCHA v2 */}
+              <div className="col-12 w-full flex justify-center sm:justify-start">
+                <ReCAPTCHA
+                  ref={recaptchaRef}
+                  sitekey="6LciOR8sAAAAAEvJCvjFx_p7Cw9nZDh-BHEbc614"
+                  onChange={(token) => {
+                    setRecaptchaToken(token);
+                    if (token) setError(null);
+                  }}
+                  onExpired={() => setRecaptchaToken(null)}
+                />
               </div>
 
               <button
