@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ClipboardList, PackageOpen, Home } from "lucide-react";
+import { useState, useEffect } from "react";
 
 const steps = [
   {
@@ -25,6 +26,18 @@ const steps = [
 ];
 
 export default function Process() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  const labelInitial = isMobile ? { opacity: 0 } : { opacity: 0, scale: 0.8 };
+  const labelAnimate = isMobile ? { opacity: 1 } : { opacity: 1, scale: 1 };
+
   return (
     <section id="process" className="py-32 bg-background relative overflow-hidden">
       {/* Decorative gradient orb */}
@@ -33,8 +46,8 @@ export default function Process() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-24 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={labelInitial}
+            whileInView={labelAnimate}
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-6"
           >
@@ -64,10 +77,10 @@ export default function Process() {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+                transition={{ duration: 0.5, delay: index * 0.15 }}
                 className="relative flex flex-col items-center text-center group"
               >
                 <div className="bg-background rounded-full p-2 mb-6">

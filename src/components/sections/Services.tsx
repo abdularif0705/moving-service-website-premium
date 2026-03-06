@@ -1,8 +1,9 @@
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import { Truck, Box, Wrench, Dumbbell, Trash2, Building2, Sparkles, Hammer, ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const services = [
   {
@@ -65,12 +66,24 @@ const containerVariants = {
   },
 };
 
-const itemVariants: any = {
-  hidden: { opacity: 0, scale: 0.95, y: 30 },
-  visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } },
-};
-
 export default function Services() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768);
+    check();
+    window.addEventListener('resize', check);
+    return () => window.removeEventListener('resize', check);
+  }, []);
+
+  // Desktop: premium scale + fade + slide. Mobile: lightweight fade + slide only.
+  const itemVariants: Variants = isMobile
+    ? { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }
+    : { hidden: { opacity: 0, scale: 0.95, y: 30 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } };
+
+  // Desktop: scale pop-in. Mobile: simple fade.
+  const labelInitial = isMobile ? { opacity: 0 } : { opacity: 0, scale: 0.8 };
+  const labelAnimate = isMobile ? { opacity: 1 } : { opacity: 1, scale: 1 };
   return (
     <section id="services" className="py-24 md:py-32 bg-foreground/5 dark:bg-background relative overflow-hidden">
       {/* Decorative background elements */}
@@ -80,8 +93,8 @@ export default function Services() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-3xl mx-auto mb-20 flex flex-col items-center">
           <motion.div
-            initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
+            initial={labelInitial}
+            whileInView={labelAnimate}
             viewport={{ once: true }}
             className="flex items-center gap-4 mb-6"
           >

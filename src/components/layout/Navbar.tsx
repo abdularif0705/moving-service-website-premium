@@ -15,7 +15,7 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
       setIsScrolled(window.scrollY > 20);
     };
     handleScroll(); // Initialize state immediately on mount
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 

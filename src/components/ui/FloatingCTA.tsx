@@ -10,10 +10,9 @@ export default function FloatingCTA() {
 
   // Show the CTA only after scrolling past the initial hero section
   useMotionValueEvent(scrollY, "change", (latest) => {
-    if (latest > 600) {
-      setIsVisible(true);
-    } else {
-      setIsVisible(false);
+    const shouldShow = latest > 600;
+    if (shouldShow !== isVisible) {
+      setIsVisible(shouldShow);
     }
   });
 

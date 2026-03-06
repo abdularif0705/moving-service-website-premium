@@ -37,6 +37,7 @@ export default function Hero() {
                 text="We Handle the Heavy Lifting." 
                 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-8 uppercase"
                 delay={0.1}
+                highlightWords={["Heavy", "Lifting."]}
               />
             </div>
           </h1>
