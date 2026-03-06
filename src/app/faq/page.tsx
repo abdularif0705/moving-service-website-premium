@@ -42,7 +42,7 @@ export default function FAQPage() {
           <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1542289656-78ab7f8fdfe3?auto=format&fit=crop&w=2000&q=80')] bg-cover bg-center opacity-10 mix-blend-luminosity"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
-              Common <span className="text-accent italic">Questions.</span>
+              Common <span className="text-accent italic pr-2">Questions.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
               Clear, transparent answers regarding our premium moving process, policies, and pricing structures.

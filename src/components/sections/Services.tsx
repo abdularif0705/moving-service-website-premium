@@ -98,7 +98,7 @@ export default function Services() {
             transition={{ delay: 0.1, duration: 0.7 }}
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight"
           >
-            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">Moving Services</span>
+            Comprehensive <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">Moving</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">Services</span>
           </motion.h3>
         </div>
 

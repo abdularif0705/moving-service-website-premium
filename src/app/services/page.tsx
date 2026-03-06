@@ -91,18 +91,18 @@ export default function ServicesPage() {
         </section>
 
         {/* Introduction / Why Us */}
-        <section className="py-24 bg-white dark:bg-slate-950 border-y border-foreground/5 dark:border-white/5">
+        <section className="py-24 md:py-32 bg-white dark:bg-slate-950 border-y border-foreground/5 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid lg:grid-cols-3 gap-12 text-center lg:text-left">
+            <div className="grid lg:grid-cols-3 gap-12 lg:gap-16 text-center lg:text-left items-center">
               <div className="lg:col-span-1">
-                <h2 className="text-3xl font-serif text-foreground mb-4">A Higher Standard of Moving.</h2>
-                <div className="w-12 h-1 bg-accent mx-auto lg:mx-0 mb-6"></div>
+                <h2 className="text-4xl md:text-5xl font-serif text-foreground mb-6 leading-tight">A Higher Standard of Moving.</h2>
+                <div className="w-16 h-1 bg-accent mx-auto lg:mx-0"></div>
               </div>
               <div className="lg:col-span-2">
-                <p className="text-foreground/70 text-lg leading-relaxed mb-6">
+                <p className="text-foreground/70 text-lg md:text-xl font-light leading-relaxed mb-6">
                   At Rent-A-Hand, we recognized a glaring flaw in the moving industry: a race to the bottom in pricing often meant a drastic drop in quality, resulting in damaged goods, hidden fees, and immense stress for the customer.
                 </p>
-                <p className="text-foreground/70 text-lg leading-relaxed">
+                <p className="text-foreground/70 text-lg md:text-xl font-light leading-relaxed">
                   We built our service offerings around the concept of absolute premium care. Whether you are moving a one-bedroom apartment across Windsor or relocating an entire corporate headquarters to Toronto, we apply the exact same meticulous methodologies, equipment, and respect to your property.
                 </p>
               </div>
@@ -171,20 +171,23 @@ export default function ServicesPage() {
             </div>
             
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
-              <div className="bg-foreground/5 dark:bg-white/5 p-8 rounded-3xl border border-transparent hover:border-accent/30 transition-colors">
-                <Wrench className="text-accent mb-6" size={32} />
-                <h3 className="text-xl font-serif text-foreground mb-3">General Furniture Assembly</h3>
-                <p className="text-foreground/70 leading-relaxed text-sm">Expert teardown and reassembly of complex furniture pieces, including IKEA systems and custom bedroom sets.</p>
+              <div className="group bg-white dark:bg-white/[0.02] p-8 md:p-10 rounded-[2xl] md:rounded-[2rem] border border-foreground/5 dark:border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-[1.5] group-hover:bg-accent/10"></div>
+                <Wrench className="text-accent mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110" size={32} />
+                <h3 className="text-xl font-serif text-foreground mb-3 relative z-10">General Furniture Assembly</h3>
+                <p className="text-foreground/70 leading-relaxed text-sm relative z-10">Expert teardown and reassembly of complex furniture pieces, including IKEA systems and custom bedroom sets.</p>
               </div>
-              <div className="bg-foreground/5 dark:bg-white/5 p-8 rounded-3xl border border-transparent hover:border-accent/30 transition-colors">
-                <Trash2 className="text-accent mb-6" size={32} />
-                <h3 className="text-xl font-serif text-foreground mb-3">Responsible Junk Removal</h3>
-                <p className="text-foreground/70 leading-relaxed text-sm">Efficient clearing of unwanted items, debris, and clutter prior to moving, handled in an environmentally responsible manner.</p>
+              <div className="group bg-white dark:bg-white/[0.02] p-8 md:p-10 rounded-[2xl] md:rounded-[2rem] border border-foreground/5 dark:border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-[1.5] group-hover:bg-accent/10"></div>
+                <Trash2 className="text-accent mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110" size={32} />
+                <h3 className="text-xl font-serif text-foreground mb-3 relative z-10">Responsible Junk Removal</h3>
+                <p className="text-foreground/70 leading-relaxed text-sm relative z-10">Efficient clearing of unwanted items, debris, and clutter prior to moving, handled in an environmentally responsible manner.</p>
               </div>
-              <div className="bg-foreground/5 dark:bg-white/5 p-8 rounded-3xl border border-transparent hover:border-accent/30 transition-colors">
-                <Sparkles className="text-accent mb-6" size={32} />
-                <h3 className="text-xl font-serif text-foreground mb-3">Post-Move Cleaning</h3>
-                <p className="text-foreground/70 leading-relaxed text-sm">Deep cleaning services for your old or new residence, ensuring you leave a spotless space or walk into a pristine home.</p>
+              <div className="group bg-white dark:bg-white/[0.02] p-8 md:p-10 rounded-[2xl] md:rounded-[2rem] border border-foreground/5 dark:border-white/5 shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.06)] dark:hover:shadow-[0_8px_30px_rgba(255,255,255,0.03)] hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden">
+                <div className="absolute top-0 right-0 w-32 h-32 bg-accent/5 rounded-bl-full -mr-16 -mt-16 transition-transform duration-700 group-hover:scale-[1.5] group-hover:bg-accent/10"></div>
+                <Sparkles className="text-accent mb-6 relative z-10 transition-transform duration-300 group-hover:scale-110" size={32} />
+                <h3 className="text-xl font-serif text-foreground mb-3 relative z-10">Post-Move Cleaning</h3>
+                <p className="text-foreground/70 leading-relaxed text-sm relative z-10">Deep cleaning services for your old or new residence, ensuring you leave a spotless space or walk into a pristine home.</p>
               </div>
             </div>
           </div>
@@ -193,11 +196,15 @@ export default function ServicesPage() {
         {/* Bottom CTA */}
         <section className="py-24 bg-primary text-center px-4 relative overflow-hidden">
           <div className="absolute inset-0 bg-[url('/images/gallery/picture4_branded.png')] bg-cover bg-center opacity-10"></div>
-          <div className="relative z-10">
-            <h2 className="text-4xl md:text-5xl font-serif text-white mb-8">Ready for a Premium Move?</h2>
-            <a href="/#quote" className="inline-flex items-center gap-3 bg-accent text-primary hover:bg-accent-light px-10 py-5 rounded-full font-bold tracking-wide text-lg transition-colors shadow-2xl">
-              Get Your Custom Quote Now
-              <ArrowRight size={20} />
+          <div className="absolute inset-0 bg-gradient-to-t from-primary/80 to-transparent pointer-events-none"></div>
+          <div className="relative z-10 max-w-2xl mx-auto flex flex-col items-center">
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-4 tracking-wide">Ready for a Premium Move?</h2>
+            <p className="text-white/70 text-lg mb-8 font-light max-w-xl">
+              Let our experts handle the heavy lifting. Get a customized plan tailored to your exact needs.
+            </p>
+            <a href="/#quote" className="group inline-flex items-center gap-2 bg-accent text-primary hover:bg-white hover:text-primary px-8 py-3.5 rounded-full font-medium text-base transition-all duration-300 transform shadow-lg hover:shadow-[0_0_20px_rgba(255,183,3,0.3)] hover:-translate-y-0.5">
+              Get your free quote
+              <ArrowRight size={18} className="transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>
         </section>

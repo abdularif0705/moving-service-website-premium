@@ -41,7 +41,7 @@ export default function CareersPage() {
              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-accent/40 bg-accent/10 text-accent font-medium text-[10px] tracking-[0.2em] uppercase mb-6 rounded-full">
               Join The Elite
             </div>
-            <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">Build a Career in <span className="text-accent italic">Premium Logistics.</span></h1>
+            <h1 className="text-4xl md:text-6xl font-serif text-white mb-6">Build a Career in <span className="text-accent italic pr-2">Premium</span> <span className="text-accent italic pr-2">Logistics.</span></h1>
             <p className="text-lg text-white/80 font-light">
               We aren't looking for day-laborers. We are looking for career-minded professionals who take pride in delivering a flawless customer experience.
             </p>
