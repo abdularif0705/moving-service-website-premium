@@ -1,28 +1,17 @@
 "use client";
 
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck, Clock, MapPin } from "lucide-react";
-import { useRef } from "react";
 import TextReveal from "../ui/TextReveal";
 
 export default function Hero() {
-  const ref = useRef(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start start", "end start"],
-  });
-  
-  // Parallax translation for the background
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "30%"]);
-
   return (
-    <section ref={ref} className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden">
-      {/* Background Image - with Parallax */}
+    <section className="relative w-full min-h-[95vh] flex items-center justify-center overflow-hidden">
+      {/* Background Image - with Parallax removed for iOS performance */}
       <motion.div 
-        className="absolute inset-0 z-0 h-[130%] -top-[15%] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 z-0 h-full bg-cover bg-center bg-no-repeat"
         style={{
-          backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80')",
-          y
+          backgroundImage: "url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80')"
         }}
       />
       {/* Overlay to ensure text readability */}

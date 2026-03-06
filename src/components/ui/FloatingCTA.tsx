@@ -26,7 +26,7 @@ export default function FloatingCTA() {
         pointerEvents: isVisible ? "auto" : "none" 
       }}
       transition={{ duration: 0.4, ease: "easeOut" }}
-      className="fixed bottom-6 right-6 z-50 md:bottom-10 md:right-10"
+      className="fixed bottom-20 right-6 z-50 md:bottom-10 md:right-10"
     >
       <a 
         href="/#quote"

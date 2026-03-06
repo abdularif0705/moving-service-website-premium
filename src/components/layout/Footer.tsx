@@ -38,11 +38,11 @@ export default function Footer() {
           <div>
             <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Services</h4>
             <ul className="space-y-3">
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Local Moving</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Long Distance Moving</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Commercial Relocation</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Professional Packing</a></li>
-              <li><a href="#" className="text-white/60 hover:text-white transition-colors text-sm">Storage Solutions</a></li>
+              <li><a href="/services" className="text-white/60 hover:text-white transition-colors text-sm">Local Moving</a></li>
+              <li><a href="/services" className="text-white/60 hover:text-white transition-colors text-sm">Long Distance Moving</a></li>
+              <li><a href="/services" className="text-white/60 hover:text-white transition-colors text-sm">Commercial Relocation</a></li>
+              <li><a href="/services" className="text-white/60 hover:text-white transition-colors text-sm">Single Item Transport</a></li>
+              <li><a href="/services" className="text-white/60 hover:text-white transition-colors text-sm">Junk Removal</a></li>
             </ul>
           </div>
 
@@ -50,8 +50,8 @@ export default function Footer() {
             <h4 className="text-white font-serif font-medium mb-6 text-lg tracking-wide">Company</h4>
             <ul className="space-y-3">
               <li><a href="/about" className="text-white/60 hover:text-white transition-colors text-sm">About Us</a></li>
-              <li><a href="/#process" className="text-white/60 hover:text-white transition-colors text-sm">How It Works</a></li>
-              <li><a href="/#testimonials" className="text-white/60 hover:text-white transition-colors text-sm">Reviews</a></li>
+              <li><a href="/gallery" className="text-white/60 hover:text-white transition-colors text-sm">Gallery</a></li>
+              <li><a href="/faq" className="text-white/60 hover:text-white transition-colors text-sm">FAQ</a></li>
               <li><a href="/careers" className="text-white/60 hover:text-white transition-colors text-sm">Careers</a></li>
               <li><a href="/privacy" className="text-white/60 hover:text-white transition-colors text-sm">Privacy Policy</a></li>
             </ul>

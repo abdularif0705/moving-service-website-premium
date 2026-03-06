@@ -284,8 +284,8 @@ export default function Contact() {
                 </div>
               </div>
 
-              <div className="grid sm:grid-cols-2 gap-6">
-                <div>
+              <div className="grid sm:grid-cols-2 gap-6 w-full max-w-full overflow-hidden">
+                <div className="w-full max-w-full overflow-hidden">
                   <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Target Move Date</label>
                   <input
                     type="date"
@@ -295,15 +295,17 @@ export default function Contact() {
                       setError(null);
                       setFormData({ ...formData, moveDate: e.target.value })
                     }}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all cursor-pointer"
+                    className="flex w-full min-w-0 px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all cursor-pointer"
+                    style={{ WebkitAppearance: 'none', width: '100%' }}
                   />
                 </div>
-                <div>
+                <div className="w-full max-w-full overflow-hidden">
                   <label className="block text-sm font-semibold text-slate-900 dark:text-white mb-2">Move Size</label>
                   <select 
                     value={formData.moveSize}
                     onChange={(e) => setFormData({ ...formData, moveSize: e.target.value })}
-                    className="w-full px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer"
+                    className="flex w-full min-w-0 px-4 py-3 rounded-2xl border border-foreground/10 bg-foreground/5 dark:bg-background text-foreground focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all appearance-none cursor-pointer"
+                    style={{ width: '100%' }}
                   >
                     <option>Studio / 1 Bedroom</option>
                     <option>2-3 Bedrooms</option>

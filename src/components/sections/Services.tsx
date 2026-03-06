@@ -116,7 +116,6 @@ export default function Services() {
               className={`relative overflow-hidden rounded-[2rem] h-[420px] group cursor-pointer border border-foreground/5 shadow-lg bg-black box-border col-span-1 lg:col-span-2 ${
                 index === 6 ? "lg:col-start-2" : ""
               }`}
-              onClick={() => document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' })}
             >
               {/* Background Image */}
               <div className="absolute inset-0 w-full h-full">
@@ -135,7 +134,7 @@ export default function Services() {
 
               {/* Content */}
               <div className="absolute inset-0 flex flex-col justify-end p-8 text-white z-20 overflow-hidden">
-                <div className="transform transition-transform duration-500 ease-out group-hover:-translate-y-14">
+                <div className="transform transition-transform duration-500 ease-out group-hover:-translate-y-14 pointer-events-none">
                   <div className="bg-white/10 backdrop-blur-md w-14 h-14 rounded-2xl flex items-center justify-center mb-6 transition-all duration-500 border border-white/20 group-hover:bg-accent group-hover:text-black group-hover:border-transparent group-hover:shadow-[0_0_20px_rgba(202,160,82,0.4)]">
                     <service.icon size={26} className="transition-colors duration-500" />
                   </div>
@@ -146,7 +145,13 @@ export default function Services() {
                 </div>
                 
                 {/* Learn More Block (Absolutely positioned to prevent layout push & clipping) */}
-                <div className="absolute bottom-8 left-8 right-8 pointer-events-none opacity-0 transform translate-y-4 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-500">
+                <div 
+                  className="absolute bottom-8 left-8 right-8 cursor-pointer opacity-0 transform translate-y-4 transition-all duration-200 ease-out group-hover:opacity-100 group-hover:translate-y-0 group-hover:duration-500"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    document.getElementById('quote')?.scrollIntoView({ behavior: 'smooth' });
+                  }}
+                >
                   <div className="flex items-center justify-between mb-2 text-accent">
                     <span className="font-semibold text-xs tracking-[0.2em] uppercase">Learn More</span>
                     <ArrowRight size={16} className="transform -translate-x-4 transition-transform duration-500 ease-out group-hover:translate-x-0 delay-100" />

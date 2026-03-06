@@ -60,7 +60,7 @@ export default function Process() {
           {/* Connector Line */}
           <div className="hidden md:absolute md:block top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-foreground/5 via-foreground/20 to-foreground/5 -translate-y-1/2 z-0" />
 
-          <div className="grid md:grid-cols-3 gap-12 relative z-10">
+          <div className="grid md:grid-cols-3 gap-y-32 gap-x-12 md:gap-12 relative z-10">
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}

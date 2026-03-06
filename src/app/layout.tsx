@@ -1,9 +1,16 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Oswald } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const oswald = Oswald({ subsets: ["latin"], variable: "--font-oswald" });
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 export const metadata: Metadata = {
   title: {
@@ -12,12 +19,21 @@ export const metadata: Metadata = {
   },
   description: "Experience a seamless, stress-free move in Windsor, Ontario and surrounding areas. Rent-A-Hand provides top-rated local moving services. Get a free quote today.",
   keywords: ["movers in Windsor", "moving companies Windsor Ontario", "Windsor movers", "Rent-A-Hand", "rent a hand moving", "local movers Windsor", "furniture moving Windsor", "movers Windsor ON", "best movers Windsor"],
+  metadataBase: new URL('https://rent-a-hand.ca'),
   openGraph: {
     type: "website",
     locale: "en_CA",
     siteName: "Rent-A-Hand Moving Services",
     title: "Rent-A-Hand | Premium Movers in Windsor, ON",
     description: "Top-rated moving services in Windsor, Ontario. Experience a seamless move with Rent-A-Hand.",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: "Rent-A-Hand Moving Services Logo",
+      },
+    ],
   },
 };
 

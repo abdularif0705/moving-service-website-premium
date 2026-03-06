@@ -60,9 +60,10 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
 
             <nav className="hidden md:flex gap-8 items-center">
               <Link href="/about" className="text-sm font-medium hover:opacity-70 transition-opacity">About</Link>
-              <Link href="/#services" className="text-sm font-medium hover:opacity-70 transition-opacity">Services</Link>
-              <Link href="/#process" className="text-sm font-medium hover:opacity-70 transition-opacity">Process</Link>
-              <Link href="/#testimonials" className="text-sm font-medium hover:opacity-70 transition-opacity">Reviews</Link>
+              <Link href="/services" className="text-sm font-medium hover:opacity-70 transition-opacity">Services</Link>
+              <Link href="/locations" className="text-sm font-medium hover:opacity-70 transition-opacity">Locations</Link>
+              <Link href="/gallery" className="text-sm font-medium hover:opacity-70 transition-opacity">Gallery</Link>
+              <Link href="/faq" className="text-sm font-medium hover:opacity-70 transition-opacity">FAQ</Link>
               <Link
                 href="/#quote"
                 className="bg-accent text-primary hover:bg-accent-light px-7 py-2.5 font-medium transition-colors duration-300 tracking-wide rounded-full shadow-md"
@@ -110,12 +111,13 @@ export default function Navbar({ transparentTextColor = "white" }: { transparent
               
               <div className="flex flex-col gap-6">
                 <Link href="/about" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">About</Link>
-                <Link href="/#services" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">Services</Link>
-                <Link href="/#process" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">Process</Link>
-                <Link href="/#testimonials" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">Reviews</Link>
+                <Link href="/services" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">Services</Link>
+                <Link href="/locations" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">Locations</Link>
+                <Link href="/gallery" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">Gallery</Link>
+                <Link href="/faq" onClick={() => setMobileMenuOpen(false)} className="text-xl font-medium text-stone-800 dark:text-stone-200 hover:text-accent transition-colors border-b border-stone-100 dark:border-stone-800 pb-4">FAQ</Link>
               </div>
               
-              <div className="mt-auto pt-8">
+              <div className="mt-auto pt-8 pb-12">
                 <Link
                   href="/#quote"
                   onClick={() => setMobileMenuOpen(false)}
