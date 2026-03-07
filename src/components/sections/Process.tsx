@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ClipboardList, PackageOpen, Home } from "lucide-react";
 import { useState, useEffect } from "react";
 
+
 const steps = [
   {
     id: "01",
@@ -37,6 +38,9 @@ export default function Process() {
 
   const labelInitial = isMobile ? { opacity: 0 } : { opacity: 0, scale: 0.8 };
   const labelAnimate = isMobile ? { opacity: 1 } : { opacity: 1, scale: 1 };
+
+  const stepInitial = isMobile ? { opacity: 0, y: 30 } : { opacity: 0, y: 30 };
+  const stepAnimate = isMobile ? { opacity: 1, y: 0 } : { opacity: 1, y: 0 };
 
   return (
     <section id="process" className="py-32 bg-background relative overflow-hidden">
@@ -77,10 +81,10 @@ export default function Process() {
             {steps.map((step, index) => (
               <motion.div
                 key={step.id}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.5, delay: index * 0.15 }}
+                initial={stepInitial}
+                whileInView={stepAnimate}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: isMobile ? 0.5 : 0.6, delay: index * 0.15 }}
                 className="relative flex flex-col items-center text-center group"
               >
                 <div className="bg-background rounded-full p-2 mb-6">

@@ -1,9 +1,10 @@
 "use client";
 
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { Truck, Box, Wrench, Dumbbell, Trash2, Building2, Sparkles, Hammer, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+
 
 const services = [
   {
@@ -56,16 +57,6 @@ const services = [
   },
 ];
 
-const containerVariants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: {
-      staggerChildren: 0.1,
-    },
-  },
-};
-
 export default function Services() {
   const [isMobile, setIsMobile] = useState(false);
 
@@ -76,14 +67,12 @@ export default function Services() {
     return () => window.removeEventListener('resize', check);
   }, []);
 
-  // Desktop: premium scale + fade + slide. Mobile: lightweight fade + slide only.
-  const itemVariants: Variants = isMobile
-    ? { hidden: { opacity: 0, y: 30 }, visible: { opacity: 1, y: 0, transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] } } }
-    : { hidden: { opacity: 0, scale: 0.95, y: 30 }, visible: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] } } };
-
-  // Desktop: scale pop-in. Mobile: simple fade.
   const labelInitial = isMobile ? { opacity: 0 } : { opacity: 0, scale: 0.8 };
   const labelAnimate = isMobile ? { opacity: 1 } : { opacity: 1, scale: 1 };
+
+  const itemInitial = isMobile ? { opacity: 0, y: 30 } : { opacity: 0, scale: 0.95, y: 30 };
+  const itemAnimate = isMobile ? { opacity: 1, y: 0 } : { opacity: 1, scale: 1, y: 0 };
+
   return (
     <section id="services" className="py-24 md:py-32 bg-foreground/5 dark:bg-background relative overflow-hidden">
       {/* Decorative background elements */}
@@ -115,17 +104,14 @@ export default function Services() {
           </motion.h3>
         </div>
 
-        <motion.div
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.15 }}
-          className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8"
-        >
+        <div className="grid md:grid-cols-2 lg:grid-cols-6 gap-6 lg:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              variants={itemVariants}
+              initial={itemInitial}
+              whileInView={itemAnimate}
+              viewport={{ once: true, amount: 0.2, margin: "-50px" }}
+              transition={{ duration: isMobile ? 0.5 : 0.6, delay: index * 0.05, ease: isMobile ? undefined : [0.22, 1, 0.36, 1] }}
               className={`relative overflow-hidden rounded-[2rem] h-[420px] group cursor-pointer border border-foreground/5 shadow-lg bg-black box-border col-span-1 lg:col-span-2 ${
                 index === 6 ? "lg:col-start-2" : ""
               }`}
@@ -177,7 +163,7 @@ export default function Services() {
               </div>
             </motion.div>
           ))}
-        </motion.div>
+        </div>
       </div>
     </section>
   );
