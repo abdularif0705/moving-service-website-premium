@@ -51,6 +51,41 @@ export default function RootLayout({
       <body className={`${inter.variable} ${oswald.variable} font-sans antialiased min-h-screen flex flex-col text-primary bg-[#FAFAF9]`}>
         <ScrollProgress />
         <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function() {
+                // Prevent browser from automatically restoring scroll position on history navigation
+                if (history.scrollRestoration) {
+                  history.scrollRestoration = 'manual';
+                }
+
+                // Store the initial scroll position
+                let lastScrollY = window.scrollY;
+                
+                // Update scroll position on scroll
+                window.addEventListener('scroll', function() {
+                  lastScrollY = window.scrollY;
+                }, { passive: true });
+
+                // When focus enters the document (e.g., after closing an iframe), 
+                // restore the scroll position if we were scrolled down.
+                window.addEventListener('focus', function() {
+                   if (lastScrollY > 0 && window.scrollY === 0) {
+                      window.scrollTo(0, lastScrollY);
+                   }
+                }, true); // Capture phase to catch it early
+
+                // Also handle focusin for better coverage
+                window.addEventListener('focusin', function() {
+                   if (lastScrollY > 0 && window.scrollY === 0) {
+                      window.scrollTo(0, lastScrollY);
+                   }
+                });
+              })();
+            `
+          }}
+        />
+        <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
