@@ -69,7 +69,7 @@ export default function Process() {
             className="text-4xl md:text-5xl lg:text-6xl font-serif text-foreground leading-tight"
           >
             Your Moving Experience <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">in</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">3</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">Simple</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2">Steps</span>
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2 -mr-2">in</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2 -mr-2">3</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2 -mr-2">Simple</span> <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent to-accent/70 italic pr-2 -mr-2">Steps</span>
           </motion.h3>
         </div>
 

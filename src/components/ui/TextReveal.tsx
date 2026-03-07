@@ -7,10 +7,12 @@ export default function TextReveal({
   text,
   className = "",
   delay = 0,
+  highlightWords = [],
 }: {
   text: string;
   className?: string;
   delay?: number;
+  highlightWords?: string[];
 }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-10px" });
@@ -23,7 +25,7 @@ export default function TextReveal({
     visible: (i = 1) => ({
       opacity: 1,
       transition: { 
-        staggerChildren: 0.12, 
+        staggerChildren: 0.1, 
         delayChildren: delay 
       },
     }),
@@ -53,26 +55,23 @@ export default function TextReveal({
   return (
     <motion.div
       ref={ref}
-      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.25em" }}
+      style={{ overflow: "hidden", display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "0.15em" }}
       variants={container}
       initial="hidden"
       animate={isInView ? "visible" : "hidden"}
       className={className}
     >
       {words.map((word, index) => {
-        // Find if the word contains specific stylized text based on the Hero content
-        let content: React.ReactNode = word;
+        const isHighlighted = highlightWords.includes(word);
         
-        // Special styling for "art form." as per the Hero component
-        if (word === "art") {
-          content = <span className="text-accent italic font-light">{word}</span>;
-        } else if (word === "form.") {
-          content = <span className="text-accent italic font-light">{word}</span>;
-        }
-
         return (
-          <motion.span variants={child} key={index} style={{ display: "inline-block" }}>
-            {content}
+          <motion.span 
+            variants={child} 
+            key={index} 
+            style={{ display: "inline-block" }}
+            className={isHighlighted ? "text-accent italic font-light pr-3 -mr-2.5" : ""}
+          >
+            {word}
           </motion.span>
         );
       })}
