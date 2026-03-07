@@ -378,7 +378,7 @@ export default function Contact() {
                {!isSuccess && !isSubmitting && (
                  <>
                    <h3 className="text-2xl font-bold mb-2 text-foreground">One Last Step</h3>
-                   <p className="text-foreground/70 mb-8">Please confirm you are human to send your request.</p>
+                   <p className="text-black mb-8">Please confirm you are human to send your request.</p>
                    <div className="flex justify-center mb-8 overflow-hidden rounded-xl">
                       <ReCAPTCHA
                         ref={recaptchaRef}
