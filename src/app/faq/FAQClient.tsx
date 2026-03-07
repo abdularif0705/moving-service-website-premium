@@ -50,7 +50,7 @@ export default function FAQClient() {
               Knowledge Base
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-6">
-              Common <span className="text-accent italic pr-2">Questions.</span>
+              Common <span className="text-accent italic pr-2 -mr-2">Questions.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed font-light">
               Clear, transparent answers regarding our premium moving process, policies, and pricing structures.

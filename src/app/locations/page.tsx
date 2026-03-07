@@ -36,7 +36,7 @@ export default function LocationsPage() {
               Local & Beyond
             </div>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-serif text-white tracking-tight leading-[1.1] mb-6">
-              Coverage <span className="text-accent italic pr-2">Areas.</span>
+              Coverage <span className="text-accent italic pr-2 -mr-2">Areas.</span>
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto leading-relaxed font-light">
               Rooted in Windsor, scaling across Ontario. We bring our signature premium moving methodologies to every corner of Essex County and beyond.

@@ -35,7 +35,7 @@ export default function GalleryPage() {
           <div className="absolute inset-0 bg-[url('/images/gallery/picture1_branded.png')] bg-cover bg-center opacity-20 mix-blend-luminosity"></div>
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
             <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
-              Our <span className="text-accent italic pr-2">Results.</span>
+              Our <span className="text-accent italic pr-2 -mr-2">Results.</span>
             </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto">
               A visual portfolio of flawlessly executed relocations, representing our commitment to absolute precision and care.

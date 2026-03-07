@@ -39,9 +39,9 @@ export default function AboutPage() {
             <div className="inline-flex items-center gap-3 px-6 py-2 border border-accent/40 bg-accent/10 text-accent font-medium text-[10px] tracking-[0.2em] uppercase mb-8 rounded-full">
               Our Story
             </div>
-            <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
-              Redefining the <br /><span className="text-accent italic pr-2">Moving</span> <span className="text-accent italic pr-2">Experience.</span>
-            </h1>
+              <h1 className="text-5xl md:text-7xl font-serif text-white mb-6">
+                Redefining the <br /><span className="text-accent italic pr-2 -mr-2">Moving</span> <span className="text-accent italic pr-2 -mr-2">Experience.</span>
+              </h1>
             <p className="text-lg text-white/70 max-w-2xl mx-auto leading-relaxed">
               Founded in Windsor, Ontario, Rent-A-Hand was built on a simple premise: moving is stressful, but it doesn't have to be. We handle the heavy lifting while you enjoy a seamless, worry-free move, providing the honest and reliable service this industry desperately needed.
             </p>
@@ -53,7 +53,7 @@ export default function AboutPage() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid lg:grid-cols-2 gap-16 items-center mb-24">
               <div>
-                <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">Built on Integrity. Driven by <span className="text-accent italic pr-2">Community.</span></h2>
+                <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">Built on Integrity. Driven by <span className="text-accent italic pr-2 -mr-2">Community.</span></h2>
                 <div className="space-y-6 text-foreground/70 leading-relaxed text-lg">
                   <p>
                     Rent-A-Hand was founded by Usman Shahzad with a singular vision: to bring honest, reliable, and premium relocation services to the hardworking people of Windsor and Essex County.
@@ -83,7 +83,7 @@ export default function AboutPage() {
         <section className="pt-32 pb-[10.5rem] bg-white dark:bg-slate-950 border-t border-foreground/5 dark:border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
-              <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">Our People & <span className="text-accent italic pr-2">Our</span> <span className="text-accent italic pr-2">Pride.</span></h2>
+              <h2 className="text-3xl sm:text-4xl font-serif text-foreground mb-6">Our People & <span className="text-accent italic pr-2 -mr-2">Our</span> <span className="text-accent italic pr-2 -mr-2">Pride.</span></h2>
               <p className="text-foreground/70 max-w-2xl mx-auto text-lg leading-relaxed">
                 A premium moving experience demands more than just muscle. It requires a dedicated, full-time staff and a meticulously maintained fleet of modern transport vehicles.
               </p>
